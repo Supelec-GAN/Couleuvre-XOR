@@ -4,6 +4,7 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES +=  sources/main.cpp \
-            sources/neuronelayer.cpp
+    sources/neuronlayer.cpp
 
-HEADERS += headers/neuronelayer.hpp
+HEADERS += \
+    headers/neuronlayer.hpp
