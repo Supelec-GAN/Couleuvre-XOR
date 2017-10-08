@@ -1,7 +1,6 @@
 #include <iostream>
 
-#include "neurone.hpp"
-#include "neuronelayer.hpp"
+#include "headers/neuronelayer.hpp"
 
 using namespace std;
 

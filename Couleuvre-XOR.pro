@@ -3,10 +3,7 @@ CONFIG += console c++11
 CONFIG -= app_bundle
 CONFIG -= qt
 
-SOURCES += main.cpp \
-    neurone.cpp \
-    neuronelayer.cpp
+SOURCES +=  sources/main.cpp \
+            sources/neuronelayer.cpp
 
-HEADERS += \
-    neurone.hpp \
-    neuronelayer.hpp
+HEADERS += headers/neuronelayer.hpp
