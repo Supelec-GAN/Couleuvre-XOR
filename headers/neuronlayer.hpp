@@ -11,7 +11,7 @@
 /**
  *  NeuroneLayer représente une couche de neurones, avec une matrice de poids et une fonction d'activation
  */
-class NeuroneLayer
+class NeuronLayer
 {
     public:
         /// Constructeur permettant d'initialiser les paramètres de la couche de neurones
@@ -22,7 +22,7 @@ class NeuroneLayer
          *
          * La matrice de poids est de dimension outputSize x inputSize
          */
-        NeuroneLayer(unsigned int inputSize, unsigned int outputSize, std::function<float(float)> activationF = [] (float x) {return x;});
+        NeuronLayer(unsigned int inputSize, unsigned int outputSize, std::function<float(float)> activationF = [] (float x) {return x;});
 
         /// La fonction effectuant le calcul de la sortie en fonction de l'entrée
         /**
@@ -37,7 +37,7 @@ class NeuroneLayer
         /**
          * Cette fonction affiche la matrice des poids
          */
-        friend std::ostream& operator<<(std::ostream& flux, NeuroneLayer nl);
+        friend std::ostream& operator<<(std::ostream& flux, NeuronLayer nl);
 
     private:
         /// La matrice des poids de la couche de neurones

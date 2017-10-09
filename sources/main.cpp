@@ -1,13 +1,13 @@
 #include <iostream>
 
-#include "headers/neuronelayer.hpp"
+#include "headers/neuronlayer.hpp"
 
 using namespace std;
 
 int main()
 {
     // On créé une couche de neurones à 5 entrées et 5 sorties
-    NeuroneLayer n(5, 5);
+    NeuronLayer n(5, 5);
     
     cout << n << "\n";
 
