@@ -1,5 +1,5 @@
-#ifndef NEURONELAYER_HPP
-#define NEURONELAYER_HPP
+#ifndef NEURONLAYER_HPP
+#define NEURONLAYER_HPP
 
 #include <eigen3/Eigen/Dense>
 #include <iostream>
@@ -42,6 +42,7 @@ class NeuronLayer
     private:
         /// La matrice des poids de la couche de neurones
         Eigen::MatrixXf                 mPoids;
+                                        
 
         /// Le vecteur des biais de la couche de neurones
         Eigen::VectorXf                 mBiais;
@@ -50,4 +51,4 @@ class NeuronLayer
         std::function<float(float)>     mActivationFun;
 };
 
-#endif // NEURONELAYER_HPP
+#endif // NEURONLAYER_HPP
