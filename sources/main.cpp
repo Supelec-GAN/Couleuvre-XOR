@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "headers/neuronlayer.hpp"
-#include "headers/neuronalnetwork.hpp"
+#include "headers/neuralnetwork.hpp"
 
 
 using namespace std;
@@ -14,7 +14,7 @@ int main()
     NeuronLayer n3(4,3);
 
     // On créé le réseau correspondant à ces 3 couches à la suite
-    NeuronalNetwork network;
+    NeuralNetwork network;
     network.push_back(n1);
     network.push_back(n2);
     network.push_back(n3);
@@ -29,9 +29,9 @@ int main()
 	
 	// Exemple 2
 	std::vector<unsigned int> arrayNbNeuronsPerLayer = {5, 4, 3};
-	NeuronalNetwork neuronalNetwork(3, 5, arrayNbNeuronsPerLayer);
+	NeuralNetwork neuralNetwork(3, 5, arrayNbNeuronsPerLayer);
 	
-	cout << neuronalNetwork.process(input) << endl;
+	cout << neuralNetwork.process(input) << endl;
 
 
     return 0;

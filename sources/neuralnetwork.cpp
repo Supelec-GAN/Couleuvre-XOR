@@ -1,9 +1,9 @@
-#include "headers/neuronalnetwork.hpp"
+#include "headers/neuralnetwork.hpp"
 
-NeuronalNetwork::NeuronalNetwork(){}
+NeuralNetwork::NeuralNetwork(){}
 
 
-NeuronalNetwork::NeuronalNetwork(unsigned int nbLayer, unsigned int nbInputs, std::vector<unsigned int> arrayNbNeuronsPerLayer, std::vector<std::function<float(float)>> arrayActivationFunctionPerLayer)
+NeuralNetwork::NeuralNetwork(unsigned int nbLayer, unsigned int nbInputs, std::vector<unsigned int> arrayNbNeuronsPerLayer, std::vector<std::function<float(float)>> arrayActivationFunctionPerLayer)
 {
 	this->push_back(NeuronLayer(nbInputs,
 								arrayNbNeuronsPerLayer[0],
@@ -19,7 +19,7 @@ NeuronalNetwork::NeuronalNetwork(unsigned int nbLayer, unsigned int nbInputs, st
 	}
 }
 
-NeuronalNetwork::NeuronalNetwork(unsigned int nbLayer, unsigned int nbInputs, std::vector<unsigned int> arrayNbNeuronsPerLayer)
+NeuralNetwork::NeuralNetwork(unsigned int nbLayer, unsigned int nbInputs, std::vector<unsigned int> arrayNbNeuronsPerLayer)
 {
 	this->push_back(NeuronLayer(nbInputs,
 								arrayNbNeuronsPerLayer[0]
@@ -34,7 +34,7 @@ NeuronalNetwork::NeuronalNetwork(unsigned int nbLayer, unsigned int nbInputs, st
 }
 
 
-Eigen::VectorXf NeuronalNetwork::process(Eigen::VectorXf input) const
+Eigen::VectorXf NeuralNetwork::process(Eigen::VectorXf input) const
 {
 	for(auto itr = begin(); itr != end(); ++itr)
 		input = (*itr).process(input);
