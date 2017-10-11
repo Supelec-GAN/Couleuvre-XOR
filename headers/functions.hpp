@@ -2,6 +2,7 @@
 #define FUNCTIONS_HPP
 
 #include <functional>
+#include <eigen3/Eigen/Dense>
 
 struct Functions
 {

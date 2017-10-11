@@ -2,6 +2,7 @@
 #define TEACHER_HPP
 
 #include "headers/neuralnetwork.hpp"
+#include "headers/functions.hpp"
 
 class Teacher
 {
@@ -14,8 +15,8 @@ class Teacher
         void propError(float error) const;
 
     private:
-        NeuralNetwork::Ptr mNetwork;
-        std::function<float(Eigen::VectorXf, Eigen::VectorXf)> mErrorFun;
+        NeuralNetwork::Ptr  mNetwork;
+        Functions::ErrorFun mErrorFun;
 };
 
 #endif // TEACHER_HPP
