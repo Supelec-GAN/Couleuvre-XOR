@@ -29,6 +29,18 @@ class NeuralNetwork : public std::vector<NeuronLayer>
 	 */
 	NeuralNetwork(unsigned int nbLayer, unsigned int nbInputs, std::vector<unsigned int> arrayNbNeuronsPerLayer);
 
+    /// Constructeur permettant d'initialiser le réseau neuronal avec un conteneur de neuronLayer
+    /**
+     *  \param Container un conteneur (vector, list...) de NeuronLayer
+     *  \param layerList la liste des couches de neurones
+     */
+    template <typename Container>
+    NeuralNetwork(Container layerList)
+    {
+        for(auto itr = layerList.begin(); itr != layerList.end(); ++itr)
+            push_back(*itr);
+    }
+
 
     Eigen::VectorXf process(Eigen::VectorXf input) const;
     

@@ -14,10 +14,12 @@ int main()
     NeuronLayer n3(4,3);
 
     // On créé le réseau correspondant à ces 3 couches à la suite
-    NeuralNetwork network;
-    network.push_back(n1);
-    network.push_back(n2);
-    network.push_back(n3);
+    vector<NeuronLayer> n;
+    n.push_back(n1);
+    n.push_back(n2);
+    n.push_back(n3);
+
+    NeuralNetwork network(n);
 
     // On créé un vecteur d'entrée de dimension 5x1 valant (1, 2, 3, 4, 5)
     Eigen::VectorXf input(5);
