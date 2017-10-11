@@ -6,7 +6,8 @@ CONFIG -= qt
 SOURCES +=  sources/main.cpp \
     sources/neuronlayer.cpp \
     sources/neuralnetwork.cpp \
-    sources/functions.cpp
+    sources/functions.cpp \
+    headers/neuralnetwork.inl
 
 HEADERS += \
     headers/neuronlayer.hpp \

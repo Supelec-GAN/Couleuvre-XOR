@@ -4,10 +4,10 @@
 
 Functions::ActivationFun Functions::sigmoid(float lambda)
 {
-    return [] (float x) {return 1.f/(1.f + exp(-lambda*x));};
+    return [=] (float x) {return 1.f/(1.f + exp(-lambda*x));};
 }
 
 Functions::ActivationFun Functions::heavyside(float gapAbscissa)
 {
-    return [] (float x) {return (x < gapAbscissa) ? 0 : 1;};
+    return [=] (float x) {return (x < gapAbscissa) ? 0 : 1;};
 }

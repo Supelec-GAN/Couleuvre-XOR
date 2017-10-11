@@ -35,15 +35,11 @@ class NeuralNetwork : public std::vector<NeuronLayer>
      *  \param layerList la liste des couches de neurones
      */
     template <typename Container>
-    NeuralNetwork(Container layerList)
-    {
-        for(auto itr = layerList.begin(); itr != layerList.end(); ++itr)
-            push_back(*itr);
-    }
-
+    NeuralNetwork(Container layerList);
 
     Eigen::VectorXf process(Eigen::VectorXf input) const;
-    
 };
+
+#include "headers/neuralnetwork.inl"
 
 #endif // NEURALNETWORK_HPP
