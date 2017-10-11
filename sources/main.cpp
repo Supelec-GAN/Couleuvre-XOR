@@ -35,6 +35,5 @@ int main()
 	
 	cout << neuralNetwork.process(input) << endl;
 
-
     return 0;
 }

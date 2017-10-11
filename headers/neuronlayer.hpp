@@ -41,8 +41,7 @@ class NeuronLayer
 
     private:
         /// La matrice des poids de la couche de neurones
-        Eigen::MatrixXf                 mPoids;
-                                        
+        Eigen::MatrixXf                 mPoids;                 
 
         /// Le vecteur des biais de la couche de neurones
         Eigen::VectorXf                 mBiais;
