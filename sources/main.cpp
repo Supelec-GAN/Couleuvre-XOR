@@ -8,7 +8,7 @@ using namespace std;
 
 int main()
 {
-    // On créé 3 couche de neurones différentes
+    /*// On créé 3 couche de neurones différentes
     NeuronLayer n1(5, 5);
     NeuronLayer n2(5 ,4);
     NeuronLayer n3(4,3);
@@ -34,6 +34,12 @@ int main()
 	NeuralNetwork neuralNetwork(3, 5, arrayNbNeuronsPerLayer);
 	
 	cout << neuralNetwork.process(input) << endl;
+    */
+    Eigen::VectorXf vect(Eigen::MatrixXf::Random(4,1));
+    cout << vect << "\n";
+    Eigen::Map<Eigen::RowVectorXf> v(vect.data(), vect.size()+1);
+    v(v.size()-1) = -1;
+    cout << v << "\n";
 
     return 0;
 }

@@ -40,11 +40,11 @@ class NeuronLayer
         friend std::ostream& operator<<(std::ostream& flux, NeuronLayer nl);
 
     private:
+        Eigen::VectorXf processInput(Eigen::VectorXf input) const;
+
+    private:
         /// La matrice des poids de la couche de neurones
         Eigen::MatrixXf                 mPoids;                 
-
-        /// Le vecteur des biais de la couche de neurones
-        Eigen::VectorXf                 mBiais;
 
         /// La fonction d'activation de la couche de neurones
         std::function<float(float)>     mActivationFun;
