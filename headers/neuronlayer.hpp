@@ -44,7 +44,7 @@ class NeuronLayer
         friend std::ostream& operator<<(std::ostream& flux, NeuronLayer nl);
 
     private:
-        Eigen::VectorXf processInput(Eigen::VectorXf input) const;
+        Eigen::VectorXf processInput(Eigen::VectorXf input);
 
         Eigen::MatrixXf fnDerivativeMatrix(Eigen::VectorXf ynPartialDerivative) const;
 
@@ -57,6 +57,9 @@ class NeuronLayer
 
         /// Buffer pour stocker Yn = WnXn-1, nécessaire pour la backprop
         Eigen::VectorXf                 mBufferActivationLevel;
+
+        /// Buffer pour stocker l'input, nécessaire pour la backrprop
+        Eigen::VectorXf                 mBufferInput;
 };
 
 #endif // NEURONLAYER_HPP

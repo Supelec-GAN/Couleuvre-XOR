@@ -7,6 +7,7 @@ NeuronLayer::NeuronLayer(unsigned int inputSize, unsigned int outputSize, std::f
 : mPoids(Eigen::MatrixXf::Random(outputSize, inputSize+1))
 , mActivationFun(activationF)
 , mBufferActivationLevel(Eigen::MatrixXf::Zero(outputSize, 1))
+, mBufferInput(Eigen::MatrixXf::Zero(inputSize+1, 1))
 {}
 
 
@@ -18,16 +19,19 @@ Eigen::VectorXf NeuronLayer::process(Eigen::VectorXf inputs)
     mBufferActivationLevel = Eigen::VectorXf(mPoids*processInput(inputs));;
     Eigen::VectorXf output = mBufferActivationLevel;
 
-    for(unsigned int i(0); i < mBufferActivationLevel.size(); i++)
+    for(unsigned int i(0); i < output.size(); i++)
         output[i] = mActivationFun(output[i]);
 
     return output;
 }
 
-Eigen::VectorXf NeuronLayer::processInput(Eigen::VectorXf input) const
+Eigen::VectorXf NeuronLayer::processInput(Eigen::VectorXf input)
 {
     Eigen::Map<Eigen::RowVectorXf> biaisedInput(input.data(), input.size()+1);
     biaisedInput(biaisedInput.size()-1) = -1.f;
+
+    mBufferInput = biaisedInput;
+
     return biaisedInput;
 }
 
@@ -38,7 +42,9 @@ Eigen::VectorXf NeuronLayer::processInput(Eigen::VectorXf input) const
 
 Eigen::VectorXf NeuronLayer::backProp(Eigen::VectorXf xnPartialDerivative)
 {
+    Eigen::VectorXf ynPartialDerivative = fnDerivativeMatrix(mBufferActivationLevel)*xnPartialDerivative;
 
+    //Eigen::MatrixXf wnPartialDerivative = ynPartialDerivative
 }
 
 Eigen::MatrixXf NeuronLayer::fnDerivativeMatrix(Eigen::VectorXf ynPartialDerivative) const
