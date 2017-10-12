@@ -9,8 +9,6 @@ Teacher::Teacher()
 
 void Teacher::backProp(Eigen::VectorXf input, Eigen::VectorXf desiredOutput, float step, float dx)
 {
-    Eigen::VectorXf deltaX = dx*Eigen::MatrixXf::Ones(desiredOutput.size(), 1);
-
     Eigen::VectorXf xnPartialDerivative = errorVector(mNetwork->process(input), desiredOutput, dx);
 
     propError(xnPartialDerivative, step);
