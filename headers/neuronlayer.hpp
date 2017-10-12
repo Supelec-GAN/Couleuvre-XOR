@@ -32,6 +32,15 @@ class NeuronLayer
          */
         Eigen::VectorXf process(Eigen::VectorXf inputs);
 
+
+        /// La fonction effectuant les calculs de rétropropagation
+        /**
+         * La fonction calcule les 3 équations matricielles, mets à jour les poids et renvoie le vecteur de dérivées partielles
+         * nécessaires pour la backprop de la couche précédente
+         * @param xnPartialDerivative le vecteur des dérivées partielles selon Xn
+         * @param step le pas d'apprentissage
+         * @return le vecteur des dérivées partielles selon Xn-1 à envoyer à la couche précédente
+         */
         Eigen::VectorXf backProp(Eigen::VectorXf xnPartialDerivative, float step);
 
 
@@ -44,6 +53,12 @@ class NeuronLayer
         friend std::ostream& operator<<(std::ostream& flux, NeuronLayer nl);
 
     private:
+        /// Fonction transformant le vecteur d'input afin de pouvoir manipuler les biais comme un poids sur une entrée -1
+        /**
+         * La fonction ajoute la coordonnée -1 en fin de vecteur (la dimension augmente de 1)
+         * @param input le vecteur auquel on ajoute une coordonnée
+         * @return le vecteur augmenté d'une coordonnée
+         */
         Eigen::VectorXf processInput(Eigen::VectorXf input);
 
         Eigen::MatrixXf fnDerivativeMatrix(Eigen::VectorXf ynPartialDerivative) const;
