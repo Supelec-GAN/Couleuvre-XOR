@@ -1,7 +1,7 @@
 #include "headers/teacher.hpp"
 
 Teacher::Teacher(NeuralNetwork::Ptr network)
-: mNetwork(std::move(network))
+: mNetwork(network)
 , mErrorFun(Functions::l2Norm())
 {}
 

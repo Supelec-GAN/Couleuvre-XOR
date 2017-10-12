@@ -54,6 +54,7 @@ class Teacher
          */
         Eigen::VectorXf errorVector(Eigen::VectorXf output, Eigen::VectorXf desiredOutput, float dx);
 
+
     private:
         /// Un pointeur sur le réseau dont on veut superviser l'apprentissage
         NeuralNetwork::Ptr  mNetwork;
