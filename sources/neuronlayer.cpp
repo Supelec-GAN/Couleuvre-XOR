@@ -27,12 +27,10 @@ Eigen::VectorXf NeuronLayer::process(Eigen::VectorXf inputs)
 
 Eigen::VectorXf NeuronLayer::processInput(Eigen::VectorXf input)
 {
-    Eigen::Map<Eigen::RowVectorXf> biaisedInput(input.data(), input.size()+1);
-    biaisedInput(biaisedInput.size()-1) = -1.f;
+    Eigen::Map<Eigen::RowVectorXf> mBufferInput(input.data(), input.size()+1);
+    mBufferInput(mBufferInput.size()-1) = -1.f;
 
-    mBufferInput = biaisedInput;
-
-    return biaisedInput;
+    return mBufferInput;
 }
 
 
