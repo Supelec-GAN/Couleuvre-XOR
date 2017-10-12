@@ -7,12 +7,13 @@
 class Teacher
 {
     public:
-        Teacher();
+                        Teacher();
 
-        void backProp(Eigen::VectorXf input, Eigen::VectorXf desiredOutput, float step) const;
+        void            backProp(Eigen::VectorXf input, Eigen::VectorXf desiredOutput, float step = 0.2, float dx = 0.05);
 
     private:
-        void propError(float error, float step) const;
+        void            propError(Eigen::VectorXf xnPartialDerivative, float step);
+        Eigen::VectorXf errorVector(Eigen::VectorXf output, Eigen::VectorXf desiredOutput, float dx);
 
     private:
         NeuralNetwork::Ptr  mNetwork;
