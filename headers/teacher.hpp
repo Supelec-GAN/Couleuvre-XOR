@@ -9,10 +9,10 @@ class Teacher
     public:
         Teacher();
 
-        void backProp(Eigen::VectorXf input, Eigen::VectorXf desiredOutput) const;
+        void backProp(Eigen::VectorXf input, Eigen::VectorXf desiredOutput, float step) const;
 
     private:
-        void propError(float error) const;
+        void propError(float error, float step) const;
 
     private:
         NeuralNetwork::Ptr  mNetwork;

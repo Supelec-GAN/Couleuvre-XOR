@@ -38,11 +38,15 @@ Eigen::VectorXf NeuronLayer::processInput(Eigen::VectorXf input)
 //**************************************
 
 
-Eigen::VectorXf NeuronLayer::backProp(Eigen::VectorXf xnPartialDerivative)
+Eigen::VectorXf NeuronLayer::backProp(Eigen::VectorXf xnPartialDerivative, float step)
 {
     Eigen::VectorXf ynPartialDerivative = fnDerivativeMatrix(mBufferActivationLevel)*xnPartialDerivative;
 
-    //Eigen::MatrixXf wnPartialDerivative = ynPartialDerivative
+    Eigen::MatrixXf wnPartialDerivative = ynPartialDerivative*(mBufferInput.transpose());
+
+    mPoids -= step*wnPartialDerivative;
+
+    return mPoids.transpose()*ynPartialDerivative;
 }
 
 Eigen::MatrixXf NeuronLayer::fnDerivativeMatrix(Eigen::VectorXf ynPartialDerivative) const

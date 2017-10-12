@@ -32,7 +32,7 @@ class NeuronLayer
          */
         Eigen::VectorXf process(Eigen::VectorXf inputs);
 
-        Eigen::VectorXf backProp(Eigen::VectorXf xnPartialDerivative);
+        Eigen::VectorXf backProp(Eigen::VectorXf xnPartialDerivative, float step);
 
 
 

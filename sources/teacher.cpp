@@ -7,12 +7,12 @@ Teacher::Teacher()
 
 }
 
-void Teacher::backProp(Eigen::VectorXf input, Eigen::VectorXf desiredOutput) const
+void Teacher::backProp(Eigen::VectorXf input, Eigen::VectorXf desiredOutput, float step) const
 {
-    propError(mErrorFun(input, desiredOutput));
+    propError(mErrorFun(input, desiredOutput), step);
 }
 
-void Teacher::propError(float error) const
+void Teacher::propError(float error, float step) const
 {
 
 }
