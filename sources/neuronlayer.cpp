@@ -40,7 +40,7 @@ Eigen::VectorXf NeuronLayer::processInput(Eigen::VectorXf input)
 
 Eigen::VectorXf NeuronLayer::backProp(Eigen::VectorXf xnPartialDerivative, float step)
 {
-    Eigen::VectorXf ynPartialDerivative = fnDerivativeMatrix(mBufferActivationLevel)*xnPartialDerivative;
+    Eigen::VectorXf ynPartialDerivative = fnDerivativeMatrix()*xnPartialDerivative;
 
     Eigen::MatrixXf wnPartialDerivative = ynPartialDerivative*(mBufferInput.transpose());
 
@@ -49,16 +49,16 @@ Eigen::VectorXf NeuronLayer::backProp(Eigen::VectorXf xnPartialDerivative, float
     return mPoids.transpose()*ynPartialDerivative;
 }
 
-Eigen::MatrixXf NeuronLayer::fnDerivativeMatrix(Eigen::VectorXf ynPartialDerivative) const
+Eigen::MatrixXf NeuronLayer::fnDerivativeMatrix() const
 {
     auto fnDerivated = [this] (float x, float dx)
                         {
                             return (mActivationFun(x+dx) - mActivationFun(x))/dx;
                         };
 
-    Eigen::VectorXf fnDerivativeMat(ynPartialDerivative.size());
-    for(auto i(0); i < ynPartialDerivative.size(); ++i)
-        fnDerivativeMat(i) = fnDerivated(ynPartialDerivative(i), 0.05);
+    Eigen::VectorXf fnDerivativeMat(mBufferActivationLevel.size());
+    for(auto i(0); i < mBufferActivationLevel.size(); ++i)
+        fnDerivativeMat(i) = fnDerivated(mBufferActivationLevel(i), 0.05);
 
     return Eigen::MatrixXf(fnDerivativeMat.asDiagonal());
 }
