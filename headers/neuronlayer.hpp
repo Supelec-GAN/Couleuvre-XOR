@@ -61,7 +61,7 @@ class NeuronLayer
          */
         Eigen::VectorXf processInput(Eigen::VectorXf input);
 
-        Eigen::MatrixXf fnDerivativeMatrix(Eigen::VectorXf ynPartialDerivative) const;
+        Eigen::MatrixXf fnDerivativeMatrix() const;
 
     private:
         /// La matrice des poids de la couche de neurones
