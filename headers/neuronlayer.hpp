@@ -22,7 +22,7 @@ class NeuronLayer
          *
          * La matrice de poids est de dimension outputSize x inputSize
          */
-        NeuronLayer(unsigned int inputSize, unsigned int outputSize, std::function<float(float)> activationF = [] (float x) {return x;});
+                        NeuronLayer(unsigned int inputSize, unsigned int outputSize, std::function<float(float)> activationF = [] (float x) {return x;});
 
         /// La fonction effectuant le calcul de la sortie en fonction de l'entrée
         /**
@@ -30,7 +30,11 @@ class NeuronLayer
          * \return le vecteur d'output de la couche de neurones
          * la fonction effectue le produit matriciel des poids par les entrées, puis applique la fonction d'activation
          */
-        Eigen::VectorXf process(Eigen::VectorXf inputs) const;
+        Eigen::VectorXf process(Eigen::VectorXf inputs);
+
+        Eigen::VectorXf backProp(Eigen::VectorXf xnPartialDerivative, float step);
+
+
 
     public:
         /// Fonction utilitaire permettant d'afficher le neurone
@@ -40,15 +44,22 @@ class NeuronLayer
         friend std::ostream& operator<<(std::ostream& flux, NeuronLayer nl);
 
     private:
-        /// La matrice des poids de la couche de neurones
-        Eigen::MatrixXf                 mPoids;
-                                        
+        Eigen::VectorXf processInput(Eigen::VectorXf input);
 
-        /// Le vecteur des biais de la couche de neurones
-        Eigen::VectorXf                 mBiais;
+        Eigen::MatrixXf fnDerivativeMatrix(Eigen::VectorXf ynPartialDerivative) const;
+
+    private:
+        /// La matrice des poids de la couche de neurones
+        Eigen::MatrixXf                 mPoids;                 
 
         /// La fonction d'activation de la couche de neurones
         std::function<float(float)>     mActivationFun;
+
+        /// Buffer pour stocker Yn = WnXn-1, nécessaire pour la backprop
+        Eigen::VectorXf                 mBufferActivationLevel;
+
+        /// Buffer pour stocker l'input, nécessaire pour la backrprop
+        Eigen::VectorXf                 mBufferInput;
 };
 
 #endif // NEURONLAYER_HPP

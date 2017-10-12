@@ -28,13 +28,5 @@ int main()
     
     // On affiche la sortie du réseau de neurones
     cout << network.process(input) << endl << endl;
-	
-	// Exemple 2
-	std::vector<unsigned int> arrayNbNeuronsPerLayer = {5, 4, 3};
-	NeuralNetwork neuralNetwork(3, 5, arrayNbNeuronsPerLayer);
-	
-	cout << neuralNetwork.process(input) << endl;
-
-
     return 0;
 }
