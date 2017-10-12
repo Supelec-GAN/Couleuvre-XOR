@@ -8,11 +8,21 @@ class Teacher
 {
     public:
 
-        /// Constructeur par défaut
+        /// Constructeur par unique pointer
         /**
-         *  Construit un teacher n'ayant pas de network
+         *  Construit un teacher supervisant l'apprentissage d'un réseau de neurone
+         *  @param un smart pointeur sur le réseau dont on veut superviser l'apprentissage
          */
-                        Teacher();
+                        Teacher(NeuralNetwork::Ptr network);
+
+        /// Constructeur par pointer
+           /**
+            * Construit un teacher supervisant l'apprentissage d'un réseau de neurone
+            * @param network un pointeur sur le réseau dont on veut superviser l'apprentissage
+            */
+                        Teacher(NeuralNetwork* network);
+
+
 
         /// Fonction appliquant la méthode de rétropropagation sur mNetwork
         /**

@@ -1,11 +1,14 @@
 #include "headers/teacher.hpp"
 
-Teacher::Teacher()
-: mNetwork(nullptr)
+Teacher::Teacher(NeuralNetwork::Ptr network)
+: mNetwork(std::move(network))
 , mErrorFun(Functions::l2Norm())
-{
+{}
 
-}
+Teacher::Teacher(NeuralNetwork* network)
+: mNetwork(network)
+, mErrorFun(Functions::l2Norm())
+{}
 
 void Teacher::backProp(Eigen::VectorXf input, Eigen::VectorXf desiredOutput, float step, float dx)
 {
