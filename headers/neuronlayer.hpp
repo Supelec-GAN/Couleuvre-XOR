@@ -61,6 +61,11 @@ class NeuronLayer
          */
         Eigen::VectorXf processInput(Eigen::VectorXf input);
 
+        /// Fonction renvoyant le vecteur des dérivées de Fn évalué en Yn
+        /**
+         * Cette fonction calcule Fn'(Yn) ou Yn = mBufferActivationLevel
+         * @return le vecteur des dérivées mises en colonne
+         */
         Eigen::MatrixXf fnDerivativeMatrix() const;
 
     private:
