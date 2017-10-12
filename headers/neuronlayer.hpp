@@ -22,7 +22,7 @@ class NeuronLayer
          *
          * La matrice de poids est de dimension outputSize x inputSize
          */
-        NeuronLayer(unsigned int inputSize, unsigned int outputSize, std::function<float(float)> activationF = [] (float x) {return x;});
+                        NeuronLayer(unsigned int inputSize, unsigned int outputSize, std::function<float(float)> activationF = [] (float x) {return x;});
 
         /// La fonction effectuant le calcul de la sortie en fonction de l'entrée
         /**
@@ -31,6 +31,10 @@ class NeuronLayer
          * la fonction effectue le produit matriciel des poids par les entrées, puis applique la fonction d'activation
          */
         Eigen::VectorXf process(Eigen::VectorXf inputs) const;
+
+        Eigen::VectorXf backProp(Eigen::VectorXf xnPartialDerivative);
+
+
 
     public:
         /// Fonction utilitaire permettant d'afficher le neurone
@@ -41,6 +45,8 @@ class NeuronLayer
 
     private:
         Eigen::VectorXf processInput(Eigen::VectorXf input) const;
+
+        Eigen::MatrixXf fnDerivativeMatrix(Eigen::VectorXf ynPartialDerivative) const;
 
     private:
         /// La matrice des poids de la couche de neurones
