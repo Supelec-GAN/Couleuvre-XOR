@@ -30,7 +30,7 @@ class NeuronLayer
          * \return le vecteur d'output de la couche de neurones
          * la fonction effectue le produit matriciel des poids par les entrées, puis applique la fonction d'activation
          */
-        Eigen::VectorXf process(Eigen::VectorXf inputs) const;
+        Eigen::VectorXf process(Eigen::VectorXf inputs);
 
         Eigen::VectorXf backProp(Eigen::VectorXf xnPartialDerivative);
 
@@ -54,6 +54,9 @@ class NeuronLayer
 
         /// La fonction d'activation de la couche de neurones
         std::function<float(float)>     mActivationFun;
+
+        /// Buffer pour stocker Yn = WnXn-1, nécessaire pour la backprop
+        Eigen::VectorXf                 mBufferActivationLevel;
 };
 
 #endif // NEURONLAYER_HPP

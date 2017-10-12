@@ -34,7 +34,7 @@ NeuralNetwork::NeuralNetwork(unsigned int nbLayer, unsigned int nbInputs, std::v
 }
 
 
-Eigen::VectorXf NeuralNetwork::process(Eigen::VectorXf input) const
+Eigen::VectorXf NeuralNetwork::process(Eigen::VectorXf input)
 {
 	for(auto itr = begin(); itr != end(); ++itr)
 		input = (*itr).process(input);
