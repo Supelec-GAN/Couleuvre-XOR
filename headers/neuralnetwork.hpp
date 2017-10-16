@@ -41,6 +41,15 @@ class NeuralNetwork : public std::list<NeuronLayer>
         NeuralNetwork(Container layerList);
 
         Eigen::VectorXf process(Eigen::VectorXf input);
+
+
+    public:
+    /// Fonction utilitaire permettant d'afficher le réseau de neurones
+    /**
+     * Cette fonction affiche les matrices de poids des différents layers du réseau
+     */
+    friend std::ostream& operator<<(std::ostream& flux, NeuralNetwork network);
+
 };
 
 #include "headers/neuralnetwork.inl"
