@@ -34,12 +34,17 @@ Eigen::VectorXf NeuronLayer::process(Eigen::VectorXf inputs)
 
 Eigen::VectorXf NeuronLayer::backProp(Eigen::VectorXf xnPartialDerivative, float step)
 {
+    // Calcul de ynPartialDerivative
     Eigen::VectorXf ynPartialDerivative = fnDerivativeMatrix()*xnPartialDerivative;
 
+    //Mise à jour des poids
     Eigen::MatrixXf wnPartialDerivative = ynPartialDerivative*(mBufferInput.transpose());
-
     mPoids -= step*wnPartialDerivative;
 
+    // Mise à jour des biais
+    mBiais += step*ynPartialDerivative;
+
+    //Retour de x(n-1)PartialDerivative
     return mPoids.transpose()*ynPartialDerivative;
 }
 
