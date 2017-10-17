@@ -1,3 +1,5 @@
+#include <eigen3/Eigen/Dense>
+
 #include "headers/teacher.hpp"
 
 Teacher::Teacher(NeuralNetwork::Ptr network)
@@ -19,21 +21,9 @@ void Teacher::backProp(Eigen::VectorXf input, Eigen::VectorXf desiredOutput, flo
 
 void Teacher::propError(Eigen::VectorXf xnPartialDerivative, float step)
 {
-    float epsilon = 0.02; //Paramètre à fixer
-
-    auto max = xnPartialDerivative(0);
-    for(auto i(1); i<xnPartialDerivative.size(); i++)
+    for(auto itr = mNetwork->rbegin(); itr != mNetwork->rend(); ++itr)
     {
-        if (max < xnPartialDerivative(i))
-           max = xnPartialDerivative(i);
-    }
-
-    if (max > epsilon)
-    {
-        for(auto itr = mNetwork->rbegin(); itr != mNetwork->rend(); ++itr)
-        {
-            xnPartialDerivative = itr->backProp(xnPartialDerivative, step);
-        }
+        xnPartialDerivative = itr->backProp(xnPartialDerivative, step);
     }
 }
 
@@ -41,14 +31,13 @@ Eigen::VectorXf Teacher::errorVector(Eigen::VectorXf output, Eigen::VectorXf des
 {
     Eigen::VectorXf errorVect = Eigen::MatrixXf::Zero(output.size(), 1);
 
-    Eigen::VectorXf deltaX(Eigen::MatrixXf::Zero(output.size(), 1));
-
     for(unsigned int i(0); i < output.size(); ++i)
     {
-        deltaX((i-1)%output.size()) = 0;
+        Eigen::VectorXf deltaX(Eigen::MatrixXf::Zero(output.size(), 1));
         deltaX(i) = dx;
         errorVect(i) = (mErrorFun(output + deltaX, desiredOutput) - mErrorFun(output, desiredOutput))/dx;
     }
+
 
     return errorVect;
 }

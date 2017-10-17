@@ -8,7 +8,7 @@
 class NeuralNetwork : public std::list<NeuronLayer>
 {
     public:
-        using Ptr = std::unique_ptr<NeuralNetwork>;
+        using Ptr = std::shared_ptr<NeuralNetwork>;
 
     public:
 	

@@ -1,18 +1,22 @@
 #include <iostream>
+#include <random>
+#include <eigen3/Eigen/Dense>
 
 #include "headers/neuronlayer.hpp"
 #include "headers/neuralnetwork.hpp"
+#include "headers/functions.hpp"
+#include "headers/teacher.hpp"
 
 
 using namespace std;
 
 int main()
 {
-<<<<<<< HEAD
-   NeuronLayer inputLayer(2,2, Functions::sigmoid(10.f));
-   NeuronLayer outputLayer(2,1, Functions::sigmoid(10.f));
+   NeuronLayer inputLayer(2,3, Functions::sigmoid(10.f));
+   NeuronLayer innerLayer(3,3, Functions::sigmoid(10.f));
+   NeuronLayer outputLayer(3,1, Functions::sigmoid(10.f));
 
-   NeuralNetwork::Ptr network(new NeuralNetwork(std::vector<NeuronLayer>({{inputLayer, outputLayer}})));
+   NeuralNetwork::Ptr network(new NeuralNetwork(std::vector<NeuronLayer>({{inputLayer, innerLayer, outputLayer}})));
 
    Teacher teacher(network);
 
@@ -22,51 +26,37 @@ int main()
    Eigen::VectorXf input(2);
    Eigen::VectorXf desiredOutput(1);
 
-   for(size_t i(0); i < 1000; i++)
+   for(size_t i(0); i < 100000; i++)
    {
        input(0)  = distribution(generator);
        input(1)  = distribution(generator);
-       desiredOutput(0) = (input(0) >= 0 && input(1) >= 0) ? 1 : 0;
-       std::cout << "Input no : " << i << "\n";
+       desiredOutput(0) = ((input(0) >= 0) ^ (input(1) >= 0)) ? 1 : 0;
+       /*std::cout << "Input no : " << i << "\n";
        std::cout << "Entrée : " << input.transpose() << "\n";
        std::cout << "Sortie attendue : " << desiredOutput(0) << "\n";
-       std::cout << "Poids : " << *(network->begin()) << "\n";
-       teacher.backProp(input, desiredOutput);
+       std::cout << "Poids : \n" << *network << "\n";*/
+       teacher.backProp(input, desiredOutput, 0.01);
    }
 
-   for(size_t i(0); i < 100; i++)
+   unsigned int okcount(0);
+
+   for(size_t i(0); i < 1000; i++)
    {
-       input(0) = distribution(generator);
-       input(1) = distribution(generator);
-       desiredOutput(0) = (input(0) >= 0 && input(1) >= 0) ? 1 : 0;
+       input(0) = distribution(generator) >= 0 ? 1 : 0;
+       input(1) = distribution(generator) >= 0 ? 1 : 0;
+       desiredOutput(0) = ((input(0) >= 0) ^ (input(1) >= 0)) ? 1 : 0;
+       auto output(network->process(input));
        std::cout << "Input test no : " << i << "\n";
        std::cout << "Entrée : " << input << "\n";
        std::cout << "Sortie attendue : " << desiredOutput(0) << "\n";
-       std::cout << "Sortie : " << network->process(input) << "\n";
+       std::cout << "Sortie : " << output << "\n";
+       auto ok((output-desiredOutput).squaredNorm() < 0.5 ? 1 : 0);
+       if(ok == 0)
+           std::cout << "*********************************************************\n";
+       okcount += ok;
    }
 
+   std::cout << okcount;
+
    return 0;
-=======
-    // On créé 3 couche de neurones différentes
-    NeuronLayer n1(5, 5);
-    NeuronLayer n2(5 ,4);
-    NeuronLayer n3(4,3);
-
-    // On créé le réseau correspondant à ces 3 couches à la suite
-    vector<NeuronLayer> n;
-    n.push_back(n1);
-    n.push_back(n2);
-    n.push_back(n3);
-
-    NeuralNetwork network(n);
-
-    // On créé un vecteur d'entrée de dimension 5x1 valant (1, 2, 3, 4, 5)
-    Eigen::VectorXf input(5);
-    input << 1,2,3,4,5;
-    
-    
-    // On affiche la sortie du réseau de neurones
-    cout << network.process(input) << endl << endl;
-    return 0;
->>>>>>> parent of b12e33e... Essai d'utilisation d'un réseau de neurones en 1D -> c'est une réussite
 }
