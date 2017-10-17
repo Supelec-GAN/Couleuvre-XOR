@@ -53,14 +53,6 @@ class NeuronLayer
         friend std::ostream& operator<<(std::ostream& flux, NeuronLayer nl);
 
     private:
-        /// Fonction transformant le vecteur d'input afin de pouvoir manipuler les biais comme un poids sur une entrée -1
-        /**
-         * La fonction ajoute la coordonnée -1 en fin de vecteur (la dimension augmente de 1)
-         * @param input le vecteur auquel on ajoute une coordonnée
-         * @return le vecteur augmenté d'une coordonnée
-         */
-        Eigen::VectorXf processInput(Eigen::VectorXf input);
-
         /// Fonction renvoyant le vecteur des dérivées de Fn évalué en Yn
         /**
          * Cette fonction calcule Fn'(Yn) ou Yn = mBufferActivationLevel
@@ -70,7 +62,10 @@ class NeuronLayer
 
     private:
         /// La matrice des poids de la couche de neurones
-        Eigen::MatrixXf                 mPoids;                 
+        Eigen::MatrixXf                 mPoids;
+
+        /// La matrice des biais de la couche de neurones
+        Eigen::VectorXf                 mBiais;
 
         /// La fonction d'activation de la couche de neurones
         std::function<float(float)>     mActivationFun;
