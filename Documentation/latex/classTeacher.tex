@@ -1,0 +1,74 @@
+\hypertarget{classTeacher}{}\section{Teacher Class Reference}
+\label{classTeacher}\index{Teacher@{Teacher}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTeacher_a8ca95fc7a29e082a676d420b9fd8fd67}{Teacher} (Neural\+Network\+::\+Ptr network)
+\begin{DoxyCompactList}\small\item\em Constructeur par unique pointer. \end{DoxyCompactList}\item 
+\hyperlink{classTeacher_afd32ab70242f2c5886d030a5e7d05919}{Teacher} (\hyperlink{classNeuralNetwork}{Neural\+Network} $\ast$network)
+\begin{DoxyCompactList}\small\item\em Constructeur par pointer. \end{DoxyCompactList}\item 
+void \hyperlink{classTeacher_a99fc69c5319be890394d2c8503e217c8}{back\+Prop} (Eigen\+::\+Vector\+Xf input, Eigen\+::\+Vector\+Xf desired\+Output, float step=0.\+2, float dx=0.\+05)
+\begin{DoxyCompactList}\small\item\em Fonction appliquant la méthode de rétropropagation sur m\+Network. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTeacher_a8ca95fc7a29e082a676d420b9fd8fd67}\label{classTeacher_a8ca95fc7a29e082a676d420b9fd8fd67}} 
+\index{Teacher@{Teacher}!Teacher@{Teacher}}
+\index{Teacher@{Teacher}!Teacher@{Teacher}}
+\subsubsection{\texorpdfstring{Teacher()}{Teacher()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Teacher\+::\+Teacher (\begin{DoxyParamCaption}\item[{Neural\+Network\+::\+Ptr}]{network }\end{DoxyParamCaption})}
+
+
+
+Constructeur par unique pointer. 
+
+Construit un teacher supervisant l\textquotesingle{}apprentissage d\textquotesingle{}un réseau de neurone 
+\begin{DoxyParams}{Parameters}
+{\em un} & smart pointeur sur le réseau dont on veut superviser l\textquotesingle{}apprentissage \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTeacher_afd32ab70242f2c5886d030a5e7d05919}\label{classTeacher_afd32ab70242f2c5886d030a5e7d05919}} 
+\index{Teacher@{Teacher}!Teacher@{Teacher}}
+\index{Teacher@{Teacher}!Teacher@{Teacher}}
+\subsubsection{\texorpdfstring{Teacher()}{Teacher()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Teacher\+::\+Teacher (\begin{DoxyParamCaption}\item[{\hyperlink{classNeuralNetwork}{Neural\+Network} $\ast$}]{network }\end{DoxyParamCaption})}
+
+
+
+Constructeur par pointer. 
+
+Construit un teacher supervisant l\textquotesingle{}apprentissage d\textquotesingle{}un réseau de neurone 
+\begin{DoxyParams}{Parameters}
+{\em network} & un pointeur sur le réseau dont on veut superviser l\textquotesingle{}apprentissage \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTeacher_a99fc69c5319be890394d2c8503e217c8}\label{classTeacher_a99fc69c5319be890394d2c8503e217c8}} 
+\index{Teacher@{Teacher}!back\+Prop@{back\+Prop}}
+\index{back\+Prop@{back\+Prop}!Teacher@{Teacher}}
+\subsubsection{\texorpdfstring{back\+Prop()}{backProp()}}
+{\footnotesize\ttfamily void Teacher\+::back\+Prop (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector\+Xf}]{input,  }\item[{Eigen\+::\+Vector\+Xf}]{desired\+Output,  }\item[{float}]{step = {\ttfamily 0.2},  }\item[{float}]{dx = {\ttfamily 0.05} }\end{DoxyParamCaption})}
+
+
+
+Fonction appliquant la méthode de rétropropagation sur m\+Network. 
+
+Calcule la première dérivée d\+E/d\+Xn puis propage l\textquotesingle{}erreur à travers le réseau 
+\begin{DoxyParams}{Parameters}
+{\em input} & le vecteur d\textquotesingle{}input que le réseau va process \\
+\hline
+{\em desired\+Output} & la sortie modèle dont on veut se rapprocher \\
+\hline
+{\em step} & le pas d\textquotesingle{}apprentissage \\
+\hline
+{\em dx} & le deplacement élémentaire pour calculer la dérivée \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+headers/teacher.\+hpp\item 
+sources/teacher.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,112 @@
+\hypertarget{classNeuronLayer}{}\section{Neuron\+Layer Class Reference}
+\label{classNeuronLayer}\index{Neuron\+Layer@{Neuron\+Layer}}
+
+
+Classe modélisant une couche de neurones.  
+
+
+
+
+{\ttfamily \#include $<$neuronlayer.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNeuronLayer_a6202abd2b8ed9f8c08863917810b75ae}{Neuron\+Layer} (unsigned int input\+Size, unsigned int output\+Size, std\+::function$<$ float(float)$>$ activationF=\mbox{[}$\,$\mbox{]}(float x) \{return x;\})
+\begin{DoxyCompactList}\small\item\em Constructeur permettant d\textquotesingle{}initialiser les paramètres de la couche de neurones. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xf \hyperlink{classNeuronLayer_aa374ba7d040ae618b5037aa88e5efae7}{process} (Eigen\+::\+Vector\+Xf inputs)
+\begin{DoxyCompactList}\small\item\em La fonction effectuant le calcul de la sortie en fonction de l\textquotesingle{}entrée. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xf \hyperlink{classNeuronLayer_a0896580aa265681f77efbcb81c6c8150}{back\+Prop} (Eigen\+::\+Vector\+Xf xn\+Partial\+Derivative, float step)
+\begin{DoxyCompactList}\small\item\em La fonction effectuant les calculs de rétropropagation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classNeuronLayer_adbe40702c22550c0392b3447e5d63c9a}{operator$<$$<$} (std\+::ostream \&flux, \hyperlink{classNeuronLayer}{Neuron\+Layer} nl)
+\begin{DoxyCompactList}\small\item\em Fonction utilitaire permettant d\textquotesingle{}afficher le neurone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe modélisant une couche de neurones. 
+
+Neurone\+Layer représente une couche de neurones, avec une matrice de poids et une fonction d\textquotesingle{}activation 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNeuronLayer_a6202abd2b8ed9f8c08863917810b75ae}\label{classNeuronLayer_a6202abd2b8ed9f8c08863917810b75ae}} 
+\index{Neuron\+Layer@{Neuron\+Layer}!Neuron\+Layer@{Neuron\+Layer}}
+\index{Neuron\+Layer@{Neuron\+Layer}!Neuron\+Layer@{Neuron\+Layer}}
+\subsubsection{\texorpdfstring{Neuron\+Layer()}{NeuronLayer()}}
+{\footnotesize\ttfamily Neuron\+Layer\+::\+Neuron\+Layer (\begin{DoxyParamCaption}\item[{unsigned int}]{input\+Size,  }\item[{unsigned int}]{output\+Size,  }\item[{std\+::function$<$ float(float)$>$}]{activationF = {\ttfamily \mbox{[}\mbox{]}~(float~x)~\{return~x;\}} }\end{DoxyParamCaption})}
+
+
+
+Constructeur permettant d\textquotesingle{}initialiser les paramètres de la couche de neurones. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Size} & le nombre d\textquotesingle{}inputs de cette couche \\
+\hline
+{\em output\+Size} & le nombre d\textquotesingle{}outputs de cette couche \\
+\hline
+{\em activationF} & la fonction d\textquotesingle{}activation de tous les neurones de la couche\\
+\hline
+\end{DoxyParams}
+La matrice de poids est de dimension output\+Size x input\+Size 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classNeuronLayer_a0896580aa265681f77efbcb81c6c8150}\label{classNeuronLayer_a0896580aa265681f77efbcb81c6c8150}} 
+\index{Neuron\+Layer@{Neuron\+Layer}!back\+Prop@{back\+Prop}}
+\index{back\+Prop@{back\+Prop}!Neuron\+Layer@{Neuron\+Layer}}
+\subsubsection{\texorpdfstring{back\+Prop()}{backProp()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xf Neuron\+Layer\+::back\+Prop (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector\+Xf}]{xn\+Partial\+Derivative,  }\item[{float}]{step }\end{DoxyParamCaption})}
+
+
+
+La fonction effectuant les calculs de rétropropagation. 
+
+La fonction calcule les 3 équations matricielles, mets à jour les poids et renvoie le vecteur de dérivées partielles nécessaires pour la backprop de la couche précédente 
+\begin{DoxyParams}{Parameters}
+{\em xn\+Partial\+Derivative} & le vecteur des dérivées partielles selon Xn \\
+\hline
+{\em step} & le pas d\textquotesingle{}apprentissage \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le vecteur des dérivées partielles selon Xn-\/1 à envoyer à la couche précédente 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNeuronLayer_aa374ba7d040ae618b5037aa88e5efae7}\label{classNeuronLayer_aa374ba7d040ae618b5037aa88e5efae7}} 
+\index{Neuron\+Layer@{Neuron\+Layer}!process@{process}}
+\index{process@{process}!Neuron\+Layer@{Neuron\+Layer}}
+\subsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xf Neuron\+Layer\+::process (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector\+Xf}]{inputs }\end{DoxyParamCaption})}
+
+
+
+La fonction effectuant le calcul de la sortie en fonction de l\textquotesingle{}entrée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inputs} & le vecteur d\textquotesingle{}input de la couche de neurones \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le vecteur d\textquotesingle{}output de la couche de neurones la fonction effectue le produit matriciel des poids par les entrées, puis applique la fonction d\textquotesingle{}activation 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classNeuronLayer_adbe40702c22550c0392b3447e5d63c9a}\label{classNeuronLayer_adbe40702c22550c0392b3447e5d63c9a}} 
+\index{Neuron\+Layer@{Neuron\+Layer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Neuron\+Layer@{Neuron\+Layer}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{flux,  }\item[{\hyperlink{classNeuronLayer}{Neuron\+Layer}}]{nl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Fonction utilitaire permettant d\textquotesingle{}afficher le neurone. 
+
+Cette fonction affiche la matrice des poids 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+headers/neuronlayer.\+hpp\item 
+sources/neuronlayer.\+cpp\end{DoxyCompactItemize}
