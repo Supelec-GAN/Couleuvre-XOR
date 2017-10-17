@@ -28,7 +28,7 @@ void Teacher::propError(Eigen::VectorXf xnPartialDerivative, float step)
            max = xnPartialDerivative(i);
     }
 
-    if (max < epsilon)
+    if (max > epsilon)
     {
         for(auto itr = mNetwork->rbegin(); itr != mNetwork->rend(); ++itr)
         {

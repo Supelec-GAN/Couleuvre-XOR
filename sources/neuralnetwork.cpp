@@ -42,3 +42,17 @@ Eigen::VectorXf NeuralNetwork::process(Eigen::VectorXf input)
 	return input;
 }
 
+
+//*************AUXILIAIRES**************
+//**************************************
+
+std::ostream& operator<<(std::ostream& flux, NeuralNetwork network)
+{
+    NeuralNetwork::iterator it;
+    for (it = network.begin(); it != network.end(); it++)
+    {
+        flux << *it << "\n" << std::endl;
+    }
+    return flux;
+}
+
