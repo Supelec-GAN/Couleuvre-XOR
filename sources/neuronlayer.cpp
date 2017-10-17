@@ -27,6 +27,17 @@ Eigen::VectorXf NeuronLayer::process(Eigen::VectorXf inputs)
     return output;
 }
 
+<<<<<<< HEAD
+=======
+Eigen::VectorXf NeuronLayer::processInput(Eigen::VectorXf input)
+{
+    Eigen::Map<Eigen::VectorXf> mBufferInput(input.data(), input.size()+1);
+    mBufferInput(mBufferInput.size()-1) = -1.f;
+
+    return mBufferInput;
+}
+
+>>>>>>> parent of b12e33e... Essai d'utilisation d'un réseau de neurones en 1D -> c'est une réussite
 
 //***********RETROPROPAGATION***********
 //**************************************
