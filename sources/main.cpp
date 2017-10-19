@@ -6,7 +6,7 @@
 #include "headers/neuralnetwork.hpp"
 #include "headers/functions.hpp"
 #include "headers/teacher.hpp"
-#include "CSVFile.h"
+#include "headers/CSVFile.h"
 
 
 using namespace std;
