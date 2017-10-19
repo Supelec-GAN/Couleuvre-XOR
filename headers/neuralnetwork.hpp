@@ -17,11 +17,22 @@ class NeuralNetwork : public std::list<NeuronLayer>
         /// Constructeur permettant d'initialiser une réseau neuronal vide
         NeuralNetwork();
 	
-        /// Constructeur permettant d'initialiser un réseau neuronal complet
+        /// Constructeur permettant d'initialiser un réseau neuronal avec choix des fonctions d'activation
+        /**
+         * Constructeur permettant l'initialisation d'un réseau à n couches à partir des (n+1) tailles d'input/output
+         * (la sortie d'une couche est l'entrée de la suivante), avec choix des fonctions d'activation
+         * @param layerSizes les tailles des vecteurs d'entrées/sorties
+         * @param activationFuns le vector contenant les fonctions d'activation de chaque couche
+         */
         NeuralNetwork(std::vector<unsigned int> layerSizes, std::vector<Functions::ActivationFun> activationFuns);
 	
         /// Constructeur permettant d'initialiser un réseau neuronal avec la fonction par défaut
-         NeuralNetwork(std::vector<unsigned int> layerSizes);
+        /**
+         * Constructeur permettant l'initialisation d'un réseau à n couches à partir des (n+1) tailles d'input/output
+         * (la sortie d'une couche est l'entrée de la suivante). La fonction d'activation choisie est la fonction d'activation par défaut
+         * @param layerSizes les tailles des vecteurs d'entrées/sorties
+         */
+        NeuralNetwork(std::vector<unsigned int> layerSizes);
 
         /// Constructeur permettant d'initialiser le réseau neuronal avec un conteneur de neuronLayer
         /**
