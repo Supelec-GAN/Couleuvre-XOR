@@ -8,7 +8,7 @@ NeuralNetwork::NeuralNetwork(std::vector<unsigned int> layerSizes, std::vector<F
         throw std::logic_error("NeuralNetwork::NeuralNetwork error - Sizes of parameters do not match");
 
     for(size_t i(0); i < layerSizes.size()-1; ++i)
-        push_back(NeuronLayer(layerSizes[i], layerSizes[i+1], activationFuns[i+1]));
+        push_back(NeuronLayer(layerSizes[i], layerSizes[i+1], activationFuns[i]));
 }
 
 
