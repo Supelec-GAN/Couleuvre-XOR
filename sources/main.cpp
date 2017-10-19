@@ -20,7 +20,7 @@ int main()
    csvfile csv("resultat.csv"); 
     
    std::vector<unsigned int> sizes{ {2,2,2,1} };
-   std::vector<Functions::ActivationFun> funs{ {Functions::sigmoid(2.f), Functions::sigmoid(2.f), Functions::sigmoid(2.f)} };
+   std::vector<Functions::ActivationFun> funs{ {Functions::sigmoid(3.f), Functions::sigmoid(3.f), Functions::sigmoid(3.f)} };
 
    std::shared_ptr<NeuralNetwork> network(new NeuralNetwork(sizes, funs));
 
@@ -53,8 +53,8 @@ int main()
 
             for(size_t j(0); j < 20; j++)
             {
-                input(0) = distribution(generator) >= 0 ? 1 : 0;
-                input(1) = distribution(generator) >= 0 ? 1 : 0;
+                input(0) = distribution(generator);
+                input(1) = distribution(generator);
                 desiredOutput(0) = ((input(0) >= 0) ^ (input(1) >= 0)) ? 1 : 0;
                 auto output(network->process(input));
                 std::cout << "Input test no : " << j << "\n";
