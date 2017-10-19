@@ -14,16 +14,17 @@ using namespace std;
 int main()
 {
    srand(192786327);
-   
+
    try 
    {
    csvfile csv("resultat.csv"); 
     
-   NeuronLayer inputLayer(2,2, Functions::sigmoid(8.f));
-   NeuronLayer innerLayer(2,2, Functions::sigmoid(8.f));
-   NeuronLayer outputLayer(2,1, Functions::sigmoid(8.f));
+   std::vector<unsigned int> sizes{ {2,2,2,1} };
+   std::vector<Functions::ActivationFun> funs{ {Functions::sigmoid(2.f), Functions::sigmoid(2.f), Functions::sigmoid(2.f)} };
 
-   NeuralNetwork::Ptr network(new NeuralNetwork(std::vector<NeuronLayer>({{inputLayer, innerLayer, outputLayer}})));
+   std::shared_ptr<NeuralNetwork> network(new NeuralNetwork(sizes, funs));
+
+   std::cout << (*network);
 
    Teacher teacher(network);
 
