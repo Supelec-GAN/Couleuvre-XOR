@@ -14,4 +14,5 @@ HEADERS += \
     headers/neuronlayer.hpp \
     headers/neuralnetwork.hpp \
     headers/functions.hpp \
-    headers/teacher.hpp
+    headers/teacher.hpp \
+    headers/CSVFile.h
