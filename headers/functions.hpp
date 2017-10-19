@@ -11,6 +11,7 @@ struct Functions
 
         static ActivationFun    sigmoid(float lambda);
         static ActivationFun    heavyside(float gapAbscissa);
+        static ActivationFun    hyperTan();
 
         static ErrorFun         l2Norm();
 };
