@@ -12,7 +12,7 @@ Classe modélisant une couche de neurones.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classNeuronLayer_a6202abd2b8ed9f8c08863917810b75ae}{Neuron\+Layer} (unsigned int input\+Size, unsigned int output\+Size, std\+::function$<$ float(float)$>$ activationF=\mbox{[}$\,$\mbox{]}(float x) \{return x;\})
+\hyperlink{classNeuronLayer_afe2804871685b8103d7cd461460e7b31}{Neuron\+Layer} (unsigned int input\+Size, unsigned int output\+Size, std\+::function$<$ float(float)$>$ activationF=Functions\+::sigmoid(10.f))
 \begin{DoxyCompactList}\small\item\em Constructeur permettant d\textquotesingle{}initialiser les paramètres de la couche de neurones. \end{DoxyCompactList}\item 
 Eigen\+::\+Vector\+Xf \hyperlink{classNeuronLayer_aa374ba7d040ae618b5037aa88e5efae7}{process} (Eigen\+::\+Vector\+Xf inputs)
 \begin{DoxyCompactList}\small\item\em La fonction effectuant le calcul de la sortie en fonction de l\textquotesingle{}entrée. \end{DoxyCompactList}\item 
@@ -31,11 +31,11 @@ Classe modélisant une couche de neurones.
 Neurone\+Layer représente une couche de neurones, avec une matrice de poids et une fonction d\textquotesingle{}activation 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classNeuronLayer_a6202abd2b8ed9f8c08863917810b75ae}\label{classNeuronLayer_a6202abd2b8ed9f8c08863917810b75ae}} 
+\mbox{\Hypertarget{classNeuronLayer_afe2804871685b8103d7cd461460e7b31}\label{classNeuronLayer_afe2804871685b8103d7cd461460e7b31}} 
 \index{Neuron\+Layer@{Neuron\+Layer}!Neuron\+Layer@{Neuron\+Layer}}
 \index{Neuron\+Layer@{Neuron\+Layer}!Neuron\+Layer@{Neuron\+Layer}}
 \subsubsection{\texorpdfstring{Neuron\+Layer()}{NeuronLayer()}}
-{\footnotesize\ttfamily Neuron\+Layer\+::\+Neuron\+Layer (\begin{DoxyParamCaption}\item[{unsigned int}]{input\+Size,  }\item[{unsigned int}]{output\+Size,  }\item[{std\+::function$<$ float(float)$>$}]{activationF = {\ttfamily \mbox{[}\mbox{]}~(float~x)~\{return~x;\}} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Neuron\+Layer\+::\+Neuron\+Layer (\begin{DoxyParamCaption}\item[{unsigned int}]{input\+Size,  }\item[{unsigned int}]{output\+Size,  }\item[{std\+::function$<$ float(float)$>$}]{activationF = {\ttfamily Functions\+:\+:sigmoid(10.f)} }\end{DoxyParamCaption})}
 
 
 

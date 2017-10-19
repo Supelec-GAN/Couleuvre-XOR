@@ -74,9 +74,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6202abd2b8ed9f8c08863917810b75ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronLayer.html#a6202abd2b8ed9f8c08863917810b75ae">NeuronLayer</a> (unsigned int inputSize, unsigned int outputSize, std::function&lt; float(float)&gt; activationF=[](float x) {return x;})</td></tr>
-<tr class="memdesc:a6202abd2b8ed9f8c08863917810b75ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur permettant d'initialiser les paramètres de la couche de neurones.  <a href="#a6202abd2b8ed9f8c08863917810b75ae">More...</a><br /></td></tr>
-<tr class="separator:a6202abd2b8ed9f8c08863917810b75ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe2804871685b8103d7cd461460e7b31"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronLayer.html#afe2804871685b8103d7cd461460e7b31">NeuronLayer</a> (unsigned int inputSize, unsigned int outputSize, std::function&lt; float(float)&gt; activationF=Functions::sigmoid(10.f))</td></tr>
+<tr class="memdesc:afe2804871685b8103d7cd461460e7b31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur permettant d'initialiser les paramètres de la couche de neurones.  <a href="#afe2804871685b8103d7cd461460e7b31">More...</a><br /></td></tr>
+<tr class="separator:afe2804871685b8103d7cd461460e7b31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa374ba7d040ae618b5037aa88e5efae7"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXf&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronLayer.html#aa374ba7d040ae618b5037aa88e5efae7">process</a> (Eigen::VectorXf inputs)</td></tr>
 <tr class="memdesc:aa374ba7d040ae618b5037aa88e5efae7"><td class="mdescLeft">&#160;</td><td class="mdescRight">La fonction effectuant le calcul de la sortie en fonction de l'entrée.  <a href="#aa374ba7d040ae618b5037aa88e5efae7">More...</a><br /></td></tr>
 <tr class="separator:aa374ba7d040ae618b5037aa88e5efae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -94,8 +94,8 @@ Friends</h2></td></tr>
 <div class="textblock"><p>Classe modélisant une couche de neurones. </p>
 <p>NeuroneLayer représente une couche de neurones, avec une matrice de poids et une fonction d'activation </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a6202abd2b8ed9f8c08863917810b75ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6202abd2b8ed9f8c08863917810b75ae">&#9670;&nbsp;</a></span>NeuronLayer()</h2>
+<a id="afe2804871685b8103d7cd461460e7b31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe2804871685b8103d7cd461460e7b31">&#9670;&nbsp;</a></span>NeuronLayer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -116,7 +116,7 @@ Friends</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::function&lt; float(float)&gt;&#160;</td>
-          <td class="paramname"><em>activationF</em> = <code>[]&#160;(float&#160;x)&#160;{return&#160;x;}</code>&#160;</td>
+          <td class="paramname"><em>activationF</em> = <code>Functions::sigmoid(10.f)</code>&#160;</td>
         </tr>
         <tr>
           <td></td>

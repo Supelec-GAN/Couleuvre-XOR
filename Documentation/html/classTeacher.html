@@ -74,9 +74,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afd32ab70242f2c5886d030a5e7d05919"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTeacher.html#afd32ab70242f2c5886d030a5e7d05919">Teacher</a> (<a class="el" href="classNeuralNetwork.html">NeuralNetwork</a> *network)</td></tr>
 <tr class="memdesc:afd32ab70242f2c5886d030a5e7d05919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur par pointer.  <a href="#afd32ab70242f2c5886d030a5e7d05919">More...</a><br /></td></tr>
 <tr class="separator:afd32ab70242f2c5886d030a5e7d05919"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99fc69c5319be890394d2c8503e217c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTeacher.html#a99fc69c5319be890394d2c8503e217c8">backProp</a> (Eigen::VectorXf input, Eigen::VectorXf desiredOutput, float step=0.2, float dx=0.05)</td></tr>
-<tr class="memdesc:a99fc69c5319be890394d2c8503e217c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction appliquant la méthode de rétropropagation sur mNetwork.  <a href="#a99fc69c5319be890394d2c8503e217c8">More...</a><br /></td></tr>
-<tr class="separator:a99fc69c5319be890394d2c8503e217c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a038afb323ffc518a3a3af5044f931442"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTeacher.html#a038afb323ffc518a3a3af5044f931442">backProp</a> (Eigen::VectorXf input, Eigen::VectorXf desiredOutput, float step=0.2, float dx=0.01)</td></tr>
+<tr class="memdesc:a038afb323ffc518a3a3af5044f931442"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction appliquant la méthode de rétropropagation sur mNetwork.  <a href="#a038afb323ffc518a3a3af5044f931442">More...</a><br /></td></tr>
+<tr class="separator:a038afb323ffc518a3a3af5044f931442"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8ca95fc7a29e082a676d420b9fd8fd67"></a>
@@ -132,8 +132,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a99fc69c5319be890394d2c8503e217c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99fc69c5319be890394d2c8503e217c8">&#9670;&nbsp;</a></span>backProp()</h2>
+<a id="a038afb323ffc518a3a3af5044f931442"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a038afb323ffc518a3a3af5044f931442">&#9670;&nbsp;</a></span>backProp()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,7 +160,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>dx</em> = <code>0.05</code>&#160;</td>
+          <td class="paramname"><em>dx</em> = <code>0.01</code>&#160;</td>
         </tr>
         <tr>
           <td></td>

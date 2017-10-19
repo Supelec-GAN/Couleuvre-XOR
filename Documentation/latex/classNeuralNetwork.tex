@@ -18,9 +18,9 @@ using {\bfseries Ptr} = std\+::shared\+\_\+ptr$<$ \hyperlink{classNeuralNetwork}
 \mbox{\Hypertarget{classNeuralNetwork_accce4a7728e89a009a9d4ca1758c9b9d}\label{classNeuralNetwork_accce4a7728e89a009a9d4ca1758c9b9d}} 
 \hyperlink{classNeuralNetwork_accce4a7728e89a009a9d4ca1758c9b9d}{Neural\+Network} ()
 \begin{DoxyCompactList}\small\item\em Constructeur permettant d\textquotesingle{}initialiser une réseau neuronal vide. \end{DoxyCompactList}\item 
-\hyperlink{classNeuralNetwork_a3caa6a6f94e1dda424149308752fe69a}{Neural\+Network} (unsigned int nb\+Layer, unsigned int nb\+Inputs, std\+::vector$<$ unsigned int $>$ array\+Nb\+Neurons\+Per\+Layer, std\+::vector$<$ std\+::function$<$ float(float)$>$$>$ array\+Activation\+Function\+Per\+Layer)
-\begin{DoxyCompactList}\small\item\em Constructeur permettant d\textquotesingle{}initialiser un réseau neuronal complet. \end{DoxyCompactList}\item 
-\hyperlink{classNeuralNetwork_aa150aec211344d7f64eac79c76275137}{Neural\+Network} (unsigned int nb\+Layer, unsigned int nb\+Inputs, std\+::vector$<$ unsigned int $>$ array\+Nb\+Neurons\+Per\+Layer)
+\hyperlink{classNeuralNetwork_a85cd20f411e96dfd28954fcda39badb7}{Neural\+Network} (std\+::vector$<$ unsigned int $>$ layer\+Sizes, std\+::vector$<$ Functions\+::\+Activation\+Fun $>$ activation\+Funs)
+\begin{DoxyCompactList}\small\item\em Constructeur permettant d\textquotesingle{}initialiser un réseau neuronal avec choix des fonctions d\textquotesingle{}activation. \end{DoxyCompactList}\item 
+\hyperlink{classNeuralNetwork_ab4015471a72a3d00b6bcabf156526f7b}{Neural\+Network} (std\+::vector$<$ unsigned int $>$ layer\+Sizes)
 \begin{DoxyCompactList}\small\item\em Constructeur permettant d\textquotesingle{}initialiser un réseau neuronal avec la fonction par défaut. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Container $>$ }\\\hyperlink{classNeuralNetwork_a7943bb4e9cb96aae048b236d4f1dd979}{Neural\+Network} (Container layer\+List)
 \begin{DoxyCompactList}\small\item\em Constructeur permettant d\textquotesingle{}initialiser le réseau neuronal avec un conteneur de neuron\+Layer. \end{DoxyCompactList}\item 
@@ -35,44 +35,36 @@ std\+::ostream \& \hyperlink{classNeuralNetwork_a0ecebf9a494437efb917804ed271e13
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classNeuralNetwork_a3caa6a6f94e1dda424149308752fe69a}\label{classNeuralNetwork_a3caa6a6f94e1dda424149308752fe69a}} 
+\mbox{\Hypertarget{classNeuralNetwork_a85cd20f411e96dfd28954fcda39badb7}\label{classNeuralNetwork_a85cd20f411e96dfd28954fcda39badb7}} 
 \index{Neural\+Network@{Neural\+Network}!Neural\+Network@{Neural\+Network}}
 \index{Neural\+Network@{Neural\+Network}!Neural\+Network@{Neural\+Network}}
 \subsubsection{\texorpdfstring{Neural\+Network()}{NeuralNetwork()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily Neural\+Network\+::\+Neural\+Network (\begin{DoxyParamCaption}\item[{unsigned int}]{nb\+Layer,  }\item[{unsigned int}]{nb\+Inputs,  }\item[{std\+::vector$<$ unsigned int $>$}]{array\+Nb\+Neurons\+Per\+Layer,  }\item[{std\+::vector$<$ std\+::function$<$ float(float)$>$$>$}]{array\+Activation\+Function\+Per\+Layer }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Neural\+Network\+::\+Neural\+Network (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned int $>$}]{layer\+Sizes,  }\item[{std\+::vector$<$ Functions\+::\+Activation\+Fun $>$}]{activation\+Funs }\end{DoxyParamCaption})}
 
 
 
-Constructeur permettant d\textquotesingle{}initialiser un réseau neuronal complet. 
+Constructeur permettant d\textquotesingle{}initialiser un réseau neuronal avec choix des fonctions d\textquotesingle{}activation. 
 
-
+Constructeur permettant l\textquotesingle{}initialisation d\textquotesingle{}un réseau à n couches à partir des (n+1) tailles d\textquotesingle{}input/output (la sortie d\textquotesingle{}une couche est l\textquotesingle{}entrée de la suivante), avec choix des fonctions d\textquotesingle{}activation 
 \begin{DoxyParams}{Parameters}
-{\em nb\+Layer} & le nombre de couches du réseau \\
+{\em layer\+Sizes} & les tailles des vecteurs d\textquotesingle{}entrées/sorties \\
 \hline
-{\em nb\+Inputs} & ne nombre d\textquotesingle{}entrées du réseau \\
-\hline
-{\em array\+Nb\+Neurons\+Per\+Layer} & la liste du nombre de neurone par couche (nb\+Layer éléments) \\
-\hline
-{\em array\+Activation\+Function\+Per\+Layer} & la liste des fonctions d\textquotesingle{}activation de chaque couche (nb\+Layer éléments) \\
+{\em activation\+Funs} & le vector contenant les fonctions d\textquotesingle{}activation de chaque couche \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classNeuralNetwork_aa150aec211344d7f64eac79c76275137}\label{classNeuralNetwork_aa150aec211344d7f64eac79c76275137}} 
+\mbox{\Hypertarget{classNeuralNetwork_ab4015471a72a3d00b6bcabf156526f7b}\label{classNeuralNetwork_ab4015471a72a3d00b6bcabf156526f7b}} 
 \index{Neural\+Network@{Neural\+Network}!Neural\+Network@{Neural\+Network}}
 \index{Neural\+Network@{Neural\+Network}!Neural\+Network@{Neural\+Network}}
 \subsubsection{\texorpdfstring{Neural\+Network()}{NeuralNetwork()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily Neural\+Network\+::\+Neural\+Network (\begin{DoxyParamCaption}\item[{unsigned int}]{nb\+Layer,  }\item[{unsigned int}]{nb\+Inputs,  }\item[{std\+::vector$<$ unsigned int $>$}]{array\+Nb\+Neurons\+Per\+Layer }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Neural\+Network\+::\+Neural\+Network (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned int $>$}]{layer\+Sizes }\end{DoxyParamCaption})}
 
 
 
 Constructeur permettant d\textquotesingle{}initialiser un réseau neuronal avec la fonction par défaut. 
 
-
+Constructeur permettant l\textquotesingle{}initialisation d\textquotesingle{}un réseau à n couches à partir des (n+1) tailles d\textquotesingle{}input/output (la sortie d\textquotesingle{}une couche est l\textquotesingle{}entrée de la suivante). La fonction d\textquotesingle{}activation choisie est la fonction d\textquotesingle{}activation par défaut 
 \begin{DoxyParams}{Parameters}
-{\em nb\+Layer} & le nombre de couches du réseau \\
-\hline
-{\em nb\+Inputs} & ne nombre d\textquotesingle{}entrées du réseau \\
-\hline
-{\em array\+Nb\+Neurons\+Per\+Layer} & la liste du nombre de neurone par couche (nb\+Layer éléments) \\
+{\em layer\+Sizes} & les tailles des vecteurs d\textquotesingle{}entrées/sorties \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classNeuralNetwork_a7943bb4e9cb96aae048b236d4f1dd979}\label{classNeuralNetwork_a7943bb4e9cb96aae048b236d4f1dd979}} 

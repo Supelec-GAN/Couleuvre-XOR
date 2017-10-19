@@ -88,12 +88,12 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuralNetwork.html#accce4a7728e89a009a9d4ca1758c9b9d">NeuralNetwork</a> ()</td></tr>
 <tr class="memdesc:accce4a7728e89a009a9d4ca1758c9b9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur permettant d'initialiser une réseau neuronal vide. <br /></td></tr>
 <tr class="separator:accce4a7728e89a009a9d4ca1758c9b9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3caa6a6f94e1dda424149308752fe69a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuralNetwork.html#a3caa6a6f94e1dda424149308752fe69a">NeuralNetwork</a> (unsigned int nbLayer, unsigned int nbInputs, std::vector&lt; unsigned int &gt; arrayNbNeuronsPerLayer, std::vector&lt; std::function&lt; float(float)&gt;&gt; arrayActivationFunctionPerLayer)</td></tr>
-<tr class="memdesc:a3caa6a6f94e1dda424149308752fe69a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur permettant d'initialiser un réseau neuronal complet.  <a href="#a3caa6a6f94e1dda424149308752fe69a">More...</a><br /></td></tr>
-<tr class="separator:a3caa6a6f94e1dda424149308752fe69a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa150aec211344d7f64eac79c76275137"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuralNetwork.html#aa150aec211344d7f64eac79c76275137">NeuralNetwork</a> (unsigned int nbLayer, unsigned int nbInputs, std::vector&lt; unsigned int &gt; arrayNbNeuronsPerLayer)</td></tr>
-<tr class="memdesc:aa150aec211344d7f64eac79c76275137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur permettant d'initialiser un réseau neuronal avec la fonction par défaut.  <a href="#aa150aec211344d7f64eac79c76275137">More...</a><br /></td></tr>
-<tr class="separator:aa150aec211344d7f64eac79c76275137"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85cd20f411e96dfd28954fcda39badb7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuralNetwork.html#a85cd20f411e96dfd28954fcda39badb7">NeuralNetwork</a> (std::vector&lt; unsigned int &gt; layerSizes, std::vector&lt; Functions::ActivationFun &gt; activationFuns)</td></tr>
+<tr class="memdesc:a85cd20f411e96dfd28954fcda39badb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur permettant d'initialiser un réseau neuronal avec choix des fonctions d'activation.  <a href="#a85cd20f411e96dfd28954fcda39badb7">More...</a><br /></td></tr>
+<tr class="separator:a85cd20f411e96dfd28954fcda39badb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4015471a72a3d00b6bcabf156526f7b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuralNetwork.html#ab4015471a72a3d00b6bcabf156526f7b">NeuralNetwork</a> (std::vector&lt; unsigned int &gt; layerSizes)</td></tr>
+<tr class="memdesc:ab4015471a72a3d00b6bcabf156526f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur permettant d'initialiser un réseau neuronal avec la fonction par défaut.  <a href="#ab4015471a72a3d00b6bcabf156526f7b">More...</a><br /></td></tr>
+<tr class="separator:ab4015471a72a3d00b6bcabf156526f7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7943bb4e9cb96aae048b236d4f1dd979"><td class="memTemplParams" colspan="2">template&lt;typename Container &gt; </td></tr>
 <tr class="memitem:a7943bb4e9cb96aae048b236d4f1dd979"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classNeuralNetwork.html#a7943bb4e9cb96aae048b236d4f1dd979">NeuralNetwork</a> (Container layerList)</td></tr>
 <tr class="memdesc:a7943bb4e9cb96aae048b236d4f1dd979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur permettant d'initialiser le réseau neuronal avec un conteneur de neuronLayer.  <a href="#a7943bb4e9cb96aae048b236d4f1dd979">More...</a><br /></td></tr>
@@ -109,8 +109,8 @@ Friends</h2></td></tr>
 <tr class="separator:a0ecebf9a494437efb917804ed271e13f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a3caa6a6f94e1dda424149308752fe69a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3caa6a6f94e1dda424149308752fe69a">&#9670;&nbsp;</a></span>NeuralNetwork() <span class="overload">[1/3]</span></h2>
+<a id="a85cd20f411e96dfd28954fcda39badb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85cd20f411e96dfd28954fcda39badb7">&#9670;&nbsp;</a></span>NeuralNetwork() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -118,26 +118,14 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">NeuralNetwork::NeuralNetwork </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>nbLayer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>nbInputs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">std::vector&lt; unsigned int &gt;&#160;</td>
-          <td class="paramname"><em>arrayNbNeuronsPerLayer</em>, </td>
+          <td class="paramname"><em>layerSizes</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; std::function&lt; float(float)&gt;&gt;&#160;</td>
-          <td class="paramname"><em>arrayActivationFunctionPerLayer</em>&#160;</td>
+          <td class="paramtype">std::vector&lt; Functions::ActivationFun &gt;&#160;</td>
+          <td class="paramname"><em>activationFuns</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -147,21 +135,19 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructeur permettant d'initialiser un réseau neuronal complet. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Constructeur permettant d'initialiser un réseau neuronal avec choix des fonctions d'activation. </p>
+<p>Constructeur permettant l'initialisation d'un réseau à n couches à partir des (n+1) tailles d'input/output (la sortie d'une couche est l'entrée de la suivante), avec choix des fonctions d'activation </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nbLayer</td><td>le nombre de couches du réseau </td></tr>
-    <tr><td class="paramname">nbInputs</td><td>ne nombre d'entrées du réseau </td></tr>
-    <tr><td class="paramname">arrayNbNeuronsPerLayer</td><td>la liste du nombre de neurone par couche (nbLayer éléments) </td></tr>
-    <tr><td class="paramname">arrayActivationFunctionPerLayer</td><td>la liste des fonctions d'activation de chaque couche (nbLayer éléments) </td></tr>
+    <tr><td class="paramname">layerSizes</td><td>les tailles des vecteurs d'entrées/sorties </td></tr>
+    <tr><td class="paramname">activationFuns</td><td>le vector contenant les fonctions d'activation de chaque couche </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="aa150aec211344d7f64eac79c76275137"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa150aec211344d7f64eac79c76275137">&#9670;&nbsp;</a></span>NeuralNetwork() <span class="overload">[2/3]</span></h2>
+<a id="ab4015471a72a3d00b6bcabf156526f7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4015471a72a3d00b6bcabf156526f7b">&#9670;&nbsp;</a></span>NeuralNetwork() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -169,35 +155,17 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">NeuralNetwork::NeuralNetwork </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>nbLayer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>nbInputs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">std::vector&lt; unsigned int &gt;&#160;</td>
-          <td class="paramname"><em>arrayNbNeuronsPerLayer</em>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>layerSizes</em></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Constructeur permettant d'initialiser un réseau neuronal avec la fonction par défaut. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Constructeur permettant l'initialisation d'un réseau à n couches à partir des (n+1) tailles d'input/output (la sortie d'une couche est l'entrée de la suivante). La fonction d'activation choisie est la fonction d'activation par défaut </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nbLayer</td><td>le nombre de couches du réseau </td></tr>
-    <tr><td class="paramname">nbInputs</td><td>ne nombre d'entrées du réseau </td></tr>
-    <tr><td class="paramname">arrayNbNeuronsPerLayer</td><td>la liste du nombre de neurone par couche (nbLayer éléments) </td></tr>
+    <tr><td class="paramname">layerSizes</td><td>les tailles des vecteurs d'entrées/sorties </td></tr>
   </table>
   </dd>
 </dl>
