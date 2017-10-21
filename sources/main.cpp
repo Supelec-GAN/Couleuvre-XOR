@@ -7,13 +7,20 @@
 #include "headers/functions.hpp"
 #include "headers/teacher.hpp"
 #include "CSVFile.h"
-
+#include "headers/gui.hpp"
+#include <QtWidgets/QApplication>
 
 using namespace std;
 
-int main()
+int main(int argc, char *argv[])
 {
    srand(192786327);
+   QApplication app(argc, argv);
+
+   gui fenetre;
+   fenetre.show();
+
+   return app.exec();
    
    try 
    {
