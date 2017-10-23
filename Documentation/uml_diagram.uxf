@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>260</x>
+      <y>290</y>
+      <w>330</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>NeuronLayer
+--
++ process(VectorXf input) -&gt; VectorXf
++ backprop(VectorXf xnPartialDerivative, float step) -&gt; VectorXf
+--
+
+- MatrixXf mPoids
+- VectorXf mBiais
+- (fun) float -&gt; float mActivationFun
+
+- VectorXf mBufferActivationLevel
+- VectorXf mBufferInput
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>290</x>
+      <y>150</y>
+      <w>280</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>NeuralNetwork
+--
++ process(VectorXf inputs)-&gt; VectorXf
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>210</y>
+      <w>50</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..n
+m2=1</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>670</x>
+      <y>150</y>
+      <w>330</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Teacher
+--
++ backProp(VectorXf input, VectorXf desiredOutput, float step)
+--
+
+- (fun) VectorXF -&gt; float mErrorFun
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>150</y>
+      <w>220</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Functions
+--
+Sert à générer facilement des 
+fonctions de seuil ou d'erreur</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>180</y>
+      <w>130</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..1</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+</diagram>
