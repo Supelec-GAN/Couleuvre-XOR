@@ -22,3 +22,5 @@ HEADERS += \
     headers/datacollector.hpp \
     headers/dataset.hpp \
     headers/utility.hpp
+
+INCLUDEPATH += D:\Users\Kvykv\Projet\C++
