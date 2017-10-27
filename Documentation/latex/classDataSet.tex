@@ -1,0 +1,90 @@
+\hypertarget{classDataSet}{}\section{Data\+Set Class Reference}
+\label{classDataSet}\index{Data\+Set@{Data\+Set}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDataSet_ab45c95dc19f12a9217c0f3da7ac92b6a}{Data\+Set} (int sample, std\+::vector$<$ float $>$ data\+Vect=\{\{\}\})
+\begin{DoxyCompactList}\small\item\em Constructeur permettant d\textquotesingle{}initialiser un jeu de données à partir d\textquotesingle{}un vecteur de données. \end{DoxyCompactList}\item 
+void \hyperlink{classDataSet_ac2453c8cd424ed33b941363a45c009f8}{add\+Raw\+Data} (float data, bool process=false)
+\begin{DoxyCompactList}\small\item\em Fonction permettant l\textquotesingle{}ajout d\textquotesingle{}une valeur dans le jeu de données. \end{DoxyCompactList}\item 
+void \hyperlink{classDataSet_a71cfe353100966c9bdfb1f6880075691}{add\+Raw\+Data} (std\+::vector$<$ float $>$ data\+Vect)
+\begin{DoxyCompactList}\small\item\em Fonction permettant l\textquotesingle{}ajout d\textquotesingle{}un vecteur de données dans le jeu de données. \end{DoxyCompactList}\item 
+void \hyperlink{classDataSet_a6e174dbffadb1a262c6cc92781d0bd12}{process\+Data} ()
+\begin{DoxyCompactList}\small\item\em Fonction calculant les moyennes, écarts-\/types et les données associées du jeu de données. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDataSet_af646e5b745734c1b18f2e90117e1d3c1}\label{classDataSet_af646e5b745734c1b18f2e90117e1d3c1}} 
+\hyperlink{structStatistics_1_1Data}{Statistics\+::\+Data} \hyperlink{classDataSet_af646e5b745734c1b18f2e90117e1d3c1}{get\+Data} ()
+\begin{DoxyCompactList}\small\item\em Fonction renvoyant Data, contenant la moyenne, écart-\/type et intervalle de confiance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDataSet_a29e3936319d5b2fda4f74b033c556766}\label{classDataSet_a29e3936319d5b2fda4f74b033c556766}} 
+int \hyperlink{classDataSet_a29e3936319d5b2fda4f74b033c556766}{get\+Sample} ()
+\begin{DoxyCompactList}\small\item\em Fonction renvoyant le nombre d\textquotesingle{}apprentissage correspondant au \hyperlink{classDataSet}{Data\+Set}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDataSet_ab45c95dc19f12a9217c0f3da7ac92b6a}\label{classDataSet_ab45c95dc19f12a9217c0f3da7ac92b6a}} 
+\index{Data\+Set@{Data\+Set}!Data\+Set@{Data\+Set}}
+\index{Data\+Set@{Data\+Set}!Data\+Set@{Data\+Set}}
+\subsubsection{\texorpdfstring{Data\+Set()}{DataSet()}}
+{\footnotesize\ttfamily Data\+Set\+::\+Data\+Set (\begin{DoxyParamCaption}\item[{int}]{sample,  }\item[{std\+::vector$<$ float $>$}]{data\+Vect = {\ttfamily \{\{\}\}} }\end{DoxyParamCaption})}
+
+
+
+Constructeur permettant d\textquotesingle{}initialiser un jeu de données à partir d\textquotesingle{}un vecteur de données. 
+
+Initialisation du jeu de données et calcul des mesures statistiques 
+\begin{DoxyParams}{Parameters}
+{\em data\+Vect} & \+: vecteur de données (float) \\
+\hline
+{\em sample} & \+: nombre d\textquotesingle{}apprentissage correspondant au data\+Set \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDataSet_ac2453c8cd424ed33b941363a45c009f8}\label{classDataSet_ac2453c8cd424ed33b941363a45c009f8}} 
+\index{Data\+Set@{Data\+Set}!add\+Raw\+Data@{add\+Raw\+Data}}
+\index{add\+Raw\+Data@{add\+Raw\+Data}!Data\+Set@{Data\+Set}}
+\subsubsection{\texorpdfstring{add\+Raw\+Data()}{addRawData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Data\+Set\+::add\+Raw\+Data (\begin{DoxyParamCaption}\item[{float}]{data,  }\item[{bool}]{process = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant l\textquotesingle{}ajout d\textquotesingle{}une valeur dans le jeu de données. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \+: nouvelle valeur ajoutée dans le vecteur de données \\
+\hline
+{\em process} & \+: bool true pour process les données (voir process\+Data) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDataSet_a71cfe353100966c9bdfb1f6880075691}\label{classDataSet_a71cfe353100966c9bdfb1f6880075691}} 
+\index{Data\+Set@{Data\+Set}!add\+Raw\+Data@{add\+Raw\+Data}}
+\index{add\+Raw\+Data@{add\+Raw\+Data}!Data\+Set@{Data\+Set}}
+\subsubsection{\texorpdfstring{add\+Raw\+Data()}{addRawData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Data\+Set\+::add\+Raw\+Data (\begin{DoxyParamCaption}\item[{std\+::vector$<$ float $>$}]{data\+Vect }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant l\textquotesingle{}ajout d\textquotesingle{}un vecteur de données dans le jeu de données. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+Vect} & nouveau vecteur ajouté dans le vecteur de données \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDataSet_a6e174dbffadb1a262c6cc92781d0bd12}\label{classDataSet_a6e174dbffadb1a262c6cc92781d0bd12}} 
+\index{Data\+Set@{Data\+Set}!process\+Data@{process\+Data}}
+\index{process\+Data@{process\+Data}!Data\+Set@{Data\+Set}}
+\subsubsection{\texorpdfstring{process\+Data()}{processData()}}
+{\footnotesize\ttfamily void Data\+Set\+::process\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction calculant les moyennes, écarts-\/types et les données associées du jeu de données. 
+
+Calcul de la moyenne et de l\textquotesingle{}intervalle de confiance Calcul de l\textquotesingle{}écart-\/type et de son intervalle de confiance Calcul de la médiane de l\textquotesingle{}échantillon 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+headers/dataset.\+hpp\item 
+sources/dataset.\+cpp\end{DoxyCompactItemize}

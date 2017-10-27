@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['functions',['Functions',['../structFunctions.html',1,'']]]
+  ['csvfile',['csvfile',['../classcsvfile.html',1,'']]]
 ];

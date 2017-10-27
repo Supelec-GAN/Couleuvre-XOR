@@ -1,0 +1,139 @@
+\hypertarget{classApplication}{}\section{Application Class Reference}
+\label{classApplication}\index{Application@{Application}}
+
+
+Classe destinée à gérer l\textquotesingle{}ensemble d\textquotesingle{}un projet.  
+
+
+
+
+{\ttfamily \#include $<$application.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classApplication_add64c430fa6318ac4885ea5ddedf0780}\label{classApplication_add64c430fa6318ac4885ea5ddedf0780}} 
+using \hyperlink{classApplication_add64c430fa6318ac4885ea5ddedf0780}{Sample} = std\+::pair$<$ Eigen\+::\+Vector\+Xf, Eigen\+::\+Vector\+Xf $>$
+\begin{DoxyCompactList}\small\item\em Un alias pour désigner un donnée (Entrée, Sortie) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classApplication_a9888f02149ca3b8ffa499ee07426cd1d}\label{classApplication_a9888f02149ca3b8ffa499ee07426cd1d}} 
+using \hyperlink{classApplication_a9888f02149ca3b8ffa499ee07426cd1d}{Batch} = std\+::vector$<$ \hyperlink{classApplication_add64c430fa6318ac4885ea5ddedf0780}{Sample} $>$
+\begin{DoxyCompactList}\small\item\em Un alias pour désigner un batch de données (Entrée, Sortie) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classApplication_ab46d83da0e069b75ab971725bcf24a54}{Application} (Neural\+Network\+::\+Ptr network, \hyperlink{classApplication_a9888f02149ca3b8ffa499ee07426cd1d}{Batch} teaching\+Batch, \hyperlink{classApplication_a9888f02149ca3b8ffa499ee07426cd1d}{Batch} testing\+Batch)
+\begin{DoxyCompactList}\small\item\em Constructeur par batchs. \end{DoxyCompactList}\item 
+\hyperlink{classApplication_a662325bca303994250427110d5d771e7}{Application} (Neural\+Network\+::\+Ptr network, std\+::function$<$ Eigen\+::\+Vector\+Xf(Eigen\+::\+Vector\+Xf)$>$ model\+Function, std\+::vector$<$ Eigen\+::\+Vector\+Xf $>$ teaching\+Inputs, std\+::vector$<$ Eigen\+::\+Vector\+Xf $>$ testing\+Inputs)
+\begin{DoxyCompactList}\small\item\em Constructeur par fonction modèle. \end{DoxyCompactList}\item 
+void \hyperlink{classApplication_ae93c9eb1888c7b3bbab68aa5da50ce46}{run\+Teach} (unsigned int nb\+Teachings)
+\begin{DoxyCompactList}\small\item\em Effectue une run d\textquotesingle{}apprentissage. \end{DoxyCompactList}\item 
+void \hyperlink{classApplication_a2efd3cc253a127ea682a00b560f6d073}{run\+Test} (unsigned int nb\+Tests)
+\begin{DoxyCompactList}\small\item\em Effectue une run de tests. \end{DoxyCompactList}\item 
+void \hyperlink{classApplication_a105d173f14e444ddb485d5ac5df91d74}{total\+Run} (unsigned int nb\+Loops, unsigned int nb\+Teachings\+Per\+Loop, unsigned int nb\+Tests\+Per\+Loop)
+\begin{DoxyCompactList}\small\item\em Effectue une run totale sur le projet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe destinée à gérer l\textquotesingle{}ensemble d\textquotesingle{}un projet. 
+
+La classe supervise l\textquotesingle{}apprentissage d\textquotesingle{}un réseau de neurones par rapport au batchs de données qu\textquotesingle{}on lui fournit et sort les résultats dans un fichier csv 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classApplication_ab46d83da0e069b75ab971725bcf24a54}\label{classApplication_ab46d83da0e069b75ab971725bcf24a54}} 
+\index{Application@{Application}!Application@{Application}}
+\index{Application@{Application}!Application@{Application}}
+\subsubsection{\texorpdfstring{Application()}{Application()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Application\+::\+Application (\begin{DoxyParamCaption}\item[{Neural\+Network\+::\+Ptr}]{network,  }\item[{\hyperlink{classApplication_a9888f02149ca3b8ffa499ee07426cd1d}{Batch}}]{teaching\+Batch,  }\item[{\hyperlink{classApplication_a9888f02149ca3b8ffa499ee07426cd1d}{Batch}}]{testing\+Batch }\end{DoxyParamCaption})}
+
+
+
+Constructeur par batchs. 
+
+Ce constructeur supervise le projet par rapport au réseau de neurones donné et aux batchs de tests et d\textquotesingle{}apprentissages donnés en paramètre 
+\begin{DoxyParams}{Parameters}
+{\em network} & le réseau avec lequel on travaille \\
+\hline
+{\em teaching\+Batch} & le batch des données servant à l\textquotesingle{}apprentissage \\
+\hline
+{\em testing\+Batch} & le batch des données de test \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classApplication_a662325bca303994250427110d5d771e7}\label{classApplication_a662325bca303994250427110d5d771e7}} 
+\index{Application@{Application}!Application@{Application}}
+\index{Application@{Application}!Application@{Application}}
+\subsubsection{\texorpdfstring{Application()}{Application()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Application\+::\+Application (\begin{DoxyParamCaption}\item[{Neural\+Network\+::\+Ptr}]{network,  }\item[{std\+::function$<$ Eigen\+::\+Vector\+Xf(Eigen\+::\+Vector\+Xf)$>$}]{model\+Function,  }\item[{std\+::vector$<$ Eigen\+::\+Vector\+Xf $>$}]{teaching\+Inputs,  }\item[{std\+::vector$<$ Eigen\+::\+Vector\+Xf $>$}]{testing\+Inputs }\end{DoxyParamCaption})}
+
+
+
+Constructeur par fonction modèle. 
+
+Ce constructeur supervise le projet par rapport au réseaude neurones donné, des batchs d\textquotesingle{}inputs pour l\textquotesingle{}apprentissage et les tests, et la fonction à modéliser 
+\begin{DoxyParams}{Parameters}
+{\em network} & le réseau avec lequel on travaille \\
+\hline
+{\em model\+Function} & la fonction à modéliser \\
+\hline
+{\em teaching\+Inputs} & les inputs pour l\textquotesingle{}apprentissage \\
+\hline
+{\em testing\+Inputs} & les inputs pour les tests \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classApplication_ae93c9eb1888c7b3bbab68aa5da50ce46}\label{classApplication_ae93c9eb1888c7b3bbab68aa5da50ce46}} 
+\index{Application@{Application}!run\+Teach@{run\+Teach}}
+\index{run\+Teach@{run\+Teach}!Application@{Application}}
+\subsubsection{\texorpdfstring{run\+Teach()}{runTeach()}}
+{\footnotesize\ttfamily void Application\+::run\+Teach (\begin{DoxyParamCaption}\item[{unsigned int}]{nb\+Teachings }\end{DoxyParamCaption})}
+
+
+
+Effectue une run d\textquotesingle{}apprentissage. 
+
+Effectue une run d\textquotesingle{}apprentissage dont le nombre d\textquotesingle{}apprentissages est passé en paramètres 
+\begin{DoxyParams}{Parameters}
+{\em nb\+Teachings} & le nombre d\textquotesingle{}apprentissages à faire pendant la run \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classApplication_a2efd3cc253a127ea682a00b560f6d073}\label{classApplication_a2efd3cc253a127ea682a00b560f6d073}} 
+\index{Application@{Application}!run\+Test@{run\+Test}}
+\index{run\+Test@{run\+Test}!Application@{Application}}
+\subsubsection{\texorpdfstring{run\+Test()}{runTest()}}
+{\footnotesize\ttfamily void Application\+::run\+Test (\begin{DoxyParamCaption}\item[{unsigned int}]{nb\+Tests }\end{DoxyParamCaption})}
+
+
+
+Effectue une run de tests. 
+
+Effectue une run de test dont le nombre de tests est passé en paramètres 
+\begin{DoxyParams}{Parameters}
+{\em nb\+Teachings} & le nombre de tests à faire pendant la run \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classApplication_a105d173f14e444ddb485d5ac5df91d74}\label{classApplication_a105d173f14e444ddb485d5ac5df91d74}} 
+\index{Application@{Application}!total\+Run@{total\+Run}}
+\index{total\+Run@{total\+Run}!Application@{Application}}
+\subsubsection{\texorpdfstring{total\+Run()}{totalRun()}}
+{\footnotesize\ttfamily void Application\+::total\+Run (\begin{DoxyParamCaption}\item[{unsigned int}]{nb\+Loops,  }\item[{unsigned int}]{nb\+Teachings\+Per\+Loop,  }\item[{unsigned int}]{nb\+Tests\+Per\+Loop }\end{DoxyParamCaption})}
+
+
+
+Effectue une run totale sur le projet. 
+
+Cette run alterne entre run d\textquotesingle{}apprentissage et de tests. Le nombre de runs, d\textquotesingle{}apprentissages par run et de tests par run est paramètrable 
+\begin{DoxyParams}{Parameters}
+{\em nb\+Loops} & le nombre d\textquotesingle{}alternances apprentissage/test \\
+\hline
+{\em nb\+Teachings\+Per\+Loop} & le nombre d\textquotesingle{}apprentissage par run \\
+\hline
+{\em nb\+Tests\+Per\+Loop} & le nombre de tests par run \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+headers/application.\+hpp\item 
+sources/application.\+cpp\end{DoxyCompactItemize}
