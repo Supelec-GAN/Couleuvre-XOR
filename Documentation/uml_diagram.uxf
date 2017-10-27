@@ -170,7 +170,7 @@ m2=1</panel_attributes>
     <panel_attributes>lt=-
 m1=0..n
 m2=1</panel_attributes>
-    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;120.0;10.0;70.0;170.0;70.0;170.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -178,7 +178,7 @@ m2=1</panel_attributes>
       <x>904</x>
       <y>464</y>
       <w>304</w>
-      <h>160</h>
+      <h>144</h>
     </coordinates>
     <panel_attributes>DataCollector
 --
@@ -192,7 +192,11 @@ _Methods :_
 + addProcessedData(DataSet dataSet)
 + operator[](string key)
 + addDataType(string type)
-+ exportData()</panel_attributes>
++ exportData()
+--
+- vector&lt;pair&lt;string, vector&lt;float&gt; &gt; mDataVector
+- csvfile file
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -201,11 +205,15 @@ _Methods :_
       <x>920</x>
       <y>712</y>
       <w>256</w>
-      <h>184</h>
+      <h>152</h>
     </coordinates>
     <panel_attributes>DataSet
 --
-_Attribute :_
++ DataSet(vector&lt;float&gt; dataVect)
++ addData(float data, bool process)
++ addRawData(vector&lt;float&gt; dataVect)
++ processData()
+--
 - vector&lt;float&gt;        mRawData
 - Statistics::Data     mMean
 - float                      mMedian
@@ -247,6 +255,6 @@ _Attributes :_
     <panel_attributes>lt=-
 m1=1
 m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
+    <additional_attributes>240.0;120.0;240.0;70.0;10.0;70.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
