@@ -16,7 +16,6 @@ int main()
 {   
     try
     {
-
         // Construction du générateurs d'inputs
         srand(time(0));
         std::default_random_engine generator((std::random_device())());
