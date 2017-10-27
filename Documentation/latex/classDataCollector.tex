@@ -1,16 +1,35 @@
 \hypertarget{classDataCollector}{}\section{Data\+Collector Class Reference}
 \label{classDataCollector}\index{Data\+Collector@{Data\+Collector}}
+
+
+{\ttfamily \#include $<$datacollector.\+hpp$>$}
+
+
+
+Collaboration diagram for Data\+Collector\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classDataCollector__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classDataCollector_a8061e46d6301b7a766bd628472353b44}{Data\+Collector} (std\+::string test\+Name=\char`\"{}resultat\char`\"{})
 \begin{DoxyCompactList}\small\item\em Constructeur permettant d\textquotesingle{}initialiser le \hyperlink{classDataCollector}{Data\+Collector} avec le nom du csv file. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classDataCollector_ac0d50d38e3a5107541f929d4ea3a8cb5}\label{classDataCollector_ac0d50d38e3a5107541f929d4ea3a8cb5}} 
 void \hyperlink{classDataCollector_ac0d50d38e3a5107541f929d4ea3a8cb5}{add\+Data} (\hyperlink{classDataSet}{Data\+Set} data\+Set)
 \begin{DoxyCompactList}\small\item\em Ajout d\textquotesingle{}un set de données traitées (abscisse, moyenne, écart-\/type, intervalle de confiance) \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classDataCollector_a6af99e22f24d045d607cb708866b9ce2}\label{classDataCollector_a6af99e22f24d045d607cb708866b9ce2}} 
 void \hyperlink{classDataCollector_a6af99e22f24d045d607cb708866b9ce2}{export\+Data} ()
 \begin{DoxyCompactList}\small\item\em Inscrit le vecteur de données dans le csv file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::pair$<$ int, \hyperlink{structStatistics_1_1Data}{Statistics\+::\+Data} $>$ $>$ \hyperlink{classDataCollector_a8d1d5a743e394b578545fa2d7b0ce4ee}{m\+Data\+Vector}
+\begin{DoxyCompactList}\small\item\em Vecteur de données traitées \+: nombre d\textquotesingle{}apprentissages, moyenne, écart-\/type, intervalle de confiance. \end{DoxyCompactList}\item 
+\hyperlink{classcsvfile}{csvfile} \hyperlink{classDataCollector_a8150de03c388af2d36cfb8f15cd28189}{csv}
+\end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -31,7 +50,49 @@ Initialisation du \hyperlink{classDataCollector}{Data\+Collector} \+: contient d
 \end{DoxyParams}
 
 
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDataCollector_ac0d50d38e3a5107541f929d4ea3a8cb5}\label{classDataCollector_ac0d50d38e3a5107541f929d4ea3a8cb5}} 
+\index{Data\+Collector@{Data\+Collector}!add\+Data@{add\+Data}}
+\index{add\+Data@{add\+Data}!Data\+Collector@{Data\+Collector}}
+\subsubsection{\texorpdfstring{add\+Data()}{addData()}}
+{\footnotesize\ttfamily void Data\+Collector\+::add\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{classDataSet}{Data\+Set}}]{data\+Set }\end{DoxyParamCaption})}
+
+
+
+Ajout d\textquotesingle{}un set de données traitées (abscisse, moyenne, écart-\/type, intervalle de confiance) 
+
+\mbox{\Hypertarget{classDataCollector_a6af99e22f24d045d607cb708866b9ce2}\label{classDataCollector_a6af99e22f24d045d607cb708866b9ce2}} 
+\index{Data\+Collector@{Data\+Collector}!export\+Data@{export\+Data}}
+\index{export\+Data@{export\+Data}!Data\+Collector@{Data\+Collector}}
+\subsubsection{\texorpdfstring{export\+Data()}{exportData()}}
+{\footnotesize\ttfamily void Data\+Collector\+::export\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Inscrit le vecteur de données dans le csv file. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classDataCollector_a8150de03c388af2d36cfb8f15cd28189}\label{classDataCollector_a8150de03c388af2d36cfb8f15cd28189}} 
+\index{Data\+Collector@{Data\+Collector}!csv@{csv}}
+\index{csv@{csv}!Data\+Collector@{Data\+Collector}}
+\subsubsection{\texorpdfstring{csv}{csv}}
+{\footnotesize\ttfamily \hyperlink{classcsvfile}{csvfile} Data\+Collector\+::csv\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDataCollector_a8d1d5a743e394b578545fa2d7b0ce4ee}\label{classDataCollector_a8d1d5a743e394b578545fa2d7b0ce4ee}} 
+\index{Data\+Collector@{Data\+Collector}!m\+Data\+Vector@{m\+Data\+Vector}}
+\index{m\+Data\+Vector@{m\+Data\+Vector}!Data\+Collector@{Data\+Collector}}
+\subsubsection{\texorpdfstring{m\+Data\+Vector}{mDataVector}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::pair$<$int, \hyperlink{structStatistics_1_1Data}{Statistics\+::\+Data}$>$ $>$ Data\+Collector\+::m\+Data\+Vector\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vecteur de données traitées \+: nombre d\textquotesingle{}apprentissages, moyenne, écart-\/type, intervalle de confiance. 
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-headers/datacollector.\+hpp\item 
-sources/datacollector.\+cpp\end{DoxyCompactItemize}
+headers/\hyperlink{datacollector_8hpp}{datacollector.\+hpp}\item 
+sources/\hyperlink{datacollector_8cpp}{datacollector.\+cpp}\end{DoxyCompactItemize}

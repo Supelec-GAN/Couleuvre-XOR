@@ -1,5 +1,19 @@
 \hypertarget{classDataSet}{}\section{Data\+Set Class Reference}
 \label{classDataSet}\index{Data\+Set@{Data\+Set}}
+
+
+{\ttfamily \#include $<$dataset.\+hpp$>$}
+
+
+
+Collaboration diagram for Data\+Set\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{classDataSet__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -11,12 +25,23 @@ void \hyperlink{classDataSet_a71cfe353100966c9bdfb1f6880075691}{add\+Raw\+Data} 
 \begin{DoxyCompactList}\small\item\em Fonction permettant l\textquotesingle{}ajout d\textquotesingle{}un vecteur de données dans le jeu de données. \end{DoxyCompactList}\item 
 void \hyperlink{classDataSet_a6e174dbffadb1a262c6cc92781d0bd12}{process\+Data} ()
 \begin{DoxyCompactList}\small\item\em Fonction calculant les moyennes, écarts-\/types et les données associées du jeu de données. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classDataSet_af646e5b745734c1b18f2e90117e1d3c1}\label{classDataSet_af646e5b745734c1b18f2e90117e1d3c1}} 
 \hyperlink{structStatistics_1_1Data}{Statistics\+::\+Data} \hyperlink{classDataSet_af646e5b745734c1b18f2e90117e1d3c1}{get\+Data} ()
 \begin{DoxyCompactList}\small\item\em Fonction renvoyant Data, contenant la moyenne, écart-\/type et intervalle de confiance. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classDataSet_a29e3936319d5b2fda4f74b033c556766}\label{classDataSet_a29e3936319d5b2fda4f74b033c556766}} 
 int \hyperlink{classDataSet_a29e3936319d5b2fda4f74b033c556766}{get\+Sample} ()
 \begin{DoxyCompactList}\small\item\em Fonction renvoyant le nombre d\textquotesingle{}apprentissage correspondant au \hyperlink{classDataSet}{Data\+Set}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ float $>$ \hyperlink{classDataSet_a578c8ddd82c2e24468d88bfd4cbfc917}{m\+Raw\+Data}
+\begin{DoxyCompactList}\small\item\em Vecteur contenant les données brutes du jeu. \end{DoxyCompactList}\item 
+\hyperlink{structStatistics_1_1Data}{Statistics\+::\+Data} \hyperlink{classDataSet_a043f1a249aa8752a8cc3115fbee61e2e}{m\+Data}
+\begin{DoxyCompactList}\small\item\em Structure contenant la moyenne, l\textquotesingle{}écart-\/type et l\textquotesingle{}intervalle de confiance à 95\% du jeu de données. \end{DoxyCompactList}\item 
+float \hyperlink{classDataSet_acf52ca5fc1f11ea8f027c7b7ad1e0d34}{m\+Median}
+\begin{DoxyCompactList}\small\item\em Médiane du jeu de données. \end{DoxyCompactList}\item 
+int \hyperlink{classDataSet_a0a2e6525fdc36753382e0546e26198df}{m\+Sample}
+\begin{DoxyCompactList}\small\item\em Entier correspondant au nombre d\textquotesingle{}apprentissage correspondant au \hyperlink{classDataSet}{Data\+Set}. \end{DoxyCompactList}\item 
+bool \hyperlink{classDataSet_acc6a6082256c926e1ad8bfa713966441}{is\+Processed}
+\begin{DoxyCompactList}\small\item\em Booleen. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -72,6 +97,26 @@ Fonction permettant l\textquotesingle{}ajout d\textquotesingle{}un vecteur de do
 {\em data\+Vect} & nouveau vecteur ajouté dans le vecteur de données \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classDataSet_af646e5b745734c1b18f2e90117e1d3c1}\label{classDataSet_af646e5b745734c1b18f2e90117e1d3c1}} 
+\index{Data\+Set@{Data\+Set}!get\+Data@{get\+Data}}
+\index{get\+Data@{get\+Data}!Data\+Set@{Data\+Set}}
+\subsubsection{\texorpdfstring{get\+Data()}{getData()}}
+{\footnotesize\ttfamily \hyperlink{structStatistics_1_1Data}{Statistics\+::\+Data} Data\+Set\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction renvoyant Data, contenant la moyenne, écart-\/type et intervalle de confiance. 
+
+\mbox{\Hypertarget{classDataSet_a29e3936319d5b2fda4f74b033c556766}\label{classDataSet_a29e3936319d5b2fda4f74b033c556766}} 
+\index{Data\+Set@{Data\+Set}!get\+Sample@{get\+Sample}}
+\index{get\+Sample@{get\+Sample}!Data\+Set@{Data\+Set}}
+\subsubsection{\texorpdfstring{get\+Sample()}{getSample()}}
+{\footnotesize\ttfamily int Data\+Set\+::get\+Sample (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction renvoyant le nombre d\textquotesingle{}apprentissage correspondant au \hyperlink{classDataSet}{Data\+Set}. 
+
 \mbox{\Hypertarget{classDataSet_a6e174dbffadb1a262c6cc92781d0bd12}\label{classDataSet_a6e174dbffadb1a262c6cc92781d0bd12}} 
 \index{Data\+Set@{Data\+Set}!process\+Data@{process\+Data}}
 \index{process\+Data@{process\+Data}!Data\+Set@{Data\+Set}}
@@ -84,7 +129,60 @@ Fonction calculant les moyennes, écarts-\/types et les données associées du j
 
 Calcul de la moyenne et de l\textquotesingle{}intervalle de confiance Calcul de l\textquotesingle{}écart-\/type et de son intervalle de confiance Calcul de la médiane de l\textquotesingle{}échantillon 
 
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classDataSet_acc6a6082256c926e1ad8bfa713966441}\label{classDataSet_acc6a6082256c926e1ad8bfa713966441}} 
+\index{Data\+Set@{Data\+Set}!is\+Processed@{is\+Processed}}
+\index{is\+Processed@{is\+Processed}!Data\+Set@{Data\+Set}}
+\subsubsection{\texorpdfstring{is\+Processed}{isProcessed}}
+{\footnotesize\ttfamily bool Data\+Set\+::is\+Processed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Booleen. 
+
+\mbox{\Hypertarget{classDataSet_a043f1a249aa8752a8cc3115fbee61e2e}\label{classDataSet_a043f1a249aa8752a8cc3115fbee61e2e}} 
+\index{Data\+Set@{Data\+Set}!m\+Data@{m\+Data}}
+\index{m\+Data@{m\+Data}!Data\+Set@{Data\+Set}}
+\subsubsection{\texorpdfstring{m\+Data}{mData}}
+{\footnotesize\ttfamily \hyperlink{structStatistics_1_1Data}{Statistics\+::\+Data} Data\+Set\+::m\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Structure contenant la moyenne, l\textquotesingle{}écart-\/type et l\textquotesingle{}intervalle de confiance à 95\% du jeu de données. 
+
+\mbox{\Hypertarget{classDataSet_acf52ca5fc1f11ea8f027c7b7ad1e0d34}\label{classDataSet_acf52ca5fc1f11ea8f027c7b7ad1e0d34}} 
+\index{Data\+Set@{Data\+Set}!m\+Median@{m\+Median}}
+\index{m\+Median@{m\+Median}!Data\+Set@{Data\+Set}}
+\subsubsection{\texorpdfstring{m\+Median}{mMedian}}
+{\footnotesize\ttfamily float Data\+Set\+::m\+Median\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Médiane du jeu de données. 
+
+\mbox{\Hypertarget{classDataSet_a578c8ddd82c2e24468d88bfd4cbfc917}\label{classDataSet_a578c8ddd82c2e24468d88bfd4cbfc917}} 
+\index{Data\+Set@{Data\+Set}!m\+Raw\+Data@{m\+Raw\+Data}}
+\index{m\+Raw\+Data@{m\+Raw\+Data}!Data\+Set@{Data\+Set}}
+\subsubsection{\texorpdfstring{m\+Raw\+Data}{mRawData}}
+{\footnotesize\ttfamily std\+::vector$<$float$>$ Data\+Set\+::m\+Raw\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vecteur contenant les données brutes du jeu. 
+
+\mbox{\Hypertarget{classDataSet_a0a2e6525fdc36753382e0546e26198df}\label{classDataSet_a0a2e6525fdc36753382e0546e26198df}} 
+\index{Data\+Set@{Data\+Set}!m\+Sample@{m\+Sample}}
+\index{m\+Sample@{m\+Sample}!Data\+Set@{Data\+Set}}
+\subsubsection{\texorpdfstring{m\+Sample}{mSample}}
+{\footnotesize\ttfamily int Data\+Set\+::m\+Sample\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Entier correspondant au nombre d\textquotesingle{}apprentissage correspondant au \hyperlink{classDataSet}{Data\+Set}. 
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-headers/dataset.\+hpp\item 
-sources/dataset.\+cpp\end{DoxyCompactItemize}
+headers/\hyperlink{dataset_8hpp}{dataset.\+hpp}\item 
+sources/\hyperlink{dataset_8cpp}{dataset.\+cpp}\end{DoxyCompactItemize}

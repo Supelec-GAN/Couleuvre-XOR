@@ -9,15 +9,42 @@ Classe modélisant une couche de neurones.
 
 {\ttfamily \#include $<$neuronlayer.\+hpp$>$}
 
+
+
+Collaboration diagram for Neuron\+Layer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{classNeuronLayer__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classNeuronLayer_afe2804871685b8103d7cd461460e7b31}{Neuron\+Layer} (unsigned int input\+Size, unsigned int output\+Size, std\+::function$<$ float(float)$>$ activationF=Functions\+::sigmoid(10.f))
+\hyperlink{classNeuronLayer_afe2804871685b8103d7cd461460e7b31}{Neuron\+Layer} (unsigned int input\+Size, unsigned int output\+Size, std\+::function$<$ float(float)$>$ activationF=\hyperlink{structFunctions_a773de9cd59f7ccc3e2fe9822f0536ae4}{Functions\+::sigmoid}(10.f))
 \begin{DoxyCompactList}\small\item\em Constructeur permettant d\textquotesingle{}initialiser les paramètres de la couche de neurones. \end{DoxyCompactList}\item 
 Eigen\+::\+Vector\+Xf \hyperlink{classNeuronLayer_aa374ba7d040ae618b5037aa88e5efae7}{process} (Eigen\+::\+Vector\+Xf inputs)
 \begin{DoxyCompactList}\small\item\em La fonction effectuant le calcul de la sortie en fonction de l\textquotesingle{}entrée. \end{DoxyCompactList}\item 
 Eigen\+::\+Vector\+Xf \hyperlink{classNeuronLayer_a0896580aa265681f77efbcb81c6c8150}{back\+Prop} (Eigen\+::\+Vector\+Xf xn\+Partial\+Derivative, float step)
 \begin{DoxyCompactList}\small\item\em La fonction effectuant les calculs de rétropropagation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Matrix\+Xf \hyperlink{classNeuronLayer_a8b4572b9b3cd779233f8c269c3eca608}{fn\+Derivative\+Matrix} () const
+\begin{DoxyCompactList}\small\item\em Fonction renvoyant le vecteur des dérivées de Fn évalué en Yn. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Matrix\+Xf \hyperlink{classNeuronLayer_ab6aaf5dc22c97ba46db5ac5e8715ed8f}{m\+Poids}
+\begin{DoxyCompactList}\small\item\em La matrice des poids de la couche de neurones. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xf \hyperlink{classNeuronLayer_a6d1c0d70051d87dace0cdf654d866a4a}{m\+Biais}
+\begin{DoxyCompactList}\small\item\em La matrice des biais de la couche de neurones. \end{DoxyCompactList}\item 
+std\+::function$<$ float(float)$>$ \hyperlink{classNeuronLayer_ac0ff52b79f1a068e75f0eb0309b5e683}{m\+Activation\+Fun}
+\begin{DoxyCompactList}\small\item\em La fonction d\textquotesingle{}activation de la couche de neurones. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xf \hyperlink{classNeuronLayer_a5b5ccadbab1d38fd3b09fcab7dc01148}{m\+Buffer\+Activation\+Level}
+\begin{DoxyCompactList}\small\item\em Buffer pour stocker Yn = Wn\+Xn-\/1, nécessaire pour la backprop. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xf \hyperlink{classNeuronLayer_ab5a3fc010c33628e37b5a19d370978e9}{m\+Buffer\+Input}
+\begin{DoxyCompactList}\small\item\em Buffer pour stocker l\textquotesingle{}input, nécessaire pour la backrprop. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -35,7 +62,7 @@ Neurone\+Layer représente une couche de neurones, avec une matrice de poids et 
 \index{Neuron\+Layer@{Neuron\+Layer}!Neuron\+Layer@{Neuron\+Layer}}
 \index{Neuron\+Layer@{Neuron\+Layer}!Neuron\+Layer@{Neuron\+Layer}}
 \subsubsection{\texorpdfstring{Neuron\+Layer()}{NeuronLayer()}}
-{\footnotesize\ttfamily Neuron\+Layer\+::\+Neuron\+Layer (\begin{DoxyParamCaption}\item[{unsigned int}]{input\+Size,  }\item[{unsigned int}]{output\+Size,  }\item[{std\+::function$<$ float(float)$>$}]{activationF = {\ttfamily Functions\+:\+:sigmoid(10.f)} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Neuron\+Layer\+::\+Neuron\+Layer (\begin{DoxyParamCaption}\item[{unsigned int}]{input\+Size,  }\item[{unsigned int}]{output\+Size,  }\item[{std\+::function$<$ float(float)$>$}]{activationF = {\ttfamily \hyperlink{structFunctions_a773de9cd59f7ccc3e2fe9822f0536ae4}{Functions\+::sigmoid}(10.f)} }\end{DoxyParamCaption})}
 
 
 
@@ -73,6 +100,19 @@ La fonction calcule les 3 équations matricielles, mets à jour les poids et ren
 \begin{DoxyReturn}{Returns}
 le vecteur des dérivées partielles selon Xn-\/1 à envoyer à la couche précédente 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classNeuronLayer_a8b4572b9b3cd779233f8c269c3eca608}\label{classNeuronLayer_a8b4572b9b3cd779233f8c269c3eca608}} 
+\index{Neuron\+Layer@{Neuron\+Layer}!fn\+Derivative\+Matrix@{fn\+Derivative\+Matrix}}
+\index{fn\+Derivative\+Matrix@{fn\+Derivative\+Matrix}!Neuron\+Layer@{Neuron\+Layer}}
+\subsubsection{\texorpdfstring{fn\+Derivative\+Matrix()}{fnDerivativeMatrix()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xf Neuron\+Layer\+::fn\+Derivative\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fonction renvoyant le vecteur des dérivées de Fn évalué en Yn. 
+
+Cette fonction calcule Fn\textquotesingle{}(Yn) ou Yn = m\+Buffer\+Activation\+Level \begin{DoxyReturn}{Returns}
+le vecteur des dérivées mises en colonne 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classNeuronLayer_aa374ba7d040ae618b5037aa88e5efae7}\label{classNeuronLayer_aa374ba7d040ae618b5037aa88e5efae7}} 
 \index{Neuron\+Layer@{Neuron\+Layer}!process@{process}}
 \index{process@{process}!Neuron\+Layer@{Neuron\+Layer}}
@@ -106,7 +146,60 @@ Fonction utilitaire permettant d\textquotesingle{}afficher le neurone.
 
 Cette fonction affiche la matrice des poids 
 
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classNeuronLayer_ac0ff52b79f1a068e75f0eb0309b5e683}\label{classNeuronLayer_ac0ff52b79f1a068e75f0eb0309b5e683}} 
+\index{Neuron\+Layer@{Neuron\+Layer}!m\+Activation\+Fun@{m\+Activation\+Fun}}
+\index{m\+Activation\+Fun@{m\+Activation\+Fun}!Neuron\+Layer@{Neuron\+Layer}}
+\subsubsection{\texorpdfstring{m\+Activation\+Fun}{mActivationFun}}
+{\footnotesize\ttfamily std\+::function$<$float(float)$>$ Neuron\+Layer\+::m\+Activation\+Fun\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+La fonction d\textquotesingle{}activation de la couche de neurones. 
+
+\mbox{\Hypertarget{classNeuronLayer_a6d1c0d70051d87dace0cdf654d866a4a}\label{classNeuronLayer_a6d1c0d70051d87dace0cdf654d866a4a}} 
+\index{Neuron\+Layer@{Neuron\+Layer}!m\+Biais@{m\+Biais}}
+\index{m\+Biais@{m\+Biais}!Neuron\+Layer@{Neuron\+Layer}}
+\subsubsection{\texorpdfstring{m\+Biais}{mBiais}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xf Neuron\+Layer\+::m\+Biais\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+La matrice des biais de la couche de neurones. 
+
+\mbox{\Hypertarget{classNeuronLayer_a5b5ccadbab1d38fd3b09fcab7dc01148}\label{classNeuronLayer_a5b5ccadbab1d38fd3b09fcab7dc01148}} 
+\index{Neuron\+Layer@{Neuron\+Layer}!m\+Buffer\+Activation\+Level@{m\+Buffer\+Activation\+Level}}
+\index{m\+Buffer\+Activation\+Level@{m\+Buffer\+Activation\+Level}!Neuron\+Layer@{Neuron\+Layer}}
+\subsubsection{\texorpdfstring{m\+Buffer\+Activation\+Level}{mBufferActivationLevel}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xf Neuron\+Layer\+::m\+Buffer\+Activation\+Level\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Buffer pour stocker Yn = Wn\+Xn-\/1, nécessaire pour la backprop. 
+
+\mbox{\Hypertarget{classNeuronLayer_ab5a3fc010c33628e37b5a19d370978e9}\label{classNeuronLayer_ab5a3fc010c33628e37b5a19d370978e9}} 
+\index{Neuron\+Layer@{Neuron\+Layer}!m\+Buffer\+Input@{m\+Buffer\+Input}}
+\index{m\+Buffer\+Input@{m\+Buffer\+Input}!Neuron\+Layer@{Neuron\+Layer}}
+\subsubsection{\texorpdfstring{m\+Buffer\+Input}{mBufferInput}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xf Neuron\+Layer\+::m\+Buffer\+Input\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Buffer pour stocker l\textquotesingle{}input, nécessaire pour la backrprop. 
+
+\mbox{\Hypertarget{classNeuronLayer_ab6aaf5dc22c97ba46db5ac5e8715ed8f}\label{classNeuronLayer_ab6aaf5dc22c97ba46db5ac5e8715ed8f}} 
+\index{Neuron\+Layer@{Neuron\+Layer}!m\+Poids@{m\+Poids}}
+\index{m\+Poids@{m\+Poids}!Neuron\+Layer@{Neuron\+Layer}}
+\subsubsection{\texorpdfstring{m\+Poids}{mPoids}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xf Neuron\+Layer\+::m\+Poids\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+La matrice des poids de la couche de neurones. 
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-headers/neuronlayer.\+hpp\item 
-sources/neuronlayer.\+cpp\end{DoxyCompactItemize}
+headers/\hyperlink{neuronlayer_8hpp}{neuronlayer.\+hpp}\item 
+sources/\hyperlink{neuronlayer_8cpp}{neuronlayer.\+cpp}\end{DoxyCompactItemize}

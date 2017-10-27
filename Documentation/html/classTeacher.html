@@ -60,15 +60,24 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classTeacher-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Teacher Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="teacher_8hpp_source.html">teacher.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Teacher:</div>
+<div class="dyncontent">
+<div class="center"><img src="classTeacher__coll__graph.png" border="0" usemap="#Teacher_coll__map" alt="Collaboration graph"/></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8ca95fc7a29e082a676d420b9fd8fd67"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTeacher.html#a8ca95fc7a29e082a676d420b9fd8fd67">Teacher</a> (NeuralNetwork::Ptr network)</td></tr>
+<tr class="memitem:a8ca95fc7a29e082a676d420b9fd8fd67"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTeacher.html#a8ca95fc7a29e082a676d420b9fd8fd67">Teacher</a> (<a class="el" href="classNeuralNetwork.html#a31de381df65f261fd0f38e0559995d1a">NeuralNetwork::Ptr</a> network)</td></tr>
 <tr class="memdesc:a8ca95fc7a29e082a676d420b9fd8fd67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur par unique pointer.  <a href="#a8ca95fc7a29e082a676d420b9fd8fd67">More...</a><br /></td></tr>
 <tr class="separator:a8ca95fc7a29e082a676d420b9fd8fd67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd32ab70242f2c5886d030a5e7d05919"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTeacher.html#afd32ab70242f2c5886d030a5e7d05919">Teacher</a> (<a class="el" href="classNeuralNetwork.html">NeuralNetwork</a> *network)</td></tr>
@@ -77,6 +86,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a99fc69c5319be890394d2c8503e217c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTeacher.html#a99fc69c5319be890394d2c8503e217c8">backProp</a> (Eigen::VectorXf input, Eigen::VectorXf desiredOutput, float step=0.2, float dx=0.05)</td></tr>
 <tr class="memdesc:a99fc69c5319be890394d2c8503e217c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction appliquant la méthode de rétropropagation sur mNetwork.  <a href="#a99fc69c5319be890394d2c8503e217c8">More...</a><br /></td></tr>
 <tr class="separator:a99fc69c5319be890394d2c8503e217c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:acee32b743a46129225b5b1a869049546"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTeacher.html#acee32b743a46129225b5b1a869049546">propError</a> (Eigen::VectorXf xnPartialDerivative, float step)</td></tr>
+<tr class="memdesc:acee32b743a46129225b5b1a869049546"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction propageant l'erreur itérativement à travers le réseau.  <a href="#acee32b743a46129225b5b1a869049546">More...</a><br /></td></tr>
+<tr class="separator:acee32b743a46129225b5b1a869049546"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14125a53f4ca3ec65fe49369ab893cf1"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXf&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTeacher.html#a14125a53f4ca3ec65fe49369ab893cf1">errorVector</a> (Eigen::VectorXf output, Eigen::VectorXf desiredOutput, float dx)</td></tr>
+<tr class="memdesc:a14125a53f4ca3ec65fe49369ab893cf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction calculant le vecteur dE/dXn initial.  <a href="#a14125a53f4ca3ec65fe49369ab893cf1">More...</a><br /></td></tr>
+<tr class="separator:a14125a53f4ca3ec65fe49369ab893cf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ae1cf0d1d29e47fd8bcf9b79b5ec52839"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNeuralNetwork.html#a31de381df65f261fd0f38e0559995d1a">NeuralNetwork::Ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTeacher.html#ae1cf0d1d29e47fd8bcf9b79b5ec52839">mNetwork</a></td></tr>
+<tr class="memdesc:ae1cf0d1d29e47fd8bcf9b79b5ec52839"><td class="mdescLeft">&#160;</td><td class="mdescRight">Un pointeur sur le réseau dont on veut superviser l'apprentissage.  <a href="#ae1cf0d1d29e47fd8bcf9b79b5ec52839">More...</a><br /></td></tr>
+<tr class="separator:ae1cf0d1d29e47fd8bcf9b79b5ec52839"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab58537b6ced063a5a6e7cd6b94ecd203"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFunctions.html#a834bc4170f1caa8c77272ecf51dbae5c">Functions::ErrorFun</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTeacher.html#ab58537b6ced063a5a6e7cd6b94ecd203">mErrorFun</a></td></tr>
+<tr class="memdesc:ab58537b6ced063a5a6e7cd6b94ecd203"><td class="mdescLeft">&#160;</td><td class="mdescRight">La fonction d'erreur utilisée.  <a href="#ab58537b6ced063a5a6e7cd6b94ecd203">More...</a><br /></td></tr>
+<tr class="separator:ab58537b6ced063a5a6e7cd6b94ecd203"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8ca95fc7a29e082a676d420b9fd8fd67"></a>
@@ -88,7 +115,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">Teacher::Teacher </td>
           <td>(</td>
-          <td class="paramtype">NeuralNetwork::Ptr&#160;</td>
+          <td class="paramtype"><a class="el" href="classNeuralNetwork.html#a31de381df65f261fd0f38e0559995d1a">NeuralNetwork::Ptr</a>&#160;</td>
           <td class="paramname"><em>network</em></td><td>)</td>
           <td></td>
         </tr>
@@ -183,9 +210,156 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a14125a53f4ca3ec65fe49369ab893cf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14125a53f4ca3ec65fe49369ab893cf1">&#9670;&nbsp;</a></span>errorVector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::VectorXf Teacher::errorVector </td>
+          <td>(</td>
+          <td class="paramtype">Eigen::VectorXf&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::VectorXf&#160;</td>
+          <td class="paramname"><em>desiredOutput</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>dx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction calculant le vecteur dE/dXn initial. </p>
+<p>La fonction effectue la dérivée de la fonction d'erreur par rapport à une variation dans chaque dimension, successivement </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>la sortie obtenue </td></tr>
+    <tr><td class="paramname">desiredOutput</td><td>la sortie modèle </td></tr>
+    <tr><td class="paramname">dx</td><td>le pas de dérivation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>renvoie le vecteur dE/dXn </dd></dl>
+
+</div>
+</div>
+<a id="acee32b743a46129225b5b1a869049546"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acee32b743a46129225b5b1a869049546">&#9670;&nbsp;</a></span>propError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Teacher::propError </td>
+          <td>(</td>
+          <td class="paramtype">Eigen::VectorXf&#160;</td>
+          <td class="paramname"><em>xnPartialDerivative</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>step</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction propageant l'erreur itérativement à travers le réseau. </p>
+<p>La fonction itère sur toutes les couches de neurones et appliques les formules de récurrence </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xnPartialDerivative</td><td>la dérivée dE/dXn initiale </td></tr>
+    <tr><td class="paramname">step</td><td>le pas d'apprentissage </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ab58537b6ced063a5a6e7cd6b94ecd203"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab58537b6ced063a5a6e7cd6b94ecd203">&#9670;&nbsp;</a></span>mErrorFun</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structFunctions.html#a834bc4170f1caa8c77272ecf51dbae5c">Functions::ErrorFun</a> Teacher::mErrorFun</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>La fonction d'erreur utilisée. </p>
+
+</div>
+</div>
+<a id="ae1cf0d1d29e47fd8bcf9b79b5ec52839"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1cf0d1d29e47fd8bcf9b79b5ec52839">&#9670;&nbsp;</a></span>mNetwork</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNeuralNetwork.html#a31de381df65f261fd0f38e0559995d1a">NeuralNetwork::Ptr</a> Teacher::mNetwork</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Un pointeur sur le réseau dont on veut superviser l'apprentissage. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>headers/<a class="el" href="teacher_8hpp_source.html">teacher.hpp</a></li>
-<li>sources/teacher.cpp</li>
+<li>sources/<a class="el" href="teacher_8cpp.html">teacher.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

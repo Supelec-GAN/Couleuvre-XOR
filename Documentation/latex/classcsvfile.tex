@@ -1,31 +1,116 @@
 \hypertarget{classcsvfile}{}\section{csvfile Class Reference}
 \label{classcsvfile}\index{csvfile@{csvfile}}
+
+
+{\ttfamily \#include $<$C\+S\+V\+File.\+h$>$}
+
+
+
+Collaboration diagram for csvfile\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classcsvfile__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classcsvfile_a22aee506583f5fd125a8f8f3dcccff3b}\label{classcsvfile_a22aee506583f5fd125a8f8f3dcccff3b}} 
-{\bfseries csvfile} (const std\+::string filename, const std\+::string separator=\char`\"{};\char`\"{})
+\hyperlink{classcsvfile_a22aee506583f5fd125a8f8f3dcccff3b}{csvfile} (const std\+::string filename, const std\+::string separator=\char`\"{};\char`\"{})
 \item 
-\mbox{\Hypertarget{classcsvfile_a5955a8c1fea1af1c95a388aac391fada}\label{classcsvfile_a5955a8c1fea1af1c95a388aac391fada}} 
-void {\bfseries flush} ()
+\hyperlink{classcsvfile_ac4a1a4a15b040e0afd25978dc07c2954}{$\sim$csvfile} ()
 \item 
-\mbox{\Hypertarget{classcsvfile_afd878cbd74e1be9aa7e33bdf7f70e9ef}\label{classcsvfile_afd878cbd74e1be9aa7e33bdf7f70e9ef}} 
-void {\bfseries endrow} ()
+void \hyperlink{classcsvfile_a5955a8c1fea1af1c95a388aac391fada}{flush} ()
 \item 
-\mbox{\Hypertarget{classcsvfile_aee44e4a9c1826eba97f476ba24572356}\label{classcsvfile_aee44e4a9c1826eba97f476ba24572356}} 
-\hyperlink{classcsvfile}{csvfile} \& {\bfseries operator$<$$<$} (\hyperlink{classcsvfile}{csvfile} \&($\ast$val)(\hyperlink{classcsvfile}{csvfile} \&))
+void \hyperlink{classcsvfile_afd878cbd74e1be9aa7e33bdf7f70e9ef}{endrow} ()
 \item 
-\mbox{\Hypertarget{classcsvfile_a2b9cd9120377c5e325b8d33ac17c7497}\label{classcsvfile_a2b9cd9120377c5e325b8d33ac17c7497}} 
-\hyperlink{classcsvfile}{csvfile} \& {\bfseries operator$<$$<$} (const char $\ast$val)
+\hyperlink{classcsvfile}{csvfile} \& \hyperlink{classcsvfile_aee44e4a9c1826eba97f476ba24572356}{operator$<$$<$} (\hyperlink{classcsvfile}{csvfile} \&($\ast$val)(\hyperlink{classcsvfile}{csvfile} \&))
 \item 
-\mbox{\Hypertarget{classcsvfile_a3850513edbfe4b488cfd4a5bac2f15e6}\label{classcsvfile_a3850513edbfe4b488cfd4a5bac2f15e6}} 
-\hyperlink{classcsvfile}{csvfile} \& {\bfseries operator$<$$<$} (const std\+::string \&val)
+\hyperlink{classcsvfile}{csvfile} \& \hyperlink{classcsvfile_a2b9cd9120377c5e325b8d33ac17c7497}{operator$<$$<$} (const char $\ast$val)
 \item 
-\mbox{\Hypertarget{classcsvfile_ad00150e1310d31fd4f27801e52a3d7a5}\label{classcsvfile_ad00150e1310d31fd4f27801e52a3d7a5}} 
-{\footnotesize template$<$typename T $>$ }\\\hyperlink{classcsvfile}{csvfile} \& {\bfseries operator$<$$<$} (const T \&val)
+\hyperlink{classcsvfile}{csvfile} \& \hyperlink{classcsvfile_a3850513edbfe4b488cfd4a5bac2f15e6}{operator$<$$<$} (const std\+::string \&val)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{classcsvfile}{csvfile} \& \hyperlink{classcsvfile_ad00150e1310d31fd4f27801e52a3d7a5}{operator$<$$<$} (const T \&val)
 \end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ofstream \hyperlink{classcsvfile_af9d64cb504548e6bca5e8bf283ae6b00}{fs\+\_\+}
+\item 
+const std\+::string \hyperlink{classcsvfile_a93e4acb10aa1213d248b4113c99988ad}{separator\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcsvfile_a22aee506583f5fd125a8f8f3dcccff3b}\label{classcsvfile_a22aee506583f5fd125a8f8f3dcccff3b}} 
+\index{csvfile@{csvfile}!csvfile@{csvfile}}
+\index{csvfile@{csvfile}!csvfile@{csvfile}}
+\subsubsection{\texorpdfstring{csvfile()}{csvfile()}}
+{\footnotesize\ttfamily csvfile\+::csvfile (\begin{DoxyParamCaption}\item[{const std\+::string}]{filename,  }\item[{const std\+::string}]{separator = {\ttfamily \char`\"{};\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classcsvfile_ac4a1a4a15b040e0afd25978dc07c2954}\label{classcsvfile_ac4a1a4a15b040e0afd25978dc07c2954}} 
+\index{csvfile@{csvfile}!````~csvfile@{$\sim$csvfile}}
+\index{````~csvfile@{$\sim$csvfile}!csvfile@{csvfile}}
+\subsubsection{\texorpdfstring{$\sim$csvfile()}{~csvfile()}}
+{\footnotesize\ttfamily csvfile\+::$\sim$csvfile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcsvfile_afd878cbd74e1be9aa7e33bdf7f70e9ef}\label{classcsvfile_afd878cbd74e1be9aa7e33bdf7f70e9ef}} 
+\index{csvfile@{csvfile}!endrow@{endrow}}
+\index{endrow@{endrow}!csvfile@{csvfile}}
+\subsubsection{\texorpdfstring{endrow()}{endrow()}}
+{\footnotesize\ttfamily void csvfile\+::endrow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classcsvfile_a5955a8c1fea1af1c95a388aac391fada}\label{classcsvfile_a5955a8c1fea1af1c95a388aac391fada}} 
+\index{csvfile@{csvfile}!flush@{flush}}
+\index{flush@{flush}!csvfile@{csvfile}}
+\subsubsection{\texorpdfstring{flush()}{flush()}}
+{\footnotesize\ttfamily void csvfile\+::flush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classcsvfile_aee44e4a9c1826eba97f476ba24572356}\label{classcsvfile_aee44e4a9c1826eba97f476ba24572356}} 
+\index{csvfile@{csvfile}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!csvfile@{csvfile}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \hyperlink{classcsvfile}{csvfile}\& csvfile\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{\hyperlink{classcsvfile}{csvfile} \&($\ast$)(\hyperlink{classcsvfile}{csvfile} \&)}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classcsvfile_a2b9cd9120377c5e325b8d33ac17c7497}\label{classcsvfile_a2b9cd9120377c5e325b8d33ac17c7497}} 
+\index{csvfile@{csvfile}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!csvfile@{csvfile}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \hyperlink{classcsvfile}{csvfile}\& csvfile\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const char $\ast$}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classcsvfile_a3850513edbfe4b488cfd4a5bac2f15e6}\label{classcsvfile_a3850513edbfe4b488cfd4a5bac2f15e6}} 
+\index{csvfile@{csvfile}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!csvfile@{csvfile}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \hyperlink{classcsvfile}{csvfile}\& csvfile\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classcsvfile_ad00150e1310d31fd4f27801e52a3d7a5}\label{classcsvfile_ad00150e1310d31fd4f27801e52a3d7a5}} 
+\index{csvfile@{csvfile}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!csvfile@{csvfile}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classcsvfile}{csvfile}\& csvfile\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const T \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classcsvfile_af9d64cb504548e6bca5e8bf283ae6b00}\label{classcsvfile_af9d64cb504548e6bca5e8bf283ae6b00}} 
+\index{csvfile@{csvfile}!fs\+\_\+@{fs\+\_\+}}
+\index{fs\+\_\+@{fs\+\_\+}!csvfile@{csvfile}}
+\subsubsection{\texorpdfstring{fs\+\_\+}{fs\_}}
+{\footnotesize\ttfamily std\+::ofstream csvfile\+::fs\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcsvfile_a93e4acb10aa1213d248b4113c99988ad}\label{classcsvfile_a93e4acb10aa1213d248b4113c99988ad}} 
+\index{csvfile@{csvfile}!separator\+\_\+@{separator\+\_\+}}
+\index{separator\+\_\+@{separator\+\_\+}!csvfile@{csvfile}}
+\subsubsection{\texorpdfstring{separator\+\_\+}{separator\_}}
+{\footnotesize\ttfamily const std\+::string csvfile\+::separator\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-headers/C\+S\+V\+File.\+h\end{DoxyCompactItemize}
+headers/\hyperlink{CSVFile_8h}{C\+S\+V\+File.\+h}\end{DoxyCompactItemize}

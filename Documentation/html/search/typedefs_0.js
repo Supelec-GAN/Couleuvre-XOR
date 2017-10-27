@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['batch',['Batch',['../classApplication.html#a9888f02149ca3b8ffa499ee07426cd1d',1,'Application']]]
+  ['activationfun',['ActivationFun',['../structFunctions.html#ad25362ffa52b2f7933431190546593ac',1,'Functions']]]
 ];

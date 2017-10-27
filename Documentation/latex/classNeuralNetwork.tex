@@ -1,31 +1,44 @@
 \hypertarget{classNeuralNetwork}{}\section{Neural\+Network Class Reference}
 \label{classNeuralNetwork}\index{Neural\+Network@{Neural\+Network}}
-Inheritance diagram for Neural\+Network\+:\begin{figure}[H]
+
+
+{\ttfamily \#include $<$neuralnetwork.\+hpp$>$}
+
+
+
+Inheritance diagram for Neural\+Network\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{classNeuralNetwork}
+\includegraphics[width=202pt]{classNeuralNetwork__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Neural\+Network\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classNeuralNetwork__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classNeuralNetwork_a31de381df65f261fd0f38e0559995d1a}\label{classNeuralNetwork_a31de381df65f261fd0f38e0559995d1a}} 
-using {\bfseries Ptr} = std\+::shared\+\_\+ptr$<$ \hyperlink{classNeuralNetwork}{Neural\+Network} $>$
+using \hyperlink{classNeuralNetwork_a31de381df65f261fd0f38e0559995d1a}{Ptr} = std\+::shared\+\_\+ptr$<$ \hyperlink{classNeuralNetwork}{Neural\+Network} $>$
 \end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classNeuralNetwork_accce4a7728e89a009a9d4ca1758c9b9d}\label{classNeuralNetwork_accce4a7728e89a009a9d4ca1758c9b9d}} 
 \hyperlink{classNeuralNetwork_accce4a7728e89a009a9d4ca1758c9b9d}{Neural\+Network} ()
 \begin{DoxyCompactList}\small\item\em Constructeur permettant d\textquotesingle{}initialiser une réseau neuronal vide. \end{DoxyCompactList}\item 
-\hyperlink{classNeuralNetwork_a85cd20f411e96dfd28954fcda39badb7}{Neural\+Network} (std\+::vector$<$ unsigned int $>$ layer\+Sizes, std\+::vector$<$ Functions\+::\+Activation\+Fun $>$ activation\+Funs)
+\hyperlink{classNeuralNetwork_a85cd20f411e96dfd28954fcda39badb7}{Neural\+Network} (std\+::vector$<$ unsigned int $>$ layer\+Sizes, std\+::vector$<$ \hyperlink{structFunctions_ad25362ffa52b2f7933431190546593ac}{Functions\+::\+Activation\+Fun} $>$ activation\+Funs)
 \begin{DoxyCompactList}\small\item\em Constructeur permettant d\textquotesingle{}initialiser un réseau neuronal avec choix des fonctions d\textquotesingle{}activation. \end{DoxyCompactList}\item 
 \hyperlink{classNeuralNetwork_ab4015471a72a3d00b6bcabf156526f7b}{Neural\+Network} (std\+::vector$<$ unsigned int $>$ layer\+Sizes)
 \begin{DoxyCompactList}\small\item\em Constructeur permettant d\textquotesingle{}initialiser un réseau neuronal avec la fonction par défaut. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Container $>$ }\\\hyperlink{classNeuralNetwork_a7943bb4e9cb96aae048b236d4f1dd979}{Neural\+Network} (Container layer\+List)
-\begin{DoxyCompactList}\small\item\em Constructeur permettant d\textquotesingle{}initialiser le réseau neuronal avec un conteneur de neuron\+Layer. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classNeuralNetwork_a98cab3b3726fbf06dca316068c29c783}\label{classNeuralNetwork_a98cab3b3726fbf06dca316068c29c783}} 
-Eigen\+::\+Vector\+Xf {\bfseries process} (Eigen\+::\+Vector\+Xf input)
+\begin{DoxyCompactList}\small\item\em Constructeur permettant d\textquotesingle{}initialiser le réseau neuronal avec un conteneur (vector, list...) de neuron\+Layer. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xf \hyperlink{classNeuralNetwork_a98cab3b3726fbf06dca316068c29c783}{process} (Eigen\+::\+Vector\+Xf input)
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -34,12 +47,31 @@ std\+::ostream \& \hyperlink{classNeuralNetwork_a0ecebf9a494437efb917804ed271e13
 \begin{DoxyCompactList}\small\item\em Fonction utilitaire permettant d\textquotesingle{}afficher le réseau de neurones. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classNeuralNetwork_a31de381df65f261fd0f38e0559995d1a}\label{classNeuralNetwork_a31de381df65f261fd0f38e0559995d1a}} 
+\index{Neural\+Network@{Neural\+Network}!Ptr@{Ptr}}
+\index{Ptr@{Ptr}!Neural\+Network@{Neural\+Network}}
+\subsubsection{\texorpdfstring{Ptr}{Ptr}}
+{\footnotesize\ttfamily using \hyperlink{classNeuralNetwork_a31de381df65f261fd0f38e0559995d1a}{Neural\+Network\+::\+Ptr} =  std\+::shared\+\_\+ptr$<$\hyperlink{classNeuralNetwork}{Neural\+Network}$>$}
+
+
+
 \subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNeuralNetwork_accce4a7728e89a009a9d4ca1758c9b9d}\label{classNeuralNetwork_accce4a7728e89a009a9d4ca1758c9b9d}} 
+\index{Neural\+Network@{Neural\+Network}!Neural\+Network@{Neural\+Network}}
+\index{Neural\+Network@{Neural\+Network}!Neural\+Network@{Neural\+Network}}
+\subsubsection{\texorpdfstring{Neural\+Network()}{NeuralNetwork()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Neural\+Network\+::\+Neural\+Network (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur permettant d\textquotesingle{}initialiser une réseau neuronal vide. 
+
 \mbox{\Hypertarget{classNeuralNetwork_a85cd20f411e96dfd28954fcda39badb7}\label{classNeuralNetwork_a85cd20f411e96dfd28954fcda39badb7}} 
 \index{Neural\+Network@{Neural\+Network}!Neural\+Network@{Neural\+Network}}
 \index{Neural\+Network@{Neural\+Network}!Neural\+Network@{Neural\+Network}}
-\subsubsection{\texorpdfstring{Neural\+Network()}{NeuralNetwork()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily Neural\+Network\+::\+Neural\+Network (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned int $>$}]{layer\+Sizes,  }\item[{std\+::vector$<$ Functions\+::\+Activation\+Fun $>$}]{activation\+Funs }\end{DoxyParamCaption})}
+\subsubsection{\texorpdfstring{Neural\+Network()}{NeuralNetwork()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Neural\+Network\+::\+Neural\+Network (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned int $>$}]{layer\+Sizes,  }\item[{std\+::vector$<$ \hyperlink{structFunctions_ad25362ffa52b2f7933431190546593ac}{Functions\+::\+Activation\+Fun} $>$}]{activation\+Funs }\end{DoxyParamCaption})}
 
 
 
@@ -55,7 +87,7 @@ Constructeur permettant l\textquotesingle{}initialisation d\textquotesingle{}un 
 \mbox{\Hypertarget{classNeuralNetwork_ab4015471a72a3d00b6bcabf156526f7b}\label{classNeuralNetwork_ab4015471a72a3d00b6bcabf156526f7b}} 
 \index{Neural\+Network@{Neural\+Network}!Neural\+Network@{Neural\+Network}}
 \index{Neural\+Network@{Neural\+Network}!Neural\+Network@{Neural\+Network}}
-\subsubsection{\texorpdfstring{Neural\+Network()}{NeuralNetwork()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+\subsubsection{\texorpdfstring{Neural\+Network()}{NeuralNetwork()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
 {\footnotesize\ttfamily Neural\+Network\+::\+Neural\+Network (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned int $>$}]{layer\+Sizes }\end{DoxyParamCaption})}
 
 
@@ -70,21 +102,28 @@ Constructeur permettant l\textquotesingle{}initialisation d\textquotesingle{}un 
 \mbox{\Hypertarget{classNeuralNetwork_a7943bb4e9cb96aae048b236d4f1dd979}\label{classNeuralNetwork_a7943bb4e9cb96aae048b236d4f1dd979}} 
 \index{Neural\+Network@{Neural\+Network}!Neural\+Network@{Neural\+Network}}
 \index{Neural\+Network@{Neural\+Network}!Neural\+Network@{Neural\+Network}}
-\subsubsection{\texorpdfstring{Neural\+Network()}{NeuralNetwork()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+\subsubsection{\texorpdfstring{Neural\+Network()}{NeuralNetwork()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily template$<$typename Container $>$ \\
 Neural\+Network\+::\+Neural\+Network (\begin{DoxyParamCaption}\item[{Container}]{layer\+List }\end{DoxyParamCaption})}
 
 
 
-Constructeur permettant d\textquotesingle{}initialiser le réseau neuronal avec un conteneur de neuron\+Layer. 
+Constructeur permettant d\textquotesingle{}initialiser le réseau neuronal avec un conteneur (vector, list...) de neuron\+Layer. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em Container} & un conteneur (vector, list...) de \hyperlink{classNeuronLayer}{Neuron\+Layer} \\
-\hline
 {\em layer\+List} & la liste des couches de neurones \\
 \hline
 \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classNeuralNetwork_a98cab3b3726fbf06dca316068c29c783}\label{classNeuralNetwork_a98cab3b3726fbf06dca316068c29c783}} 
+\index{Neural\+Network@{Neural\+Network}!process@{process}}
+\index{process@{process}!Neural\+Network@{Neural\+Network}}
+\subsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xf Neural\+Network\+::process (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector\+Xf}]{input }\end{DoxyParamCaption})}
+
 
 
 \subsection{Friends And Related Function Documentation}
@@ -102,6 +141,6 @@ Cette fonction affiche les matrices de poids des différents layers du réseau
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-headers/neuralnetwork.\+hpp\item 
-headers/neuralnetwork.\+inl\item 
-sources/neuralnetwork.\+cpp\end{DoxyCompactItemize}
+headers/\hyperlink{neuralnetwork_8hpp}{neuralnetwork.\+hpp}\item 
+headers/\hyperlink{neuralnetwork_8inl}{neuralnetwork.\+inl}\item 
+sources/\hyperlink{neuralnetwork_8cpp}{neuralnetwork.\+cpp}\end{DoxyCompactItemize}

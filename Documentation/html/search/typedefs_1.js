@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sample',['Sample',['../classApplication.html#add64c430fa6318ac4885ea5ddedf0780',1,'Application']]]
+  ['batch',['Batch',['../classApplication.html#a9888f02149ca3b8ffa499ee07426cd1d',1,'Application']]]
 ];

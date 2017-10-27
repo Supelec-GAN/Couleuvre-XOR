@@ -1,32 +1,81 @@
 \hypertarget{structFunctions}{}\section{Functions Struct Reference}
 \label{structFunctions}\index{Functions@{Functions}}
+
+
+{\ttfamily \#include $<$functions.\+hpp$>$}
+
+
+
+Collaboration diagram for Functions\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{structFunctions__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{structFunctions_ad25362ffa52b2f7933431190546593ac}\label{structFunctions_ad25362ffa52b2f7933431190546593ac}} 
-using {\bfseries Activation\+Fun} = std\+::function$<$ float(float)$>$
+using \hyperlink{structFunctions_ad25362ffa52b2f7933431190546593ac}{Activation\+Fun} = std\+::function$<$ float(float)$>$
 \item 
-\mbox{\Hypertarget{structFunctions_a834bc4170f1caa8c77272ecf51dbae5c}\label{structFunctions_a834bc4170f1caa8c77272ecf51dbae5c}} 
-using {\bfseries Error\+Fun} = std\+::function$<$ float(Eigen\+::\+Vector\+Xf, Eigen\+::\+Vector\+Xf)$>$
+using \hyperlink{structFunctions_a834bc4170f1caa8c77272ecf51dbae5c}{Error\+Fun} = std\+::function$<$ float(Eigen\+::\+Vector\+Xf, Eigen\+::\+Vector\+Xf)$>$
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{structFunctions_a773de9cd59f7ccc3e2fe9822f0536ae4}\label{structFunctions_a773de9cd59f7ccc3e2fe9822f0536ae4}} 
-static Activation\+Fun {\bfseries sigmoid} (float lambda)
+static \hyperlink{structFunctions_ad25362ffa52b2f7933431190546593ac}{Activation\+Fun} \hyperlink{structFunctions_a773de9cd59f7ccc3e2fe9822f0536ae4}{sigmoid} (float lambda)
 \item 
-\mbox{\Hypertarget{structFunctions_a683c495693f3e2a5ec55e30edaccfd2d}\label{structFunctions_a683c495693f3e2a5ec55e30edaccfd2d}} 
-static Activation\+Fun {\bfseries heavyside} (float gap\+Abscissa)
+static \hyperlink{structFunctions_ad25362ffa52b2f7933431190546593ac}{Activation\+Fun} \hyperlink{structFunctions_a683c495693f3e2a5ec55e30edaccfd2d}{heavyside} (float gap\+Abscissa)
 \item 
-\mbox{\Hypertarget{structFunctions_a0aac84382fccbc38cacccd566434d4a8}\label{structFunctions_a0aac84382fccbc38cacccd566434d4a8}} 
-static Activation\+Fun {\bfseries hyper\+Tan} ()
+static \hyperlink{structFunctions_ad25362ffa52b2f7933431190546593ac}{Activation\+Fun} \hyperlink{structFunctions_a0aac84382fccbc38cacccd566434d4a8}{hyper\+Tan} ()
 \item 
-\mbox{\Hypertarget{structFunctions_a00bac40f42bb6c47d25c0cd238c4275a}\label{structFunctions_a00bac40f42bb6c47d25c0cd238c4275a}} 
-static Error\+Fun {\bfseries l2\+Norm} ()
+static \hyperlink{structFunctions_a834bc4170f1caa8c77272ecf51dbae5c}{Error\+Fun} \hyperlink{structFunctions_a00bac40f42bb6c47d25c0cd238c4275a}{l2\+Norm} ()
 \end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{structFunctions_ad25362ffa52b2f7933431190546593ac}\label{structFunctions_ad25362ffa52b2f7933431190546593ac}} 
+\index{Functions@{Functions}!Activation\+Fun@{Activation\+Fun}}
+\index{Activation\+Fun@{Activation\+Fun}!Functions@{Functions}}
+\subsubsection{\texorpdfstring{Activation\+Fun}{ActivationFun}}
+{\footnotesize\ttfamily using \hyperlink{structFunctions_ad25362ffa52b2f7933431190546593ac}{Functions\+::\+Activation\+Fun} =  std\+::function$<$float(float)$>$}
+
+\mbox{\Hypertarget{structFunctions_a834bc4170f1caa8c77272ecf51dbae5c}\label{structFunctions_a834bc4170f1caa8c77272ecf51dbae5c}} 
+\index{Functions@{Functions}!Error\+Fun@{Error\+Fun}}
+\index{Error\+Fun@{Error\+Fun}!Functions@{Functions}}
+\subsubsection{\texorpdfstring{Error\+Fun}{ErrorFun}}
+{\footnotesize\ttfamily using \hyperlink{structFunctions_a834bc4170f1caa8c77272ecf51dbae5c}{Functions\+::\+Error\+Fun} =  std\+::function$<$float(Eigen\+::\+Vector\+Xf, Eigen\+::\+Vector\+Xf)$>$}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structFunctions_a683c495693f3e2a5ec55e30edaccfd2d}\label{structFunctions_a683c495693f3e2a5ec55e30edaccfd2d}} 
+\index{Functions@{Functions}!heavyside@{heavyside}}
+\index{heavyside@{heavyside}!Functions@{Functions}}
+\subsubsection{\texorpdfstring{heavyside()}{heavyside()}}
+{\footnotesize\ttfamily \hyperlink{structFunctions_ad25362ffa52b2f7933431190546593ac}{Functions\+::\+Activation\+Fun} Functions\+::heavyside (\begin{DoxyParamCaption}\item[{float}]{gap\+Abscissa }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structFunctions_a0aac84382fccbc38cacccd566434d4a8}\label{structFunctions_a0aac84382fccbc38cacccd566434d4a8}} 
+\index{Functions@{Functions}!hyper\+Tan@{hyper\+Tan}}
+\index{hyper\+Tan@{hyper\+Tan}!Functions@{Functions}}
+\subsubsection{\texorpdfstring{hyper\+Tan()}{hyperTan()}}
+{\footnotesize\ttfamily \hyperlink{structFunctions_ad25362ffa52b2f7933431190546593ac}{Functions\+::\+Activation\+Fun} Functions\+::hyper\+Tan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structFunctions_a00bac40f42bb6c47d25c0cd238c4275a}\label{structFunctions_a00bac40f42bb6c47d25c0cd238c4275a}} 
+\index{Functions@{Functions}!l2\+Norm@{l2\+Norm}}
+\index{l2\+Norm@{l2\+Norm}!Functions@{Functions}}
+\subsubsection{\texorpdfstring{l2\+Norm()}{l2Norm()}}
+{\footnotesize\ttfamily \hyperlink{structFunctions_a834bc4170f1caa8c77272ecf51dbae5c}{Functions\+::\+Error\+Fun} Functions\+::l2\+Norm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structFunctions_a773de9cd59f7ccc3e2fe9822f0536ae4}\label{structFunctions_a773de9cd59f7ccc3e2fe9822f0536ae4}} 
+\index{Functions@{Functions}!sigmoid@{sigmoid}}
+\index{sigmoid@{sigmoid}!Functions@{Functions}}
+\subsubsection{\texorpdfstring{sigmoid()}{sigmoid()}}
+{\footnotesize\ttfamily \hyperlink{structFunctions_ad25362ffa52b2f7933431190546593ac}{Functions\+::\+Activation\+Fun} Functions\+::sigmoid (\begin{DoxyParamCaption}\item[{float}]{lambda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 
 
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-headers/functions.\+hpp\item 
-sources/functions.\+cpp\end{DoxyCompactItemize}
+headers/\hyperlink{functions_8hpp}{functions.\+hpp}\item 
+sources/\hyperlink{functions_8cpp}{functions.\+cpp}\end{DoxyCompactItemize}
