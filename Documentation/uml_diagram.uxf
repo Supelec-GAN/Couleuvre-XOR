@@ -170,7 +170,7 @@ m2=1</panel_attributes>
     <panel_attributes>lt=-
 m1=0..n
 m2=1</panel_attributes>
-    <additional_attributes>10.0;120.0;10.0;70.0;170.0;70.0;170.0;10.0</additional_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -178,7 +178,7 @@ m2=1</panel_attributes>
       <x>904</x>
       <y>464</y>
       <w>304</w>
-      <h>144</h>
+      <h>160</h>
     </coordinates>
     <panel_attributes>DataCollector
 --
@@ -255,6 +255,6 @@ _Attributes :_
     <panel_attributes>lt=-
 m1=1
 m2=1</panel_attributes>
-    <additional_attributes>240.0;120.0;240.0;70.0;10.0;70.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
   </element>
 </diagram>
