@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['process',['process',['../classNeuronLayer.html#aa374ba7d040ae618b5037aa88e5efae7',1,'NeuronLayer']]]
+  ['datacollector',['DataCollector',['../classDataCollector.html#a8061e46d6301b7a766bd628472353b44',1,'DataCollector']]],
+  ['dataset',['DataSet',['../classDataSet.html#ab45c95dc19f12a9217c0f3da7ac92b6a',1,'DataSet']]]
 ];
