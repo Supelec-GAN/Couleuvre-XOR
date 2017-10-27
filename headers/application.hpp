@@ -56,7 +56,7 @@ class Application
         /// Effectue une run de tests
         /**
          * Effectue une run de test dont le nombre de tests est passé en paramètres
-         * @param nbTeachings le nombre de tests à faire pendant la run
+         * @param nbTests le nombre de tests à faire pendant la run
          */
         void runTest(unsigned int nbTests);
 
