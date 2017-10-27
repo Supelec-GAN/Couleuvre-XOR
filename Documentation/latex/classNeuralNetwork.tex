@@ -23,7 +23,7 @@ using {\bfseries Ptr} = std\+::shared\+\_\+ptr$<$ \hyperlink{classNeuralNetwork}
 \hyperlink{classNeuralNetwork_ab4015471a72a3d00b6bcabf156526f7b}{Neural\+Network} (std\+::vector$<$ unsigned int $>$ layer\+Sizes)
 \begin{DoxyCompactList}\small\item\em Constructeur permettant d\textquotesingle{}initialiser un réseau neuronal avec la fonction par défaut. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Container $>$ }\\\hyperlink{classNeuralNetwork_a7943bb4e9cb96aae048b236d4f1dd979}{Neural\+Network} (Container layer\+List)
-\begin{DoxyCompactList}\small\item\em Constructeur permettant d\textquotesingle{}initialiser le réseau neuronal avec un conteneur de neuron\+Layer. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Constructeur permettant d\textquotesingle{}initialiser le réseau neuronal avec un conteneur (vector, list...) de neuron\+Layer. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classNeuralNetwork_a98cab3b3726fbf06dca316068c29c783}\label{classNeuralNetwork_a98cab3b3726fbf06dca316068c29c783}} 
 Eigen\+::\+Vector\+Xf {\bfseries process} (Eigen\+::\+Vector\+Xf input)
 \end{DoxyCompactItemize}
@@ -76,12 +76,10 @@ Neural\+Network\+::\+Neural\+Network (\begin{DoxyParamCaption}\item[{Container}]
 
 
 
-Constructeur permettant d\textquotesingle{}initialiser le réseau neuronal avec un conteneur de neuron\+Layer. 
+Constructeur permettant d\textquotesingle{}initialiser le réseau neuronal avec un conteneur (vector, list...) de neuron\+Layer. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em Container} & un conteneur (vector, list...) de \hyperlink{classNeuronLayer}{Neuron\+Layer} \\
-\hline
 {\em layer\+List} & la liste des couches de neurones \\
 \hline
 \end{DoxyParams}
