@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['teacher',['Teacher',['../classTeacher.html',1,'']]]
+  ['functions',['Functions',['../structFunctions.html',1,'']]]
 ];
