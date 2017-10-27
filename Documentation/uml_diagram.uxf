@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>96</x>
-      <y>464</y>
+      <x>120</x>
+      <y>488</y>
       <w>264</w>
       <h>128</h>
     </coordinates>
@@ -27,8 +27,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>272</x>
-      <y>232</y>
+      <x>296</x>
+      <y>256</y>
       <w>224</w>
       <h>56</h>
     </coordinates>
@@ -42,8 +42,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>216</x>
-      <y>280</y>
+      <x>240</x>
+      <y>304</y>
       <w>176</w>
       <h>200</h>
     </coordinates>
@@ -55,8 +55,8 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>416</x>
-      <y>464</y>
+      <x>440</x>
+      <y>488</y>
       <w>264</w>
       <h>64</h>
     </coordinates>
@@ -72,8 +72,8 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>40</x>
-      <y>232</y>
+      <x>64</x>
+      <y>256</y>
       <w>176</w>
       <h>56</h>
     </coordinates>
@@ -86,8 +86,8 @@ fonctions de seuil ou d'erreur</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>368</x>
-      <y>280</y>
+      <x>392</x>
+      <y>304</y>
       <w>208</w>
       <h>200</h>
     </coordinates>
@@ -99,8 +99,8 @@ m2=0..1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>432</x>
-      <y>8</y>
+      <x>456</x>
+      <y>32</y>
       <w>168</w>
       <h>56</h>
     </coordinates>
@@ -112,8 +112,8 @@ m2=0..1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>368</x>
-      <y>56</y>
+      <x>392</x>
+      <y>80</y>
       <w>168</w>
       <h>192</h>
     </coordinates>
@@ -125,8 +125,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>512</x>
-      <y>56</y>
+      <x>536</x>
+      <y>80</y>
       <w>104</w>
       <h>424</h>
     </coordinates>
@@ -136,55 +136,106 @@ m2=1</panel_attributes>
     <additional_attributes>110.0;510.0;110.0;100.0;10.0;100.0;10.0;10.0</additional_attributes>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>760</x>
-      <y>248</y>
-      <w>168</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>DataCollector
---
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>512</x>
-      <y>56</y>
-      <w>344</w>
+      <x>536</x>
+      <y>80</y>
+      <w>392</w>
       <h>208</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=1</panel_attributes>
-    <additional_attributes>410.0;240.0;410.0;100.0;10.0;100.0;10.0;10.0</additional_attributes>
+    <additional_attributes>470.0;240.0;470.0;100.0;10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>904</x>
+      <y>424</y>
+      <w>40</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=1</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>760</x>
-      <y>464</y>
-      <w>168</w>
-      <h>56</h>
+      <x>768</x>
+      <y>272</y>
+      <w>304</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>DataCollector
+--
+_Attribute :_
+- vector&lt;pair&lt;string, vector&lt;float&gt; &gt; mDataVector
+- csvfile file
+--
+_Méthodes :_
++ addRawData(string key, DataSet)
++ addData(DataSet dataSet) [[deprecated]]
++ addProcessedData(DataSet dataSet)
++ operator[](string key)
++ addDataType(string type)
++ exportData()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>784</x>
+      <y>520</y>
+      <w>256</w>
+      <h>184</h>
     </coordinates>
     <panel_attributes>DataSet
 --
-</panel_attributes>
+_Attribute :_
+- vector&lt;float&gt;        mRawData
+- Statistics::Data     mMean
+- float                      mMedian
+- int                         mSample
+- bool                      isProcessed
+--
+_Méthodes :_
++ DataSet(vector&lt;float&gt; dataVect)
++ addData(float data, bool process)
++ addRawData(vector&lt;float&gt; dataVect)
+- processData()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1144</x>
+      <y>520</y>
+      <w>216</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Struct : Data
+--
+_Attributes :_
++ float             mean
++ float             deviation
++ float             confRangeMean
++ float             confRangeDeviation</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>832</x>
-      <y>296</y>
-      <w>40</w>
-      <h>184</h>
+      <x>1032</x>
+      <y>560</y>
+      <w>128</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=-
-m1=0..n
+m1=1
 m2=1</panel_attributes>
-    <additional_attributes>10.0;210.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
   </element>
 </diagram>
