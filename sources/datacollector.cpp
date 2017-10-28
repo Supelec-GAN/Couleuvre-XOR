@@ -46,11 +46,11 @@ void DataCollector::exportData()
 {
     std::for_each(mDataVector.begin(), mDataVector.end(), [&] (std::pair<std::string, std::vector<float>> data) {csv << data.first;});
     csv << endrow;
-    int max(0);
+    unsigned int max(0);
     for (auto i = mDataVector.begin(); i != mDataVector.end(); ++i)
         if (i->second.size() > max)
             max = i->second.size();
-    for (int i = 0; i < max; ++i)
+    for (unsigned int i = 0; i < max; ++i)
     {
         std::for_each(mDataVector.begin(), mDataVector.end(), [&] (std::pair<std::string, std::vector<float>> data) {if (i < data.second.size()) csv << data.second[i];});
         csv << endrow;
