@@ -24,9 +24,9 @@ public:
     /// Ajout d'un nouveau type de données sous la clé type
     void addDataType(std::string type);
 
-    /// Ajout d'un set de données traitées (abscisse, moyenne, écart-type, intervalle de confiance)
     [[deprecated]]
     void addData(DataSet dataSet);
+    /// Ajout d'un set de données traitées (abscisse, moyenne, écart-type, intervalle de confiance)
     void addProcessedData(DataSet dataSet);
 
     /// Ajout d'un set de données selon la clé "key" et les données brutes du DataSet
