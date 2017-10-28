@@ -12,7 +12,9 @@ SOURCES +=  sources/main.cpp \
     sources/application.cpp \
     sources/dataset.cpp \
     sources/datacollector.cpp \
-    sources/utility.cpp
+    sources/utility.cpp \
+    sources/errorcollector.cpp \
+    sources/statscollector.cpp
 
 HEADERS += \
     headers/neuronlayer.hpp \
@@ -24,3 +26,5 @@ HEADERS += \
     headers/dataset.hpp \
     headers/utility.hpp \
     headers/datacollector.hpp \
+    headers/errorcollector.hpp \
+    headers/statscollector.hpp
