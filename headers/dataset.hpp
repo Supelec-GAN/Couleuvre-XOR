@@ -5,6 +5,7 @@
 
 #include "headers/utility.hpp"
 
+/// Classe stockant un Set de données et les mesures statistiques associées
 class DataSet
 {
 public:
@@ -41,6 +42,8 @@ public:
     Statistics::Data getData();
     /// Fonction renvoyant le nombre d'apprentissage correspondant au DataSet
     int getSample();
+    /// Fonction renvoyant le vecteur de données brutes
+    const std::vector<float>& getRawData();
 
 private:
     /// Vecteur contenant les données brutes du jeu

@@ -34,6 +34,8 @@ void DataSet::processData()
 
 Statistics::Data DataSet::getData()
 {
+    if (!isProcessed)
+        processData();
     return mData;
 }
 int DataSet::getSample()
@@ -41,4 +43,7 @@ int DataSet::getSample()
     return mSample;
 }
 
-
+const std::vector<float>& DataSet::getRawData()
+{
+    return mRawData;
+}
