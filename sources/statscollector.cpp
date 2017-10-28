@@ -15,16 +15,16 @@ Stats::ErrorCollector& Stats::StatsCollector::operator[](unsigned int teachIndex
     return  mErrorStats[teachIndex];
 }
 
-Stats::StatsCollector::exportData(bool mustProcessData)
+void Stats::StatsCollector::exportData(bool mustProcessData)
 {
     if(!mustProcessData)
         throw std::logic_error("Not implemented yet");
 
     mCSV << "Teach index" << "Mean" << "Deviation" << "Confidence Range" << endrow;
-    for (unsigned int index{0}; i < mErrorStats.size(); ++i)
+    for (unsigned int index{0}; index < mErrorStats.size(); ++index)
     {
-        ErrorCollector::StatisticData data{mErrorStats[i].processData()};
+        ErrorCollector::StatisticData data{mErrorStats[index].processData()};
 
-        csv << i << data.mean << data.deviation << data.confidenceRange << endrow;
+        mCSV << index << data.mean << data.deviation << data.confidenceRange << endrow;
     }
 }
