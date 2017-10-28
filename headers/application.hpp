@@ -8,6 +8,7 @@
 #include "headers/neuralnetwork.hpp"
 #include "headers/datacollector.hpp"
 #include "headers/teacher.hpp"
+#include "headers/statscollector.hpp"
 
 ///Classe destinée à gérer l'ensemble d'un projet
 /**
@@ -58,7 +59,7 @@ class Application
          * Effectue une run de test dont le nombre de tests est passé en paramètres
          * @param nbTests le nombre de tests à faire pendant la run
          */
-        void runTest();
+        float runTest();
 
         /// Effectue une run totale sur le projet
         /**
@@ -68,6 +69,11 @@ class Application
          * @param nbTestsPerLoop le nombre de tests par run
          */
         void totalRun(unsigned int nbLoops, unsigned int nbTeachingsPerLoop);
+
+        void runExperiments(unsigned int nbExperiments, unsigned int nbLoops, unsigned int nbTeachingsPerLoop);
+        void runSingleExperiment(unsigned int experimentIndex, unsigned int nbLoops, unsigned int nbTeachingsPerLoop);
+
+        void resetExperiment();
 
     private:
         /// Extrait un batch d'un des batchs globaux du projet
@@ -92,6 +98,8 @@ class Application
 
         /// Le dataCollector permettant de stocker les données d'erreur et de les exporter en csv
         DataCollector       mDataCollector;
+
+        Stats::StatsCollector mStatsCollector;
         /// Un compteur permettant d'indicer les données exportées
         unsigned int        mTestCounter;
 };

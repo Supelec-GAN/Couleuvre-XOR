@@ -45,7 +45,7 @@ class NeuronLayer
          */
         Eigen::VectorXf backProp(Eigen::VectorXf xnPartialDerivative, float step);
 
-
+        void            reset();
 
     public:
         /// Fonction utilitaire permettant d'afficher le neurone

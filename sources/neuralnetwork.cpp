@@ -27,6 +27,11 @@ Eigen::VectorXf NeuralNetwork::process(Eigen::VectorXf input)
 	return input;
 }
 
+void NeuralNetwork::reset()
+{
+    for (auto itr = begin(); itr != end(); ++itr)
+        itr->reset();
+}
 
 //*************AUXILIAIRES**************
 //**************************************

@@ -2,15 +2,17 @@
 
 #include <stdexcept>
 
-Stats::StatsCollector::StatsCollector(unsigned int nbExperiments, const std::string& CSVFileName)
-: mErrorStats(nbExperiments)
-, mCSV(CSVFileName + ".csv")
+Stats::StatsCollector::StatsCollector(const std::string& CSVFileName)
+: mCSV(CSVFileName + ".csv")
 {}
 
 Stats::ErrorCollector& Stats::StatsCollector::operator[](unsigned int teachIndex)
 {
-    if(teachIndex >= mErrorStats.size())
+    if(teachIndex > mErrorStats.size())
         throw std::logic_error("StatsCollector::operator[] - Erreur : Indice d'apprentissage trop grand");
+
+    if(teachIndex == mErrorStats.size())
+        mErrorStats.push_back(ErrorCollector());
 
     return  mErrorStats[teachIndex];
 }

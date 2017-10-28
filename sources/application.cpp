@@ -1,6 +1,5 @@
 #include "headers/application.hpp"
 #include "headers/dataset.hpp"
-
 #include <math.h>
 
 Application::Application(NeuralNetwork::Ptr network, Batch teachingBatch, Batch testingBatch)
@@ -9,6 +8,7 @@ Application::Application(NeuralNetwork::Ptr network, Batch teachingBatch, Batch 
 , mTeachingBatch(teachingBatch)
 , mTestingBatch(testingBatch)
 , mDataCollector()
+, mStatsCollector()
 , mTestCounter(0)
 {}
 
@@ -19,6 +19,7 @@ Application::Application(   NeuralNetwork::Ptr network,
 : mNetwork(network)
 , mTeacher(mNetwork)
 , mDataCollector()
+, mStatsCollector()
 , mTestCounter(0)
 {
     // Génère le batch d'apprentissage à partir des entrées et de la fonction à modéliser
@@ -29,6 +30,31 @@ Application::Application(   NeuralNetwork::Ptr network,
         mTestingBatch.push_back(Sample(testingInputs[i], modelFunction(testingInputs[i])));
 }
 
+void Application::runExperiments(unsigned int nbExperiments, unsigned int nbLoops, unsigned int nbTeachingsPerLoop)
+{
+    for(unsigned int index{0}; index < nbExperiments; ++index)
+    {
+        runSingleExperiment(index, nbLoops, nbTeachingsPerLoop);
+        resetExperiment();
+    }
+
+    mStatsCollector.exportData(true);
+}
+
+void Application::runSingleExperiment(unsigned int experimentIndex, unsigned int nbLoops, unsigned int nbTeachingsPerLoop)
+{
+    for(unsigned int loopIndex{0}; loopIndex < nbLoops; ++loopIndex)
+    {
+        runTeach(nbTeachingsPerLoop);
+        mStatsCollector[experimentIndex].addResult(runTest());
+    }
+}
+
+void Application::resetExperiment()
+{
+    //mNetwork->reset();
+}
+
 void Application::runTeach(unsigned int nbTeachings)
 {
     auto samples(generateBatch(nbTeachings));
@@ -37,20 +63,17 @@ void Application::runTeach(unsigned int nbTeachings)
         mTeacher.backProp(itr->first, itr->second);
 }
 
-void Application::runTest()
+float Application::runTest()
 {
-    DataSet errorSet(mTestCounter++);
+    float errorMean{0};
 
     for(auto itr = mTestingBatch.begin(); itr != mTestingBatch.end(); ++itr)
     {
         auto output{mNetwork->process(itr->first)};
-        auto error{sqrt((output - itr->second).squaredNorm())};
-
-        errorSet.addRawData(error);
+        errorMean += sqrt((output - itr->second).squaredNorm());
     }
 
-    errorSet.processData();
-    mDataCollector.addData(errorSet);
+    return errorMean/static_cast<float>(mTestingBatch.size());
 }
 
 void Application::totalRun(unsigned int nbLoops, unsigned int nbTeachingsPerLoop)

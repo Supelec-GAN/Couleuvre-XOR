@@ -5,6 +5,7 @@
 #include <math.h>
 
 Stats::ErrorCollector::ErrorCollector()
+: mErrors()
 {
 
 }

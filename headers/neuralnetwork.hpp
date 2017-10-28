@@ -38,6 +38,9 @@ class NeuralNetwork : public std::list<NeuronLayer>
         /**
          *  \param layerList la liste des couches de neurones
          */
+
+        void reset();
+
         template <typename Container>
         NeuralNetwork(Container layerList);
 

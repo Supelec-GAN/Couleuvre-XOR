@@ -13,7 +13,7 @@ namespace Stats
 class StatsCollector
 {
     public:
-        StatsCollector(unsigned int nbExperiments, const std::string& CSVFileName = "resultat");
+        StatsCollector(const std::string& CSVFileName = "resultat");
 
         ErrorCollector& operator[](unsigned int teachIndex);
 
