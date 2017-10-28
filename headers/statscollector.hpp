@@ -2,8 +2,10 @@
 #define STATSCOLLECTOR_HPP
 
 #include "headers/errorcollector.hpp"
+#include "headers/CSVFile.h"
 
 #include <vector>
+#include <string>
 
 namespace Stats
 {
@@ -11,12 +13,15 @@ namespace Stats
 class StatsCollector
 {
     public:
-        StatsCollector(unsigned int nbExperiments);
+        StatsCollector(unsigned int nbExperiments, const std::string& CSVFileName = "resultat");
 
         ErrorCollector& operator[](unsigned int teachIndex);
 
+        void exportData(bool mustProcessData = true);
+
     private:
         std::vector<ErrorCollector> mErrorStats;
+        csvfile                     mCSV;
 };
 
 }
