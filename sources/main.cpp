@@ -58,7 +58,7 @@ int main()
         //Construction de l'application qui gère tout
         Application appXOR(network, teachBatch, testBatch);
 
-        appXOR.totalRun(100, 1000, 3000);
+        appXOR.totalRun(100, 1000);
     }
     catch (const std::exception& ex)
     {

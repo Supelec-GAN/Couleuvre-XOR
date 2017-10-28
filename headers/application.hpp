@@ -58,7 +58,7 @@ class Application
          * Effectue une run de test dont le nombre de tests est passé en paramètres
          * @param nbTests le nombre de tests à faire pendant la run
          */
-        void runTest(unsigned int nbTests);
+        void runTest();
 
         /// Effectue une run totale sur le projet
         /**
@@ -67,7 +67,7 @@ class Application
          * @param nbTeachingsPerLoop le nombre d'apprentissage par run
          * @param nbTestsPerLoop le nombre de tests par run
          */
-        void totalRun(unsigned int nbLoops, unsigned int nbTeachingsPerLoop, unsigned int nbTestsPerLoop);
+        void totalRun(unsigned int nbLoops, unsigned int nbTeachingsPerLoop);
 
     private:
         /// Extrait un batch d'un des batchs globaux du projet
@@ -77,7 +77,7 @@ class Application
          * @param isTestBatch permet de déterminer si on veut extraire du batch de test ou du batch d'apprentissage
          * @return le batch extrait du batch global choisir
          */
-        Batch generateBatch(unsigned int batchSize, bool isTestBatch) const;
+        Batch generateBatch(unsigned int batchSize) const;
 
     private:
         /// Le réseau avec lequel on travaille

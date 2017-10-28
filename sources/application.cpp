@@ -31,19 +31,17 @@ Application::Application(   NeuralNetwork::Ptr network,
 
 void Application::runTeach(unsigned int nbTeachings)
 {
-    auto samples(generateBatch(nbTeachings, false));
+    auto samples(generateBatch(nbTeachings));
 
     for(auto itr = samples.begin(); itr != samples.end(); ++itr)
         mTeacher.backProp(itr->first, itr->second);
 }
 
-void Application::runTest(unsigned int nbTests)
+void Application::runTest()
 {
-    auto samples(generateBatch(nbTests, true));
-
     DataSet errorSet(mTestCounter++);
 
-    for(auto itr = samples.begin(); itr != samples.end(); ++itr)
+    for(auto itr = mTestingBatch.begin(); itr != mTestingBatch.end(); ++itr)
     {
         auto output{mNetwork->process(itr->first)};
         auto error{sqrt((output - itr->second).squaredNorm())};
@@ -55,19 +53,19 @@ void Application::runTest(unsigned int nbTests)
     mDataCollector.addData(errorSet);
 }
 
-void Application::totalRun(unsigned int nbLoops, unsigned int nbTeachingsPerLoop, unsigned int nbTestsPerLoop)
+void Application::totalRun(unsigned int nbLoops, unsigned int nbTeachingsPerLoop)
 {
 
     for(unsigned int i{0}; i < nbLoops; i++)
     {
         runTeach(nbTeachingsPerLoop);
-        runTest(nbTestsPerLoop);
+        runTest();
     }
 
     mDataCollector.exportData();
 }
 
-Application::Batch Application::generateBatch(unsigned int batchSize, bool isTestBatch) const
+Application::Batch Application::generateBatch(unsigned int batchSize) const
 {
     std::uniform_int_distribution<> distribution(0, batchSize-1);
     std::mt19937 randomEngine((std::random_device())());
@@ -75,12 +73,7 @@ Application::Batch Application::generateBatch(unsigned int batchSize, bool isTes
     Batch batch;
 
     for(unsigned int i{0}; i < batchSize; ++i)
-    {
-        if(isTestBatch)
-            batch.push_back(mTestingBatch[distribution(randomEngine)]);
-        else
-            batch.push_back(mTeachingBatch[distribution(randomEngine)]);
-    }
+        batch.push_back(mTeachingBatch[distribution(randomEngine)]);
 
     return batch;
 }
