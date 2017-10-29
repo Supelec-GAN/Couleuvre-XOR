@@ -62,7 +62,7 @@ class Application
         float runTest();
 
         void runExperiments(unsigned int nbExperiments, unsigned int nbLoops, unsigned int nbTeachingsPerLoop);
-        void runSingleExperiment(unsigned int experimentIndex, unsigned int nbLoops, unsigned int nbTeachingsPerLoop);
+        void runSingleExperiment(unsigned int nbLoops, unsigned int nbTeachingsPerLoop);
 
         void resetExperiment();
 

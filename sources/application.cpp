@@ -34,20 +34,19 @@ void Application::runExperiments(unsigned int nbExperiments, unsigned int nbLoop
 {
     for(unsigned int index{0}; index < nbExperiments; ++index)
     {
-        runSingleExperiment(index, nbLoops, nbTeachingsPerLoop);
+        runSingleExperiment(nbLoops, nbTeachingsPerLoop);
         resetExperiment();
     }
 
     mStatsCollector.exportData(true);
 }
 
-void Application::runSingleExperiment(unsigned int experimentIndex, unsigned int nbLoops, unsigned int nbTeachingsPerLoop)
+void Application::runSingleExperiment(unsigned int nbLoops, unsigned int nbTeachingsPerLoop)
 {
     for(unsigned int loopIndex{0}; loopIndex < nbLoops; ++loopIndex)
     {
         runTeach(nbTeachingsPerLoop);
         mStatsCollector[loopIndex].addResult(runTest());
-        std::cout << loopIndex << std::endl;
     }
 }
 
