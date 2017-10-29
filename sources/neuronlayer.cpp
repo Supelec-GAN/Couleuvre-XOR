@@ -63,9 +63,8 @@ Eigen::MatrixXf NeuronLayer::fnDerivativeMatrix() const
 
 void NeuronLayer::reset()
 {
-    throw std::logic_error("NeuronLayer::Reset - Not yet implemented");
-    //mPoids = Eigen::MatrixXf::Random();
-    //mBiais = Eigen::VectorXf::Random(mBiais.size());
+    mPoids = Eigen::MatrixXf::Random(mPoids.rows(), mPoids.cols());
+    mBiais = Eigen::VectorXf::Random(mBiais.size());
 }
 
 //*************AUXILIAIRES**************

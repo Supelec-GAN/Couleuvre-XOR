@@ -76,18 +76,6 @@ float Application::runTest()
     return errorMean/static_cast<float>(mTestingBatch.size());
 }
 
-void Application::totalRun(unsigned int nbLoops, unsigned int nbTeachingsPerLoop)
-{
-
-    for(unsigned int i{0}; i < nbLoops; i++)
-    {
-        runTeach(nbTeachingsPerLoop);
-        runTest();
-    }
-
-    mDataCollector.exportData();
-}
-
 Application::Batch Application::generateBatch(unsigned int batchSize) const
 {
     std::uniform_int_distribution<> distribution(0, batchSize-1);

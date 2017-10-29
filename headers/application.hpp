@@ -61,15 +61,6 @@ class Application
          */
         float runTest();
 
-        /// Effectue une run totale sur le projet
-        /**
-         * Cette run alterne entre run d'apprentissage et de tests. Le nombre de runs, d'apprentissages par run et de tests par run est paramètrable
-         * @param nbLoops le nombre d'alternances apprentissage/test
-         * @param nbTeachingsPerLoop le nombre d'apprentissage par run
-         * @param nbTestsPerLoop le nombre de tests par run
-         */
-        void totalRun(unsigned int nbLoops, unsigned int nbTeachingsPerLoop);
-
         void runExperiments(unsigned int nbExperiments, unsigned int nbLoops, unsigned int nbTeachingsPerLoop);
         void runSingleExperiment(unsigned int experimentIndex, unsigned int nbLoops, unsigned int nbTeachingsPerLoop);
 
