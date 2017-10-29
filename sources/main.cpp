@@ -28,7 +28,7 @@ int main()
 
         // Construction du batch d'exemples de test
         Application::Batch testBatch;
-        for(size_t i{0}; i < 1000000; i++)
+        for(size_t i{0}; i < 1000; i++)
         {
             Eigen::VectorXf input(2);
             Eigen::VectorXf output(1);
@@ -58,7 +58,7 @@ int main()
         //Construction de l'application qui gère tout
         Application appXOR(network, teachBatch, testBatch);
 
-        //appXOR.totalRun(100, 1000);
+        appXOR.runExperiments(1, 1000, 1000);
     }
     catch (const std::exception& ex)
     {

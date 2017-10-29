@@ -46,13 +46,14 @@ void Application::runSingleExperiment(unsigned int experimentIndex, unsigned int
     for(unsigned int loopIndex{0}; loopIndex < nbLoops; ++loopIndex)
     {
         runTeach(nbTeachingsPerLoop);
-        mStatsCollector[experimentIndex].addResult(runTest());
+        mStatsCollector[loopIndex].addResult(runTest());
+        std::cout << loopIndex << std::endl;
     }
 }
 
 void Application::resetExperiment()
 {
-    //mNetwork->reset();
+    mNetwork->reset();
 }
 
 void Application::runTeach(unsigned int nbTeachings)
