@@ -16,7 +16,8 @@ Stats::ErrorCollector::StatisticData Stats::ErrorCollector::processData() const
 
     // Calcul de la moyenne
     data.mean = std::accumulate(mErrors.begin(), mErrors.end(), 0.f)/(static_cast<float>(mErrors.size()));
-
+	data.deviation = 0;
+	
     // Calcul d'écart type
     float deviation{0};
     if(mErrors.size() != 1)
