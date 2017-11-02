@@ -46,7 +46,7 @@ public:
 	Eigen::VectorXf layerBackProp(Eigen::VectorXf xnPartialDerivative, float step);
 	
 	/// La fonction effectuant la mise à jour des poids à la fin du Mini-Batch
-	void updateWeights();
+	void updateLayerWeights();
 	
 	
 	void            reset();

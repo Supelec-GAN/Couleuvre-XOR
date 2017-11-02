@@ -45,7 +45,7 @@ Eigen::VectorXf NeuronLayer::layerBackProp(Eigen::VectorXf xnPartialDerivative, 
 	return mPoids.transpose()*ynPartialDerivative;
 }
 
-void NeuronLayer::updateWeights()
+void NeuronLayer::updateLayerWeights()
 {
 	mPoids -= mSumWeightVariation;
 	mBiais += mSumBiasVariation;

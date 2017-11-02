@@ -45,7 +45,7 @@ void Application::runSingleExperiment(unsigned int nbLoops, unsigned int nbTeach
 {
     for(unsigned int loopIndex{0}; loopIndex < nbLoops; ++loopIndex)
     {
-        runTeach(nbTeachingsPerLoop);
+        runOnlineTeach(nbTeachingsPerLoop);
         mStatsCollector[loopIndex].addResult(runTest());
     }
 }
@@ -55,12 +55,26 @@ void Application::resetExperiment()
     mNetwork->reset();
 }
 
-void Application::runTeach(unsigned int nbTeachings)
+void Application::runOnlineTeach(unsigned int nbTeachings)
 {
     auto samples(generateBatch(nbTeachings));
 
     for(auto itr = samples.begin(); itr != samples.end(); ++itr)
-        mTeacher.backProp(itr->first, itr->second);
+        mTeacher.onlineBackProp(itr->first, itr->second);
+}
+
+void Application::runMiniBatchTeach(unsigned int nbTeachings, unsigned int batchSize)
+{
+	for (unsigned int i(0); i < nbTeachings; ++i){
+		auto samples(generateBatch(batchSize));
+		for(auto itr = samples.begin(); itr != samples.end(); ++itr)
+			mTeacher.miniBatchBackProp(itr->first, itr->second);
+		mTeacher.updateNetworkWeights();
+		
+	}
+	
+	
+	
 }
 
 float Application::runTest()
