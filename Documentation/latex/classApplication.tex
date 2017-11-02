@@ -11,12 +11,11 @@ Classe destinée à gérer l\textquotesingle{}ensemble d\textquotesingle{}un pro
 
 
 
-Collaboration diagram for Application\+:
-\nopagebreak
+Collaboration diagram for Application\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=267pt]{classApplication__coll__graph}
+\includegraphics[width=350pt]{classApplication__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Types}
@@ -35,14 +34,18 @@ using \hyperlink{classApplication_a9888f02149ca3b8ffa499ee07426cd1d}{Batch} = st
 \begin{DoxyCompactList}\small\item\em Constructeur par fonction modèle. \end{DoxyCompactList}\item 
 void \hyperlink{classApplication_ae93c9eb1888c7b3bbab68aa5da50ce46}{run\+Teach} (unsigned int nb\+Teachings)
 \begin{DoxyCompactList}\small\item\em Effectue une run d\textquotesingle{}apprentissage. \end{DoxyCompactList}\item 
-void \hyperlink{classApplication_a2efd3cc253a127ea682a00b560f6d073}{run\+Test} (unsigned int nb\+Tests)
+float \hyperlink{classApplication_abd01b94dfbff9ce3ecf9e77f840a81fa}{run\+Test} ()
 \begin{DoxyCompactList}\small\item\em Effectue une run de tests. \end{DoxyCompactList}\item 
-void \hyperlink{classApplication_a105d173f14e444ddb485d5ac5df91d74}{total\+Run} (unsigned int nb\+Loops, unsigned int nb\+Teachings\+Per\+Loop, unsigned int nb\+Tests\+Per\+Loop)
-\begin{DoxyCompactList}\small\item\em Effectue une run totale sur le projet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{classApplication_ad57005e2c8e096af66eca715a7c6a961}{run\+Experiments} (unsigned int nb\+Experiments, unsigned int nb\+Loops, unsigned int nb\+Teachings\+Per\+Loop)
+\item 
+void \hyperlink{classApplication_a57dbef541907f1d1436732afec051ac2}{run\+Single\+Experiment} (unsigned int nb\+Loops, unsigned int nb\+Teachings\+Per\+Loop)
+\item 
+void \hyperlink{classApplication_a88102872db25c2f897ba6d6832ecaedc}{reset\+Experiment} ()
+\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classApplication_a9888f02149ca3b8ffa499ee07426cd1d}{Batch} \hyperlink{classApplication_a354527f371bf64ce05992bf1af5008da}{generate\+Batch} (unsigned int batch\+Size, bool is\+Test\+Batch) const
+\hyperlink{classApplication_a9888f02149ca3b8ffa499ee07426cd1d}{Batch} \hyperlink{classApplication_a201ce31cdd2a89861bf6ac0f9f09371f}{generate\+Batch} (unsigned int batch\+Size) const
 \begin{DoxyCompactList}\small\item\em Extrait un batch d\textquotesingle{}un des batchs globaux du projet. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -57,6 +60,8 @@ void \hyperlink{classApplication_a105d173f14e444ddb485d5ac5df91d74}{total\+Run} 
 \begin{DoxyCompactList}\small\item\em Le batch contenant tous les samples de test du projet. \end{DoxyCompactList}\item 
 \hyperlink{classDataCollector}{Data\+Collector} \hyperlink{classApplication_a4409ee4b27b5142510e5be6d41d2a203}{m\+Data\+Collector}
 \begin{DoxyCompactList}\small\item\em Le data\+Collector permettant de stocker les données d\textquotesingle{}erreur et de les exporter en csv. \end{DoxyCompactList}\item 
+\hyperlink{classStats_1_1StatsCollector}{Stats\+::\+Stats\+Collector} \hyperlink{classApplication_a33f1c0f13d4c81101bb497264037cb82}{m\+Stats\+Collector}
+\item 
 unsigned int \hyperlink{classApplication_a3ee8257a9c7ece037ee91b68d9841002}{m\+Test\+Counter}
 \begin{DoxyCompactList}\small\item\em Un compteur permettant d\textquotesingle{}indicer les données exportées. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -133,11 +138,11 @@ Ce constructeur supervise le projet par rapport au réseaude neurones donné, de
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classApplication_a354527f371bf64ce05992bf1af5008da}\label{classApplication_a354527f371bf64ce05992bf1af5008da}} 
+\mbox{\Hypertarget{classApplication_a201ce31cdd2a89861bf6ac0f9f09371f}\label{classApplication_a201ce31cdd2a89861bf6ac0f9f09371f}} 
 \index{Application@{Application}!generate\+Batch@{generate\+Batch}}
 \index{generate\+Batch@{generate\+Batch}!Application@{Application}}
 \subsubsection{\texorpdfstring{generate\+Batch()}{generateBatch()}}
-{\footnotesize\ttfamily \hyperlink{classApplication_a9888f02149ca3b8ffa499ee07426cd1d}{Application\+::\+Batch} Application\+::generate\+Batch (\begin{DoxyParamCaption}\item[{unsigned int}]{batch\+Size,  }\item[{bool}]{is\+Test\+Batch }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \hyperlink{classApplication_a9888f02149ca3b8ffa499ee07426cd1d}{Application\+::\+Batch} Application\+::generate\+Batch (\begin{DoxyParamCaption}\item[{unsigned int}]{batch\+Size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -153,6 +158,24 @@ Extrait un batch d\textquotesingle{}exemples d\textquotesingle{}un des deux batc
 \begin{DoxyReturn}{Returns}
 le batch extrait du batch global choisir 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classApplication_a88102872db25c2f897ba6d6832ecaedc}\label{classApplication_a88102872db25c2f897ba6d6832ecaedc}} 
+\index{Application@{Application}!reset\+Experiment@{reset\+Experiment}}
+\index{reset\+Experiment@{reset\+Experiment}!Application@{Application}}
+\subsubsection{\texorpdfstring{reset\+Experiment()}{resetExperiment()}}
+{\footnotesize\ttfamily void Application\+::reset\+Experiment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classApplication_ad57005e2c8e096af66eca715a7c6a961}\label{classApplication_ad57005e2c8e096af66eca715a7c6a961}} 
+\index{Application@{Application}!run\+Experiments@{run\+Experiments}}
+\index{run\+Experiments@{run\+Experiments}!Application@{Application}}
+\subsubsection{\texorpdfstring{run\+Experiments()}{runExperiments()}}
+{\footnotesize\ttfamily void Application\+::run\+Experiments (\begin{DoxyParamCaption}\item[{unsigned int}]{nb\+Experiments,  }\item[{unsigned int}]{nb\+Loops,  }\item[{unsigned int}]{nb\+Teachings\+Per\+Loop }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classApplication_a57dbef541907f1d1436732afec051ac2}\label{classApplication_a57dbef541907f1d1436732afec051ac2}} 
+\index{Application@{Application}!run\+Single\+Experiment@{run\+Single\+Experiment}}
+\index{run\+Single\+Experiment@{run\+Single\+Experiment}!Application@{Application}}
+\subsubsection{\texorpdfstring{run\+Single\+Experiment()}{runSingleExperiment()}}
+{\footnotesize\ttfamily void Application\+::run\+Single\+Experiment (\begin{DoxyParamCaption}\item[{unsigned int}]{nb\+Loops,  }\item[{unsigned int}]{nb\+Teachings\+Per\+Loop }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{classApplication_ae93c9eb1888c7b3bbab68aa5da50ce46}\label{classApplication_ae93c9eb1888c7b3bbab68aa5da50ce46}} 
 \index{Application@{Application}!run\+Teach@{run\+Teach}}
 \index{run\+Teach@{run\+Teach}!Application@{Application}}
@@ -168,11 +191,11 @@ Effectue une run d\textquotesingle{}apprentissage dont le nombre d\textquotesing
 {\em nb\+Teachings} & le nombre d\textquotesingle{}apprentissages à faire pendant la run \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classApplication_a2efd3cc253a127ea682a00b560f6d073}\label{classApplication_a2efd3cc253a127ea682a00b560f6d073}} 
+\mbox{\Hypertarget{classApplication_abd01b94dfbff9ce3ecf9e77f840a81fa}\label{classApplication_abd01b94dfbff9ce3ecf9e77f840a81fa}} 
 \index{Application@{Application}!run\+Test@{run\+Test}}
 \index{run\+Test@{run\+Test}!Application@{Application}}
 \subsubsection{\texorpdfstring{run\+Test()}{runTest()}}
-{\footnotesize\ttfamily void Application\+::run\+Test (\begin{DoxyParamCaption}\item[{unsigned int}]{nb\+Tests }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily float Application\+::run\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -181,25 +204,6 @@ Effectue une run de tests.
 Effectue une run de test dont le nombre de tests est passé en paramètres 
 \begin{DoxyParams}{Parameters}
 {\em nb\+Tests} & le nombre de tests à faire pendant la run \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classApplication_a105d173f14e444ddb485d5ac5df91d74}\label{classApplication_a105d173f14e444ddb485d5ac5df91d74}} 
-\index{Application@{Application}!total\+Run@{total\+Run}}
-\index{total\+Run@{total\+Run}!Application@{Application}}
-\subsubsection{\texorpdfstring{total\+Run()}{totalRun()}}
-{\footnotesize\ttfamily void Application\+::total\+Run (\begin{DoxyParamCaption}\item[{unsigned int}]{nb\+Loops,  }\item[{unsigned int}]{nb\+Teachings\+Per\+Loop,  }\item[{unsigned int}]{nb\+Tests\+Per\+Loop }\end{DoxyParamCaption})}
-
-
-
-Effectue une run totale sur le projet. 
-
-Cette run alterne entre run d\textquotesingle{}apprentissage et de tests. Le nombre de runs, d\textquotesingle{}apprentissages par run et de tests par run est paramètrable 
-\begin{DoxyParams}{Parameters}
-{\em nb\+Loops} & le nombre d\textquotesingle{}alternances apprentissage/test \\
-\hline
-{\em nb\+Teachings\+Per\+Loop} & le nombre d\textquotesingle{}apprentissage par run \\
-\hline
-{\em nb\+Tests\+Per\+Loop} & le nombre de tests par run \\
 \hline
 \end{DoxyParams}
 
@@ -224,6 +228,12 @@ Le data\+Collector permettant de stocker les données d\textquotesingle{}erreur 
 
 
 Le réseau avec lequel on travaille. 
+
+\mbox{\Hypertarget{classApplication_a33f1c0f13d4c81101bb497264037cb82}\label{classApplication_a33f1c0f13d4c81101bb497264037cb82}} 
+\index{Application@{Application}!m\+Stats\+Collector@{m\+Stats\+Collector}}
+\index{m\+Stats\+Collector@{m\+Stats\+Collector}!Application@{Application}}
+\subsubsection{\texorpdfstring{m\+Stats\+Collector}{mStatsCollector}}
+{\footnotesize\ttfamily \hyperlink{classStats_1_1StatsCollector}{Stats\+::\+Stats\+Collector} Application\+::m\+Stats\+Collector\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classApplication_aabafc2a40d05198496fed23f6fe1ea1f}\label{classApplication_aabafc2a40d05198496fed23f6fe1ea1f}} 
 \index{Application@{Application}!m\+Teacher@{m\+Teacher}}

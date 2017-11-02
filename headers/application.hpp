@@ -57,7 +57,6 @@ class Application
         /// Effectue une run de tests
         /**
          * Effectue une run de test dont le nombre de tests est passé en paramètres
-         * @param nbTests le nombre de tests à faire pendant la run
          */
         float runTest();
 
@@ -71,7 +70,6 @@ class Application
         /**
          * Extrait un batch d'exemples d'un des deux batchs globaux (mTeachingBatch ou mTestingBatch) au choix
          * @param batchSize le nombre de samples qu'on veut extraire
-         * @param isTestBatch permet de déterminer si on veut extraire du batch de test ou du batch d'apprentissage
          * @return le batch extrait du batch global choisir
          */
         Batch generateBatch(unsigned int batchSize) const;

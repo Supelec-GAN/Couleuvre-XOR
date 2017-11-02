@@ -66,6 +66,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Classe stockant un Set de données et les mesures statistiques associées.  
+ <a href="classDataSet.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="dataset_8hpp_source.html">dataset.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for DataSet:</div>
@@ -94,8 +97,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af646e5b745734c1b18f2e90117e1d3c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction renvoyant Data, contenant la moyenne, écart-type et intervalle de confiance.  <a href="#af646e5b745734c1b18f2e90117e1d3c1">More...</a><br /></td></tr>
 <tr class="separator:af646e5b745734c1b18f2e90117e1d3c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29e3936319d5b2fda4f74b033c556766"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataSet.html#a29e3936319d5b2fda4f74b033c556766">getSample</a> ()</td></tr>
-<tr class="memdesc:a29e3936319d5b2fda4f74b033c556766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction renvoyant le nombre d'apprentissage correspondant au <a class="el" href="classDataSet.html">DataSet</a>.  <a href="#a29e3936319d5b2fda4f74b033c556766">More...</a><br /></td></tr>
+<tr class="memdesc:a29e3936319d5b2fda4f74b033c556766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction renvoyant le nombre d'apprentissage correspondant au <a class="el" href="classDataSet.html" title="Classe stockant un Set de données et les mesures statistiques associées. ">DataSet</a>.  <a href="#a29e3936319d5b2fda4f74b033c556766">More...</a><br /></td></tr>
 <tr class="separator:a29e3936319d5b2fda4f74b033c556766"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05c7eba44d4d75941172628b1845f108"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; float &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataSet.html#a05c7eba44d4d75941172628b1845f108">getRawData</a> ()</td></tr>
+<tr class="memdesc:a05c7eba44d4d75941172628b1845f108"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction renvoyant le vecteur de données brutes.  <a href="#a05c7eba44d4d75941172628b1845f108">More...</a><br /></td></tr>
+<tr class="separator:a05c7eba44d4d75941172628b1845f108"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -109,13 +115,15 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:acf52ca5fc1f11ea8f027c7b7ad1e0d34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Médiane du jeu de données.  <a href="#acf52ca5fc1f11ea8f027c7b7ad1e0d34">More...</a><br /></td></tr>
 <tr class="separator:acf52ca5fc1f11ea8f027c7b7ad1e0d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a2e6525fdc36753382e0546e26198df"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataSet.html#a0a2e6525fdc36753382e0546e26198df">mSample</a></td></tr>
-<tr class="memdesc:a0a2e6525fdc36753382e0546e26198df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entier correspondant au nombre d'apprentissage correspondant au <a class="el" href="classDataSet.html">DataSet</a>.  <a href="#a0a2e6525fdc36753382e0546e26198df">More...</a><br /></td></tr>
+<tr class="memdesc:a0a2e6525fdc36753382e0546e26198df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entier correspondant au nombre d'apprentissage correspondant au <a class="el" href="classDataSet.html" title="Classe stockant un Set de données et les mesures statistiques associées. ">DataSet</a>.  <a href="#a0a2e6525fdc36753382e0546e26198df">More...</a><br /></td></tr>
 <tr class="separator:a0a2e6525fdc36753382e0546e26198df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc6a6082256c926e1ad8bfa713966441"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataSet.html#acc6a6082256c926e1ad8bfa713966441">isProcessed</a></td></tr>
 <tr class="memdesc:acc6a6082256c926e1ad8bfa713966441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Booleen.  <a href="#acc6a6082256c926e1ad8bfa713966441">More...</a><br /></td></tr>
 <tr class="separator:acc6a6082256c926e1ad8bfa713966441"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Classe stockant un Set de données et les mesures statistiques associées. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab45c95dc19f12a9217c0f3da7ac92b6a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab45c95dc19f12a9217c0f3da7ac92b6a">&#9670;&nbsp;</a></span>DataSet()</h2>
 
@@ -236,6 +244,25 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a05c7eba44d4d75941172628b1845f108"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05c7eba44d4d75941172628b1845f108">&#9670;&nbsp;</a></span>getRawData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; float &gt; &amp; DataSet::getRawData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction renvoyant le vecteur de données brutes. </p>
+
+</div>
+</div>
 <a id="a29e3936319d5b2fda4f74b033c556766"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a29e3936319d5b2fda4f74b033c556766">&#9670;&nbsp;</a></span>getSample()</h2>
 
@@ -251,7 +278,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Fonction renvoyant le nombre d'apprentissage correspondant au <a class="el" href="classDataSet.html">DataSet</a>. </p>
+<p>Fonction renvoyant le nombre d'apprentissage correspondant au <a class="el" href="classDataSet.html" title="Classe stockant un Set de données et les mesures statistiques associées. ">DataSet</a>. </p>
 
 </div>
 </div>
@@ -392,7 +419,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Entier correspondant au nombre d'apprentissage correspondant au <a class="el" href="classDataSet.html">DataSet</a>. </p>
+<p>Entier correspondant au nombre d'apprentissage correspondant au <a class="el" href="classDataSet.html" title="Classe stockant un Set de données et les mesures statistiques associées. ">DataSet</a>. </p>
 
 </div>
 </div>

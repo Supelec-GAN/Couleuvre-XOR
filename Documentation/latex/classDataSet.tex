@@ -2,12 +2,16 @@
 \label{classDataSet}\index{Data\+Set@{Data\+Set}}
 
 
+Classe stockant un Set de données et les mesures statistiques associées.  
+
+
+
+
 {\ttfamily \#include $<$dataset.\+hpp$>$}
 
 
 
-Collaboration diagram for Data\+Set\+:
-\nopagebreak
+Collaboration diagram for Data\+Set\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -28,7 +32,9 @@ void \hyperlink{classDataSet_a6e174dbffadb1a262c6cc92781d0bd12}{process\+Data} (
 \hyperlink{structStatistics_1_1Data}{Statistics\+::\+Data} \hyperlink{classDataSet_af646e5b745734c1b18f2e90117e1d3c1}{get\+Data} ()
 \begin{DoxyCompactList}\small\item\em Fonction renvoyant Data, contenant la moyenne, écart-\/type et intervalle de confiance. \end{DoxyCompactList}\item 
 int \hyperlink{classDataSet_a29e3936319d5b2fda4f74b033c556766}{get\+Sample} ()
-\begin{DoxyCompactList}\small\item\em Fonction renvoyant le nombre d\textquotesingle{}apprentissage correspondant au \hyperlink{classDataSet}{Data\+Set}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Fonction renvoyant le nombre d\textquotesingle{}apprentissage correspondant au \hyperlink{classDataSet}{Data\+Set}. \end{DoxyCompactList}\item 
+const std\+::vector$<$ float $>$ \& \hyperlink{classDataSet_a05c7eba44d4d75941172628b1845f108}{get\+Raw\+Data} ()
+\begin{DoxyCompactList}\small\item\em Fonction renvoyant le vecteur de données brutes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -43,6 +49,9 @@ int \hyperlink{classDataSet_a0a2e6525fdc36753382e0546e26198df}{m\+Sample}
 bool \hyperlink{classDataSet_acc6a6082256c926e1ad8bfa713966441}{is\+Processed}
 \begin{DoxyCompactList}\small\item\em Booleen. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Classe stockant un Set de données et les mesures statistiques associées. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classDataSet_ab45c95dc19f12a9217c0f3da7ac92b6a}\label{classDataSet_ab45c95dc19f12a9217c0f3da7ac92b6a}} 
@@ -106,6 +115,16 @@ Fonction permettant l\textquotesingle{}ajout d\textquotesingle{}un vecteur de do
 
 
 Fonction renvoyant Data, contenant la moyenne, écart-\/type et intervalle de confiance. 
+
+\mbox{\Hypertarget{classDataSet_a05c7eba44d4d75941172628b1845f108}\label{classDataSet_a05c7eba44d4d75941172628b1845f108}} 
+\index{Data\+Set@{Data\+Set}!get\+Raw\+Data@{get\+Raw\+Data}}
+\index{get\+Raw\+Data@{get\+Raw\+Data}!Data\+Set@{Data\+Set}}
+\subsubsection{\texorpdfstring{get\+Raw\+Data()}{getRawData()}}
+{\footnotesize\ttfamily const std\+::vector$<$ float $>$ \& Data\+Set\+::get\+Raw\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction renvoyant le vecteur de données brutes. 
 
 \mbox{\Hypertarget{classDataSet_a29e3936319d5b2fda4f74b033c556766}\label{classDataSet_a29e3936319d5b2fda4f74b033c556766}} 
 \index{Data\+Set@{Data\+Set}!get\+Sample@{get\+Sample}}

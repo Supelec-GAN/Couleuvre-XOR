@@ -2,50 +2,67 @@
 \label{classDataCollector}\index{Data\+Collector@{Data\+Collector}}
 
 
+Classe servant à collecter et exporter les données dans un fichier .csv.  
+
+
+
+
 {\ttfamily \#include $<$datacollector.\+hpp$>$}
 
 
 
-Collaboration diagram for Data\+Collector\+:
-\nopagebreak
+Collaboration diagram for Data\+Collector\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=170pt]{classDataCollector__coll__graph}
+\includegraphics[width=196pt]{classDataCollector__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classDataCollector_a8061e46d6301b7a766bd628472353b44}{Data\+Collector} (std\+::string test\+Name=\char`\"{}resultat\char`\"{})
+\hyperlink{classDataCollector_a75668f55c1c689c231d00efd1613f3fd}{Data\+Collector} (std\+::string csv\+Name=\char`\"{}resultat\char`\"{}, bool is\+Error\+Set=0)
 \begin{DoxyCompactList}\small\item\em Constructeur permettant d\textquotesingle{}initialiser le \hyperlink{classDataCollector}{Data\+Collector} avec le nom du csv file. \end{DoxyCompactList}\item 
+void \hyperlink{classDataCollector_a04219510b176548e0fd8eb084bcc1848}{add\+Data\+Type} (std\+::string type)
+\begin{DoxyCompactList}\small\item\em Ajout d\textquotesingle{}un nouveau type de données sous la clé type. \end{DoxyCompactList}\item 
 void \hyperlink{classDataCollector_ac0d50d38e3a5107541f929d4ea3a8cb5}{add\+Data} (\hyperlink{classDataSet}{Data\+Set} data\+Set)
+\item 
+void \hyperlink{classDataCollector_afd44db46dab8f105d4b36ef91a169090}{add\+Processed\+Data} (\hyperlink{classDataSet}{Data\+Set} data\+Set)
 \begin{DoxyCompactList}\small\item\em Ajout d\textquotesingle{}un set de données traitées (abscisse, moyenne, écart-\/type, intervalle de confiance) \end{DoxyCompactList}\item 
+void \hyperlink{classDataCollector_a3a7379e572a3123d83772ca0dd79f3b6}{add\+Raw\+Data} (std\+::string key, \hyperlink{classDataSet}{Data\+Set} data\+Set)
+\begin{DoxyCompactList}\small\item\em Ajout d\textquotesingle{}un set de données selon la clé \char`\"{}key\char`\"{} et les données brutes du \hyperlink{classDataSet}{Data\+Set}. \end{DoxyCompactList}\item 
 void \hyperlink{classDataCollector_a6af99e22f24d045d607cb708866b9ce2}{export\+Data} ()
-\begin{DoxyCompactList}\small\item\em Inscrit le vecteur de données dans le csv file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Inscrit le vecteur de données dans le csv file. \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \& \hyperlink{classDataCollector_aa7cc44e889e13c2b03d0128917c57454}{operator\mbox{[}$\,$\mbox{]}} (std\+::string key)
+\begin{DoxyCompactList}\small\item\em Surcouche de l\textquotesingle{}opérateur \mbox{[}\mbox{]} \+: fonctionne comme pour une map. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-std\+::vector$<$ std\+::pair$<$ int, \hyperlink{structStatistics_1_1Data}{Statistics\+::\+Data} $>$ $>$ \hyperlink{classDataCollector_a8d1d5a743e394b578545fa2d7b0ce4ee}{m\+Data\+Vector}
-\begin{DoxyCompactList}\small\item\em Vecteur de données traitées \+: nombre d\textquotesingle{}apprentissages, moyenne, écart-\/type, intervalle de confiance. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::pair$<$ std\+::string, std\+::vector$<$ float $>$ $>$ $>$ \hyperlink{classDataCollector_a97505c7a9d744d9e3bbeb9909d76bb9f}{m\+Data\+Vector}
+\begin{DoxyCompactList}\small\item\em Vecteur de données \+: vecteur de paires \+: nom de la donnée (clé) et ensemble des données associées. \end{DoxyCompactList}\item 
 \hyperlink{classcsvfile}{csvfile} \hyperlink{classDataCollector_a8150de03c388af2d36cfb8f15cd28189}{csv}
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+Classe servant à collecter et exporter les données dans un fichier .csv. 
+
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classDataCollector_a8061e46d6301b7a766bd628472353b44}\label{classDataCollector_a8061e46d6301b7a766bd628472353b44}} 
+\mbox{\Hypertarget{classDataCollector_a75668f55c1c689c231d00efd1613f3fd}\label{classDataCollector_a75668f55c1c689c231d00efd1613f3fd}} 
 \index{Data\+Collector@{Data\+Collector}!Data\+Collector@{Data\+Collector}}
 \index{Data\+Collector@{Data\+Collector}!Data\+Collector@{Data\+Collector}}
 \subsubsection{\texorpdfstring{Data\+Collector()}{DataCollector()}}
-{\footnotesize\ttfamily Data\+Collector\+::\+Data\+Collector (\begin{DoxyParamCaption}\item[{std\+::string}]{test\+Name = {\ttfamily \char`\"{}resultat\char`\"{}} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Data\+Collector\+::\+Data\+Collector (\begin{DoxyParamCaption}\item[{std\+::string}]{csv\+Name = {\ttfamily \char`\"{}resultat\char`\"{}},  }\item[{bool}]{is\+Error\+Set = {\ttfamily 0} }\end{DoxyParamCaption})}
 
 
 
 Constructeur permettant d\textquotesingle{}initialiser le \hyperlink{classDataCollector}{Data\+Collector} avec le nom du csv file. 
 
-Initialisation du \hyperlink{classDataCollector}{Data\+Collector} \+: contient des données traitées (abcisse, moyenne, écart-\/type, intervalle de confiance) et un csv file 
+Initialisation du \hyperlink{classDataCollector}{Data\+Collector} contenant un csv file et les données voulues 
 \begin{DoxyParams}{Parameters}
-{\em test\+Name} & \+: nom du csv file associé à ce relevé de données \\
+{\em csv\+Name} & \+: nom du csv file associé à ce relevé de données \\
+\hline
+{\em is\+Error\+Set} & \+: génère les paires $<$clé, vecteur$<$float$>$ vide$>$ pour les donnees d\textquotesingle{}un \hyperlink{classDataSet}{Data\+Set} \+: numéro de batch, erreur moyenne, écart-\/type et intervalle de confiance à 95\% \\
 \hline
 \end{DoxyParams}
 
@@ -57,9 +74,35 @@ Initialisation du \hyperlink{classDataCollector}{Data\+Collector} \+: contient d
 \subsubsection{\texorpdfstring{add\+Data()}{addData()}}
 {\footnotesize\ttfamily void Data\+Collector\+::add\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{classDataSet}{Data\+Set}}]{data\+Set }\end{DoxyParamCaption})}
 
+\mbox{\Hypertarget{classDataCollector_a04219510b176548e0fd8eb084bcc1848}\label{classDataCollector_a04219510b176548e0fd8eb084bcc1848}} 
+\index{Data\+Collector@{Data\+Collector}!add\+Data\+Type@{add\+Data\+Type}}
+\index{add\+Data\+Type@{add\+Data\+Type}!Data\+Collector@{Data\+Collector}}
+\subsubsection{\texorpdfstring{add\+Data\+Type()}{addDataType()}}
+{\footnotesize\ttfamily void Data\+Collector\+::add\+Data\+Type (\begin{DoxyParamCaption}\item[{std\+::string}]{type }\end{DoxyParamCaption})}
+
+
+
+Ajout d\textquotesingle{}un nouveau type de données sous la clé type. 
+
+\mbox{\Hypertarget{classDataCollector_afd44db46dab8f105d4b36ef91a169090}\label{classDataCollector_afd44db46dab8f105d4b36ef91a169090}} 
+\index{Data\+Collector@{Data\+Collector}!add\+Processed\+Data@{add\+Processed\+Data}}
+\index{add\+Processed\+Data@{add\+Processed\+Data}!Data\+Collector@{Data\+Collector}}
+\subsubsection{\texorpdfstring{add\+Processed\+Data()}{addProcessedData()}}
+{\footnotesize\ttfamily void Data\+Collector\+::add\+Processed\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{classDataSet}{Data\+Set}}]{data\+Set }\end{DoxyParamCaption})}
+
 
 
 Ajout d\textquotesingle{}un set de données traitées (abscisse, moyenne, écart-\/type, intervalle de confiance) 
+
+\mbox{\Hypertarget{classDataCollector_a3a7379e572a3123d83772ca0dd79f3b6}\label{classDataCollector_a3a7379e572a3123d83772ca0dd79f3b6}} 
+\index{Data\+Collector@{Data\+Collector}!add\+Raw\+Data@{add\+Raw\+Data}}
+\index{add\+Raw\+Data@{add\+Raw\+Data}!Data\+Collector@{Data\+Collector}}
+\subsubsection{\texorpdfstring{add\+Raw\+Data()}{addRawData()}}
+{\footnotesize\ttfamily void Data\+Collector\+::add\+Raw\+Data (\begin{DoxyParamCaption}\item[{std\+::string}]{key,  }\item[{\hyperlink{classDataSet}{Data\+Set}}]{data\+Set }\end{DoxyParamCaption})}
+
+
+
+Ajout d\textquotesingle{}un set de données selon la clé \char`\"{}key\char`\"{} et les données brutes du \hyperlink{classDataSet}{Data\+Set}. 
 
 \mbox{\Hypertarget{classDataCollector_a6af99e22f24d045d607cb708866b9ce2}\label{classDataCollector_a6af99e22f24d045d607cb708866b9ce2}} 
 \index{Data\+Collector@{Data\+Collector}!export\+Data@{export\+Data}}
@@ -71,7 +114,17 @@ Ajout d\textquotesingle{}un set de données traitées (abscisse, moyenne, écart
 
 Inscrit le vecteur de données dans le csv file. 
 
+\mbox{\Hypertarget{classDataCollector_aa7cc44e889e13c2b03d0128917c57454}\label{classDataCollector_aa7cc44e889e13c2b03d0128917c57454}} 
+\index{Data\+Collector@{Data\+Collector}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Data\+Collector@{Data\+Collector}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily std\+::vector$<$ float $>$ \& Data\+Collector\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{std\+::string}]{key }\end{DoxyParamCaption})}
 
+
+
+Surcouche de l\textquotesingle{}opérateur \mbox{[}\mbox{]} \+: fonctionne comme pour une map. 
+
+data\+Collector\mbox{[}key\mbox{]} renvoie le vecteur de données associé à la key Si cette paire n\textquotesingle{}existe pas encore, elle est créée. Cela crée une nouvelle colonne de données 
 
 \subsection{Field Documentation}
 \mbox{\Hypertarget{classDataCollector_a8150de03c388af2d36cfb8f15cd28189}\label{classDataCollector_a8150de03c388af2d36cfb8f15cd28189}} 
@@ -80,17 +133,17 @@ Inscrit le vecteur de données dans le csv file.
 \subsubsection{\texorpdfstring{csv}{csv}}
 {\footnotesize\ttfamily \hyperlink{classcsvfile}{csvfile} Data\+Collector\+::csv\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classDataCollector_a8d1d5a743e394b578545fa2d7b0ce4ee}\label{classDataCollector_a8d1d5a743e394b578545fa2d7b0ce4ee}} 
+\mbox{\Hypertarget{classDataCollector_a97505c7a9d744d9e3bbeb9909d76bb9f}\label{classDataCollector_a97505c7a9d744d9e3bbeb9909d76bb9f}} 
 \index{Data\+Collector@{Data\+Collector}!m\+Data\+Vector@{m\+Data\+Vector}}
 \index{m\+Data\+Vector@{m\+Data\+Vector}!Data\+Collector@{Data\+Collector}}
 \subsubsection{\texorpdfstring{m\+Data\+Vector}{mDataVector}}
-{\footnotesize\ttfamily std\+::vector$<$std\+::pair$<$int, \hyperlink{structStatistics_1_1Data}{Statistics\+::\+Data}$>$ $>$ Data\+Collector\+::m\+Data\+Vector\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::pair$<$std\+::string, std\+::vector$<$float$>$ $>$ $>$ Data\+Collector\+::m\+Data\+Vector\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Vecteur de données traitées \+: nombre d\textquotesingle{}apprentissages, moyenne, écart-\/type, intervalle de confiance. 
+Vecteur de données \+: vecteur de paires \+: nom de la donnée (clé) et ensemble des données associées. 
 
-
+brief std\+::string \+: Type de donnée brief std\+::vector$<$float$>$ \+: vecteur contenant les données 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

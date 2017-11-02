@@ -11,8 +11,7 @@ Classe modélisant une couche de neurones.
 
 
 
-Collaboration diagram for Neuron\+Layer\+:
-\nopagebreak
+Collaboration diagram for Neuron\+Layer\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -27,7 +26,9 @@ Collaboration diagram for Neuron\+Layer\+:
 Eigen\+::\+Vector\+Xf \hyperlink{classNeuronLayer_aa374ba7d040ae618b5037aa88e5efae7}{process} (Eigen\+::\+Vector\+Xf inputs)
 \begin{DoxyCompactList}\small\item\em La fonction effectuant le calcul de la sortie en fonction de l\textquotesingle{}entrée. \end{DoxyCompactList}\item 
 Eigen\+::\+Vector\+Xf \hyperlink{classNeuronLayer_a0896580aa265681f77efbcb81c6c8150}{back\+Prop} (Eigen\+::\+Vector\+Xf xn\+Partial\+Derivative, float step)
-\begin{DoxyCompactList}\small\item\em La fonction effectuant les calculs de rétropropagation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em La fonction effectuant les calculs de rétropropagation. \end{DoxyCompactList}\item 
+void \hyperlink{classNeuronLayer_af4f8a2ea263ab0c242124571db916d73}{reset} ()
+\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -132,6 +133,12 @@ La fonction effectuant le calcul de la sortie en fonction de l\textquotesingle{}
 \begin{DoxyReturn}{Returns}
 le vecteur d\textquotesingle{}output de la couche de neurones la fonction effectue le produit matriciel des poids par les entrées, puis applique la fonction d\textquotesingle{}activation 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classNeuronLayer_af4f8a2ea263ab0c242124571db916d73}\label{classNeuronLayer_af4f8a2ea263ab0c242124571db916d73}} 
+\index{Neuron\+Layer@{Neuron\+Layer}!reset@{reset}}
+\index{reset@{reset}!Neuron\+Layer@{Neuron\+Layer}}
+\subsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Neuron\+Layer\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 
 
 \subsection{Friends And Related Function Documentation}

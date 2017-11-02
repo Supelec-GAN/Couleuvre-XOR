@@ -23,22 +23,14 @@ public:
     /**
      * Calcul de la moyenne et de l'intervalle de confiance
      * Calcul de l'écart-type et de son intervalle de confiance
-<<<<<<< HEAD
      * @param dataVect Vecteur de données
-=======
-     * @param Vecteur de données
->>>>>>> datacollector
      */
     static Data processData(const std::vector<float> &dataVect);
 
 
     /// Fonction calculant la médiane d'un jeu de données
     /**
-<<<<<<< HEAD
      * @param dataVect Vecteur de données
-=======
-     * @param Vecteur de données
->>>>>>> datacollector
      */
     static float processMedian(std::vector<float> dataVect);
 };

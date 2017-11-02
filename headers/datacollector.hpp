@@ -46,8 +46,8 @@ public:
 private:
     /// Vecteur de données : vecteur de paires : nom de la donnée (clé) et ensemble des données associées
     /**
-    * @param std::string : Type de donnée
-    * @param std::vector<float> : vecteur contenant les données
+    * std::string : Type de donnée
+    * std::vector<float> : vecteur contenant les données
     */
     std::vector<std::pair<std::string, std::vector<float>>> mDataVector;
     csvfile                                                 csv;

@@ -2,12 +2,16 @@
 \label{structFunctions}\index{Functions@{Functions}}
 
 
+Classe statique pour la gestion des fonctions.  
+
+
+
+
 {\ttfamily \#include $<$functions.\+hpp$>$}
 
 
 
-Collaboration diagram for Functions\+:
-\nopagebreak
+Collaboration diagram for Functions\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -18,21 +22,26 @@ Collaboration diagram for Functions\+:
 \begin{DoxyCompactItemize}
 \item 
 using \hyperlink{structFunctions_ad25362ffa52b2f7933431190546593ac}{Activation\+Fun} = std\+::function$<$ float(float)$>$
-\item 
+\begin{DoxyCompactList}\small\item\em Un alias sur une fonction d\textquotesingle{}activation. \end{DoxyCompactList}\item 
 using \hyperlink{structFunctions_a834bc4170f1caa8c77272ecf51dbae5c}{Error\+Fun} = std\+::function$<$ float(Eigen\+::\+Vector\+Xf, Eigen\+::\+Vector\+Xf)$>$
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Un alias sur une fonction d\textquotesingle{}erreur. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{structFunctions_ad25362ffa52b2f7933431190546593ac}{Activation\+Fun} \hyperlink{structFunctions_a773de9cd59f7ccc3e2fe9822f0536ae4}{sigmoid} (float lambda)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}activation sigmoide. \end{DoxyCompactList}\item 
 static \hyperlink{structFunctions_ad25362ffa52b2f7933431190546593ac}{Activation\+Fun} \hyperlink{structFunctions_a683c495693f3e2a5ec55e30edaccfd2d}{heavyside} (float gap\+Abscissa)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}activation seuil. \end{DoxyCompactList}\item 
 static \hyperlink{structFunctions_ad25362ffa52b2f7933431190546593ac}{Activation\+Fun} \hyperlink{structFunctions_a0aac84382fccbc38cacccd566434d4a8}{hyper\+Tan} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}activation seuil. \end{DoxyCompactList}\item 
 static \hyperlink{structFunctions_a834bc4170f1caa8c77272ecf51dbae5c}{Error\+Fun} \hyperlink{structFunctions_a00bac40f42bb6c47d25c0cd238c4275a}{l2\+Norm} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}erreur norme 2. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Classe statique pour la gestion des fonctions. 
+
+Cette classe statique définit des alias de fonctions et permet d\textquotesingle{}en générer à la volée 
 
 \subsection{Member Typedef Documentation}
 \mbox{\Hypertarget{structFunctions_ad25362ffa52b2f7933431190546593ac}\label{structFunctions_ad25362ffa52b2f7933431190546593ac}} 
@@ -41,11 +50,19 @@ static \hyperlink{structFunctions_a834bc4170f1caa8c77272ecf51dbae5c}{Error\+Fun}
 \subsubsection{\texorpdfstring{Activation\+Fun}{ActivationFun}}
 {\footnotesize\ttfamily using \hyperlink{structFunctions_ad25362ffa52b2f7933431190546593ac}{Functions\+::\+Activation\+Fun} =  std\+::function$<$float(float)$>$}
 
+
+
+Un alias sur une fonction d\textquotesingle{}activation. 
+
 \mbox{\Hypertarget{structFunctions_a834bc4170f1caa8c77272ecf51dbae5c}\label{structFunctions_a834bc4170f1caa8c77272ecf51dbae5c}} 
 \index{Functions@{Functions}!Error\+Fun@{Error\+Fun}}
 \index{Error\+Fun@{Error\+Fun}!Functions@{Functions}}
 \subsubsection{\texorpdfstring{Error\+Fun}{ErrorFun}}
 {\footnotesize\ttfamily using \hyperlink{structFunctions_a834bc4170f1caa8c77272ecf51dbae5c}{Functions\+::\+Error\+Fun} =  std\+::function$<$float(Eigen\+::\+Vector\+Xf, Eigen\+::\+Vector\+Xf)$>$}
+
+
+
+Un alias sur une fonction d\textquotesingle{}erreur. 
 
 
 
@@ -56,17 +73,40 @@ static \hyperlink{structFunctions_a834bc4170f1caa8c77272ecf51dbae5c}{Error\+Fun}
 \subsubsection{\texorpdfstring{heavyside()}{heavyside()}}
 {\footnotesize\ttfamily \hyperlink{structFunctions_ad25362ffa52b2f7933431190546593ac}{Functions\+::\+Activation\+Fun} Functions\+::heavyside (\begin{DoxyParamCaption}\item[{float}]{gap\+Abscissa }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Fonction d\textquotesingle{}activation seuil. 
+
+\begin{DoxyReturn}{Returns}
+f(x) = 1 si x$>$= gap\+Abscissa, 0 sinon 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em gap\+Abscissa} & l\textquotesingle{}abscisse pour laquelle le seuil se fait \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{structFunctions_a0aac84382fccbc38cacccd566434d4a8}\label{structFunctions_a0aac84382fccbc38cacccd566434d4a8}} 
 \index{Functions@{Functions}!hyper\+Tan@{hyper\+Tan}}
 \index{hyper\+Tan@{hyper\+Tan}!Functions@{Functions}}
 \subsubsection{\texorpdfstring{hyper\+Tan()}{hyperTan()}}
 {\footnotesize\ttfamily \hyperlink{structFunctions_ad25362ffa52b2f7933431190546593ac}{Functions\+::\+Activation\+Fun} Functions\+::hyper\+Tan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Fonction d\textquotesingle{}activation seuil. 
+
+\begin{DoxyReturn}{Returns}
+f(x) = 2/3 $\ast$ tanh(1,7153$\ast$x) 
+\end{DoxyReturn}
 \mbox{\Hypertarget{structFunctions_a00bac40f42bb6c47d25c0cd238c4275a}\label{structFunctions_a00bac40f42bb6c47d25c0cd238c4275a}} 
 \index{Functions@{Functions}!l2\+Norm@{l2\+Norm}}
 \index{l2\+Norm@{l2\+Norm}!Functions@{Functions}}
 \subsubsection{\texorpdfstring{l2\+Norm()}{l2Norm()}}
 {\footnotesize\ttfamily \hyperlink{structFunctions_a834bc4170f1caa8c77272ecf51dbae5c}{Functions\+::\+Error\+Fun} Functions\+::l2\+Norm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Fonction d\textquotesingle{}erreur norme 2. 
 
 \mbox{\Hypertarget{structFunctions_a773de9cd59f7ccc3e2fe9822f0536ae4}\label{structFunctions_a773de9cd59f7ccc3e2fe9822f0536ae4}} 
 \index{Functions@{Functions}!sigmoid@{sigmoid}}
@@ -74,6 +114,18 @@ static \hyperlink{structFunctions_a834bc4170f1caa8c77272ecf51dbae5c}{Error\+Fun}
 \subsubsection{\texorpdfstring{sigmoid()}{sigmoid()}}
 {\footnotesize\ttfamily \hyperlink{structFunctions_ad25362ffa52b2f7933431190546593ac}{Functions\+::\+Activation\+Fun} Functions\+::sigmoid (\begin{DoxyParamCaption}\item[{float}]{lambda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Fonction d\textquotesingle{}activation sigmoide. 
+
+\begin{DoxyReturn}{Returns}
+f(x) = 1/(1-\/e(-\/x.\+lambda)) 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em lambda} & le paramètre de pente de la sigmoide \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}

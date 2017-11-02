@@ -17,7 +17,7 @@ int main()
     try
     {
         // Construction du générateurs d'inputs
-        srand(time(0));
+        srand(static_cast<unsigned int>(time(0)));
         std::default_random_engine generator((std::random_device())());
         std::uniform_real_distribution<float> distribution(-1.f,1.f);
 

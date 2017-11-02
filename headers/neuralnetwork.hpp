@@ -38,11 +38,10 @@ class NeuralNetwork : public std::list<NeuronLayer>
         /**
          *  \param layerList la liste des couches de neurones
          */
-
+		template <typename Container>
+		NeuralNetwork(Container layerList);
+	
         void reset();
-
-        template <typename Container>
-        NeuralNetwork(Container layerList);
 
         Eigen::VectorXf process(Eigen::VectorXf input);
 

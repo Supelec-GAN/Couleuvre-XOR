@@ -24,7 +24,8 @@ void Teacher::propError(Eigen::VectorXf xnPartialDerivative, float step)
 {
     for(auto itr = mNetwork->rbegin(); itr != mNetwork->rend(); ++itr)
     {
-        xnPartialDerivative = itr->backProp(xnPartialDerivative, step);
+        xnPartialDerivative = itr->layerBackProp(xnPartialDerivative, step);
+		itr->updateWeights();
     }
 }
 

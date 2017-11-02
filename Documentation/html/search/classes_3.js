@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['functions',['Functions',['../structFunctions.html',1,'']]]
+  ['errorcollector',['ErrorCollector',['../classStats_1_1ErrorCollector.html',1,'Stats']]]
 ];

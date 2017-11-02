@@ -12,7 +12,7 @@ Statistics::Data Statistics::processData(const std::vector<float> &dataVect)
     float deviation(0);
 
     std::for_each(dataVect.begin(), dataVect.end(), [&] (float x) {deviation += pow(x, 2);});
-    data.deviation = sqrt(deviation/static_cast<float>(dataVect.size()) - pow(data.mean, 2));
+    data.deviation = sqrtf(deviation/static_cast<float>(dataVect.size()) - powf(data.mean, 2));
     data.confRange = 2*data.deviation/(sqrt(static_cast<float>(dataVect.size())));
     return data;
 }

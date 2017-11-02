@@ -1,6 +1,27 @@
 var searchData=
 [
-  ['process',['process',['../classNeuronLayer.html#aa374ba7d040ae618b5037aa88e5efae7',1,'NeuronLayer']]],
-  ['processdata',['processData',['../classDataSet.html#a6e174dbffadb1a262c6cc92781d0bd12',1,'DataSet::processData()'],['../classStatistics.html#aaa2152a3f262ce8d003663f993420c4c',1,'Statistics::processData()']]],
-  ['processmedian',['processMedian',['../classStatistics.html#ae1c12077162711aa0ea8b4ee6e15b4da',1,'Statistics']]]
+  ['mactivationfun',['mActivationFun',['../classNeuronLayer.html#ac0ff52b79f1a068e75f0eb0309b5e683',1,'NeuronLayer']]],
+  ['main',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
+  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['mbiais',['mBiais',['../classNeuronLayer.html#a6d1c0d70051d87dace0cdf654d866a4a',1,'NeuronLayer']]],
+  ['mbufferactivationlevel',['mBufferActivationLevel',['../classNeuronLayer.html#a5b5ccadbab1d38fd3b09fcab7dc01148',1,'NeuronLayer']]],
+  ['mbufferinput',['mBufferInput',['../classNeuronLayer.html#ab5a3fc010c33628e37b5a19d370978e9',1,'NeuronLayer']]],
+  ['mcsv',['mCSV',['../classStats_1_1StatsCollector.html#af14709500616e5f6e0bee6e766d8437f',1,'Stats::StatsCollector']]],
+  ['mdata',['mData',['../classDataSet.html#a043f1a249aa8752a8cc3115fbee61e2e',1,'DataSet']]],
+  ['mdatacollector',['mDataCollector',['../classApplication.html#a4409ee4b27b5142510e5be6d41d2a203',1,'Application']]],
+  ['mdatavector',['mDataVector',['../classDataCollector.html#a97505c7a9d744d9e3bbeb9909d76bb9f',1,'DataCollector']]],
+  ['mean',['mean',['../structStats_1_1ErrorCollector_1_1StatisticData.html#aa508c97d0c658eef35ac6f4be08bbe3f',1,'Stats::ErrorCollector::StatisticData::mean()'],['../structStatistics_1_1Data.html#a70c674f35bce1803c894c1df2649ac3f',1,'Statistics::Data::mean()']]],
+  ['merrorfun',['mErrorFun',['../classTeacher.html#ab58537b6ced063a5a6e7cd6b94ecd203',1,'Teacher']]],
+  ['merrors',['mErrors',['../classStats_1_1ErrorCollector.html#a60b1b91539d0e781f87c044a7b6b8842',1,'Stats::ErrorCollector']]],
+  ['merrorstats',['mErrorStats',['../classStats_1_1StatsCollector.html#a123089374935eb7ac36998807ac4d0e1',1,'Stats::StatsCollector']]],
+  ['mmedian',['mMedian',['../classDataSet.html#acf52ca5fc1f11ea8f027c7b7ad1e0d34',1,'DataSet']]],
+  ['mnetwork',['mNetwork',['../classApplication.html#aeec81cfdef16dae6f18bc7da55991e45',1,'Application::mNetwork()'],['../classTeacher.html#ae1cf0d1d29e47fd8bcf9b79b5ec52839',1,'Teacher::mNetwork()']]],
+  ['mpoids',['mPoids',['../classNeuronLayer.html#ab6aaf5dc22c97ba46db5ac5e8715ed8f',1,'NeuronLayer']]],
+  ['mrawdata',['mRawData',['../classDataSet.html#a578c8ddd82c2e24468d88bfd4cbfc917',1,'DataSet']]],
+  ['msample',['mSample',['../classDataSet.html#a0a2e6525fdc36753382e0546e26198df',1,'DataSet']]],
+  ['mstatscollector',['mStatsCollector',['../classApplication.html#a33f1c0f13d4c81101bb497264037cb82',1,'Application']]],
+  ['mteacher',['mTeacher',['../classApplication.html#aabafc2a40d05198496fed23f6fe1ea1f',1,'Application']]],
+  ['mteachingbatch',['mTeachingBatch',['../classApplication.html#a2ccd850b23693fd6d76cad0975a597dd',1,'Application']]],
+  ['mtestcounter',['mTestCounter',['../classApplication.html#a3ee8257a9c7ece037ee91b68d9841002',1,'Application']]],
+  ['mtestingbatch',['mTestingBatch',['../classApplication.html#a765dbdcf8fa110557c67fb78cffaceb3',1,'Application']]]
 ];

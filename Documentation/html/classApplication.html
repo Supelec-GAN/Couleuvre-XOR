@@ -77,9 +77,10 @@ Collaboration diagram for Application:</div>
 <div class="dyncontent">
 <div class="center"><img src="classApplication__coll__graph.png" border="0" usemap="#Application_coll__map" alt="Collaboration graph"/></div>
 <map name="Application_coll__map" id="Application_coll__map">
-<area shape="rect" id="node2" href="classDataCollector.html" title="{DataCollector\n|&#45; mDataVector\l|+ DataCollector()\l+ addData()\l+ exportData()\l}" alt="" coords="4,269,125,369"/>
-<area shape="rect" id="node3" href="classcsvfile.html" title="{csvfile\n|&#45; fs_\l&#45; separator_\l|+ csvfile()\l+ ~csvfile()\l+ flush()\l+ endrow()\l+ operator\&lt;\&lt;()\l+ operator\&lt;\&lt;()\l+ operator\&lt;\&lt;()\l+ operator\&lt;\&lt;()\l}" alt="" coords="12,6,119,186"/>
-<area shape="rect" id="node4" href="classTeacher.html" title="{Teacher\n|&#45; mNetwork\l&#45; mErrorFun\l|+ Teacher()\l+ Teacher()\l+ backProp()\l&#45; propError()\l&#45; errorVector()\l}" alt="" coords="151,249,255,389"/>
+<area shape="rect" id="node2" href="classDataCollector.html" title="Classe servant à collecter et exporter les données dans un fichier .csv. " alt="" coords="5,249,160,402"/>
+<area shape="rect" id="node3" href="classcsvfile.html" title="{csvfile\n|&#45; fs_\l&#45; separator_\l|+ csvfile()\l+ ~csvfile()\l+ flush()\l+ endrow()\l+ operator\&lt;\&lt;()\l+ operator\&lt;\&lt;()\l+ operator\&lt;\&lt;()\l+ operator\&lt;\&lt;()\l}" alt="" coords="128,6,235,186"/>
+<area shape="rect" id="node5" href="classStats_1_1StatsCollector.html" title="{Stats::StatsCollector\n|&#45; mErrorStats\l|+ StatsCollector()\l+ operator[]()\l+ exportData()\l}" alt="" coords="184,275,325,375"/>
+<area shape="rect" id="node4" href="classTeacher.html" title="{Teacher\n|&#45; mNetwork\l&#45; mErrorFun\l|+ Teacher()\l+ Teacher()\l+ backProp()\l&#45; propError()\l&#45; errorVector()\l}" alt="" coords="349,255,453,395"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -103,18 +104,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae93c9eb1888c7b3bbab68aa5da50ce46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classApplication.html#ae93c9eb1888c7b3bbab68aa5da50ce46">runTeach</a> (unsigned int nbTeachings)</td></tr>
 <tr class="memdesc:ae93c9eb1888c7b3bbab68aa5da50ce46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Effectue une run d'apprentissage.  <a href="#ae93c9eb1888c7b3bbab68aa5da50ce46">More...</a><br /></td></tr>
 <tr class="separator:ae93c9eb1888c7b3bbab68aa5da50ce46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2efd3cc253a127ea682a00b560f6d073"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classApplication.html#a2efd3cc253a127ea682a00b560f6d073">runTest</a> (unsigned int nbTests)</td></tr>
-<tr class="memdesc:a2efd3cc253a127ea682a00b560f6d073"><td class="mdescLeft">&#160;</td><td class="mdescRight">Effectue une run de tests.  <a href="#a2efd3cc253a127ea682a00b560f6d073">More...</a><br /></td></tr>
-<tr class="separator:a2efd3cc253a127ea682a00b560f6d073"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a105d173f14e444ddb485d5ac5df91d74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classApplication.html#a105d173f14e444ddb485d5ac5df91d74">totalRun</a> (unsigned int nbLoops, unsigned int nbTeachingsPerLoop, unsigned int nbTestsPerLoop)</td></tr>
-<tr class="memdesc:a105d173f14e444ddb485d5ac5df91d74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Effectue une run totale sur le projet.  <a href="#a105d173f14e444ddb485d5ac5df91d74">More...</a><br /></td></tr>
-<tr class="separator:a105d173f14e444ddb485d5ac5df91d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd01b94dfbff9ce3ecf9e77f840a81fa"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classApplication.html#abd01b94dfbff9ce3ecf9e77f840a81fa">runTest</a> ()</td></tr>
+<tr class="memdesc:abd01b94dfbff9ce3ecf9e77f840a81fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Effectue une run de tests.  <a href="#abd01b94dfbff9ce3ecf9e77f840a81fa">More...</a><br /></td></tr>
+<tr class="separator:abd01b94dfbff9ce3ecf9e77f840a81fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad57005e2c8e096af66eca715a7c6a961"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classApplication.html#ad57005e2c8e096af66eca715a7c6a961">runExperiments</a> (unsigned int nbExperiments, unsigned int nbLoops, unsigned int nbTeachingsPerLoop)</td></tr>
+<tr class="separator:ad57005e2c8e096af66eca715a7c6a961"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57dbef541907f1d1436732afec051ac2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classApplication.html#a57dbef541907f1d1436732afec051ac2">runSingleExperiment</a> (unsigned int nbLoops, unsigned int nbTeachingsPerLoop)</td></tr>
+<tr class="separator:a57dbef541907f1d1436732afec051ac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88102872db25c2f897ba6d6832ecaedc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classApplication.html#a88102872db25c2f897ba6d6832ecaedc">resetExperiment</a> ()</td></tr>
+<tr class="separator:a88102872db25c2f897ba6d6832ecaedc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a354527f371bf64ce05992bf1af5008da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classApplication.html#a9888f02149ca3b8ffa499ee07426cd1d">Batch</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classApplication.html#a354527f371bf64ce05992bf1af5008da">generateBatch</a> (unsigned int batchSize, bool isTestBatch) const</td></tr>
-<tr class="memdesc:a354527f371bf64ce05992bf1af5008da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrait un batch d'un des batchs globaux du projet.  <a href="#a354527f371bf64ce05992bf1af5008da">More...</a><br /></td></tr>
-<tr class="separator:a354527f371bf64ce05992bf1af5008da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a201ce31cdd2a89861bf6ac0f9f09371f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classApplication.html#a9888f02149ca3b8ffa499ee07426cd1d">Batch</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classApplication.html#a201ce31cdd2a89861bf6ac0f9f09371f">generateBatch</a> (unsigned int batchSize) const</td></tr>
+<tr class="memdesc:a201ce31cdd2a89861bf6ac0f9f09371f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrait un batch d'un des batchs globaux du projet.  <a href="#a201ce31cdd2a89861bf6ac0f9f09371f">More...</a><br /></td></tr>
+<tr class="separator:a201ce31cdd2a89861bf6ac0f9f09371f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -133,6 +137,8 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a4409ee4b27b5142510e5be6d41d2a203"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDataCollector.html">DataCollector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classApplication.html#a4409ee4b27b5142510e5be6d41d2a203">mDataCollector</a></td></tr>
 <tr class="memdesc:a4409ee4b27b5142510e5be6d41d2a203"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le dataCollector permettant de stocker les données d'erreur et de les exporter en csv.  <a href="#a4409ee4b27b5142510e5be6d41d2a203">More...</a><br /></td></tr>
 <tr class="separator:a4409ee4b27b5142510e5be6d41d2a203"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33f1c0f13d4c81101bb497264037cb82"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classStats_1_1StatsCollector.html">Stats::StatsCollector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classApplication.html#a33f1c0f13d4c81101bb497264037cb82">mStatsCollector</a></td></tr>
+<tr class="separator:a33f1c0f13d4c81101bb497264037cb82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ee8257a9c7ece037ee91b68d9841002"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classApplication.html#a3ee8257a9c7ece037ee91b68d9841002">mTestCounter</a></td></tr>
 <tr class="memdesc:a3ee8257a9c7ece037ee91b68d9841002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Un compteur permettant d'indicer les données exportées.  <a href="#a3ee8257a9c7ece037ee91b68d9841002">More...</a><br /></td></tr>
 <tr class="separator:a3ee8257a9c7ece037ee91b68d9841002"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -270,8 +276,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a354527f371bf64ce05992bf1af5008da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a354527f371bf64ce05992bf1af5008da">&#9670;&nbsp;</a></span>generateBatch()</h2>
+<a id="a201ce31cdd2a89861bf6ac0f9f09371f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a201ce31cdd2a89861bf6ac0f9f09371f">&#9670;&nbsp;</a></span>generateBatch()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -283,18 +289,8 @@ Private Attributes</h2></td></tr>
           <td class="memname"><a class="el" href="classApplication.html#a9888f02149ca3b8ffa499ee07426cd1d">Application::Batch</a> Application::generateBatch </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>batchSize</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>isTestBatch</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
+          <td class="paramname"><em>batchSize</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -313,6 +309,85 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>le batch extrait du batch global choisir </dd></dl>
+
+</div>
+</div>
+<a id="a88102872db25c2f897ba6d6832ecaedc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88102872db25c2f897ba6d6832ecaedc">&#9670;&nbsp;</a></span>resetExperiment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Application::resetExperiment </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad57005e2c8e096af66eca715a7c6a961"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad57005e2c8e096af66eca715a7c6a961">&#9670;&nbsp;</a></span>runExperiments()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Application::runExperiments </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>nbExperiments</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>nbLoops</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>nbTeachingsPerLoop</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a57dbef541907f1d1436732afec051ac2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57dbef541907f1d1436732afec051ac2">&#9670;&nbsp;</a></span>runSingleExperiment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Application::runSingleExperiment </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>nbLoops</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>nbTeachingsPerLoop</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -342,17 +417,16 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a2efd3cc253a127ea682a00b560f6d073"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2efd3cc253a127ea682a00b560f6d073">&#9670;&nbsp;</a></span>runTest()</h2>
+<a id="abd01b94dfbff9ce3ecf9e77f840a81fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd01b94dfbff9ce3ecf9e77f840a81fa">&#9670;&nbsp;</a></span>runTest()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Application::runTest </td>
+          <td class="memname">float Application::runTest </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>nbTests</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -362,50 +436,6 @@ Private Attributes</h2></td></tr>
 <p>Effectue une run de test dont le nombre de tests est passé en paramètres </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">nbTests</td><td>le nombre de tests à faire pendant la run </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a105d173f14e444ddb485d5ac5df91d74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a105d173f14e444ddb485d5ac5df91d74">&#9670;&nbsp;</a></span>totalRun()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Application::totalRun </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>nbLoops</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>nbTeachingsPerLoop</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>nbTestsPerLoop</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Effectue une run totale sur le projet. </p>
-<p>Cette run alterne entre run d'apprentissage et de tests. Le nombre de runs, d'apprentissages par run et de tests par run est paramètrable </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">nbLoops</td><td>le nombre d'alternances apprentissage/test </td></tr>
-    <tr><td class="paramname">nbTeachingsPerLoop</td><td>le nombre d'apprentissage par run </td></tr>
-    <tr><td class="paramname">nbTestsPerLoop</td><td>le nombre de tests par run </td></tr>
   </table>
   </dd>
 </dl>
@@ -458,6 +488,28 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Le réseau avec lequel on travaille. </p>
+
+</div>
+</div>
+<a id="a33f1c0f13d4c81101bb497264037cb82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33f1c0f13d4c81101bb497264037cb82">&#9670;&nbsp;</a></span>mStatsCollector</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classStats_1_1StatsCollector.html">Stats::StatsCollector</a> Application::mStatsCollector</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

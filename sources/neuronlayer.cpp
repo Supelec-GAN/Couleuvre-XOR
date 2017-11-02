@@ -9,6 +9,8 @@ NeuronLayer::NeuronLayer(unsigned int inputSize, unsigned int outputSize, std::f
 , mActivationFun(activationF)
 , mBufferActivationLevel(Eigen::MatrixXf::Zero(outputSize, 1))
 , mBufferInput(Eigen::MatrixXf::Zero(inputSize, 1))
+, mSumWeightVariation(Eigen::MatrixXf::Zero(outputSize, inputSize))
+, mSumBiasVariation(Eigen::MatrixXf::Zero(outputSize, 1))
 {}
 
 
@@ -17,54 +19,61 @@ NeuronLayer::NeuronLayer(unsigned int inputSize, unsigned int outputSize, std::f
 
 Eigen::VectorXf NeuronLayer::process(Eigen::VectorXf inputs)
 {
-    mBufferInput = inputs;
-    mBufferActivationLevel = mPoids*inputs - mBiais;
-    Eigen::VectorXf output = mBufferActivationLevel;
-
-    for(unsigned int i(0); i < output.size(); i++)
-        output[i] = mActivationFun(output[i]);
-
-    return output;
+	mBufferInput = inputs;
+	mBufferActivationLevel = mPoids*inputs - mBiais;
+	Eigen::VectorXf output = mBufferActivationLevel;
+	
+	for(unsigned int i(0); i < output.size(); i++)
+		output[i] = mActivationFun(output[i]);
+	
+	return output;
 }
 
 //***********RETROPROPAGATION***********
 //**************************************
 
 
-Eigen::VectorXf NeuronLayer::backProp(Eigen::VectorXf xnPartialDerivative, float step)
+Eigen::VectorXf NeuronLayer::layerBackProp(Eigen::VectorXf xnPartialDerivative, float step)
 {
-    // Calcul de ynPartialDerivative
-    Eigen::VectorXf ynPartialDerivative = fnDerivativeMatrix()*xnPartialDerivative;
-
-    //Mise à jour des poids
-    Eigen::MatrixXf wnPartialDerivative = ynPartialDerivative*(mBufferInput.transpose());
-    mPoids -= step*wnPartialDerivative;
-
-    // Mise à jour des biais
-    mBiais += step*ynPartialDerivative;
-
-    //Retour de x(n-1)PartialDerivative
-    return mPoids.transpose()*ynPartialDerivative;
+	Eigen::VectorXf ynPartialDerivative = fnDerivativeMatrix()*xnPartialDerivative;
+	Eigen::MatrixXf wnPartialDerivative = ynPartialDerivative*(mBufferInput.transpose());
+	
+	mSumBiasVariation += step*ynPartialDerivative;
+	mSumWeightVariation += step*wnPartialDerivative;
+	
+	//Retour de x(n-1)PartialDerivative
+	return mPoids.transpose()*ynPartialDerivative;
 }
+
+void NeuronLayer::updateWeights()
+{
+	mPoids -= mSumWeightVariation;
+	mBiais += mSumBiasVariation;
+	
+	//reset des buffer
+	mSumWeightVariation.setZero() ;
+	mSumBiasVariation.setZero();
+}
+
 
 Eigen::MatrixXf NeuronLayer::fnDerivativeMatrix() const
 {
-    auto fnDerivated = [this] (float x, float dx)
-                        {
-                            return (mActivationFun(x+dx) - mActivationFun(x))/dx;
-                        };
-
-    Eigen::VectorXf fnDerivativeMat(mBufferActivationLevel.size());
-    for(auto i(0); i < mBufferActivationLevel.size(); ++i)
-        fnDerivativeMat(i) = fnDerivated(mBufferActivationLevel(i), 0.05);
-
-    return Eigen::MatrixXf(fnDerivativeMat.asDiagonal());
+	auto fnDerivated = [this] (float x, float dx)
+	{
+		return (mActivationFun(x+dx) - mActivationFun(x))/dx;
+	};
+	
+	Eigen::VectorXf fnDerivativeMat(mBufferActivationLevel.size());
+	for(auto i(0); i < mBufferActivationLevel.size(); ++i)
+		fnDerivativeMat(i) = fnDerivated(mBufferActivationLevel(i), 0.05);
+	
+	return Eigen::MatrixXf(fnDerivativeMat.asDiagonal());
 }
 
 void NeuronLayer::reset()
 {
-    mPoids = Eigen::MatrixXf::Random(mPoids.rows(), mPoids.cols());
-    mBiais = Eigen::VectorXf::Random(mBiais.size());
+	mPoids = Eigen::MatrixXf::Random(mPoids.rows(), mPoids.cols());
+	mBiais = Eigen::VectorXf::Random(mBiais.size());
 }
 
 //*************AUXILIAIRES**************
@@ -72,6 +81,6 @@ void NeuronLayer::reset()
 
 std::ostream& operator<<(std::ostream& flux, NeuronLayer n)
 {
-    flux << n.mPoids;
-    return flux;
+	flux << n.mPoids;
+	return flux;
 }
