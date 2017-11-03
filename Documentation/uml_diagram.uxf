@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>216</x>
-      <y>552</y>
+      <x>56</x>
+      <y>528</y>
       <w>264</w>
       <h>128</h>
     </coordinates>
@@ -27,8 +27,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>392</x>
-      <y>320</y>
+      <x>232</x>
+      <y>296</y>
       <w>224</w>
       <h>56</h>
     </coordinates>
@@ -42,8 +42,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>336</x>
-      <y>368</y>
+      <x>176</x>
+      <y>344</y>
       <w>176</w>
       <h>200</h>
     </coordinates>
@@ -55,8 +55,8 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>536</x>
-      <y>552</y>
+      <x>376</x>
+      <y>528</y>
       <w>264</w>
       <h>64</h>
     </coordinates>
@@ -72,8 +72,8 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>160</x>
-      <y>320</y>
+      <x>0</x>
+      <y>296</y>
       <w>176</w>
       <h>56</h>
     </coordinates>
@@ -86,8 +86,8 @@ fonctions de seuil ou d'erreur</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>488</x>
-      <y>368</y>
+      <x>328</x>
+      <y>344</y>
       <w>208</w>
       <h>200</h>
     </coordinates>
@@ -99,8 +99,8 @@ m2=0..1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>496</x>
-      <y>96</y>
+      <x>336</x>
+      <y>72</y>
       <w>512</w>
       <h>144</h>
     </coordinates>
@@ -121,8 +121,8 @@ m2=0..1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>488</x>
-      <y>232</y>
+      <x>328</x>
+      <y>208</y>
       <w>216</w>
       <h>104</h>
     </coordinates>
@@ -134,8 +134,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>680</x>
-      <y>232</y>
+      <x>520</x>
+      <y>208</y>
       <w>56</w>
       <h>336</h>
     </coordinates>
@@ -147,8 +147,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>680</x>
-      <y>232</y>
+      <x>520</x>
+      <y>208</y>
       <w>464</w>
       <h>104</h>
     </coordinates>
@@ -160,74 +160,69 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>880</x>
-      <y>760</y>
+      <x>768</x>
+      <y>696</y>
       <w>216</w>
       <h>96</h>
     </coordinates>
-    <panel_attributes>Struct : Data
+    <panel_attributes>Struct : StatisticData
 --
 + float             mean
 + float             deviation
-+ float             confRangeMean
-+ float             confRangeDeviation</panel_attributes>
++ float             confidenceRange</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>976</x>
-      <y>320</y>
+      <x>816</x>
+      <y>296</y>
       <w>304</w>
       <h>144</h>
     </coordinates>
-    <panel_attributes>DataCollector
+    <panel_attributes>StatsCollector
 --
-+ addRawData(string key, DataSet)
-+ addData(DataSet dataSet) [[deprecated]]
-+ addProcessedData(DataSet dataSet)
-+ operator[](string key)
-+ addDataType(string type)
-+ exportData()
++ ErrorCollector&amp; 	     operator[](unsigned int teachIndex);
++ void                       exportData(bool mustProcessData = true);
 --
-- vector&lt;pair&lt;string, vector&lt;float&gt; &gt; mDataVector
-- csvfile file
-</panel_attributes>
+- StatsCollector(const std::string&amp; CSVFileName = "resultat")
+- std::vector&lt;ErrorCollector&gt; mErrorStats;
+- csvfile                     mCSV;</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>984</x>
-      <y>456</y>
-      <w>152</w>
-      <h>112</h>
+      <x>872</x>
+      <y>432</y>
+      <w>88</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0..n
 m2=1</panel_attributes>
-    <additional_attributes>10.0;120.0;10.0;70.0;170.0;70.0;170.0;10.0</additional_attributes>
+    <additional_attributes>10.0;80.0;10.0;40.0;90.0;40.0;90.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1112</x>
-      <y>456</y>
-      <w>208</w>
-      <h>112</h>
+      <x>1056</x>
+      <y>432</y>
+      <w>80</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=1</panel_attributes>
-    <additional_attributes>240.0;120.0;240.0;70.0;10.0;70.0;10.0;10.0</additional_attributes>
+    <additional_attributes>80.0;100.0;80.0;50.0;10.0;50.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1216</x>
-      <y>552</y>
+      <x>1032</x>
+      <y>512</y>
       <w>168</w>
-      <h>56</h>
+      <h>40</h>
     </coordinates>
     <panel_attributes>CSVFile
 --</panel_attributes>
@@ -236,31 +231,27 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>864</x>
-      <y>552</y>
+      <x>752</x>
+      <y>496</y>
       <w>256</w>
-      <h>152</h>
+      <h>144</h>
     </coordinates>
-    <panel_attributes>DataSet
+    <panel_attributes>ErrorCollector
 --
-+ DataSet(vector&lt;float&gt; dataVect)
-+ addData(float data, bool process)
-+ addRawData(vector&lt;float&gt; dataVect)
-+ processData()
++ void            addResult(float result);
++ StatisticData   processData() const;
 --
-- vector&lt;float&gt;        mRawData
-- Statistics::Data     mMean
-- float                      mMedian
-- int                         mSample
-- bool                      isProcessed
+- std::vector&lt;float&gt; mErrors;
+
+
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>984</x>
-      <y>696</y>
+      <x>872</x>
+      <y>632</y>
       <w>24</w>
       <h>80</h>
     </coordinates>
